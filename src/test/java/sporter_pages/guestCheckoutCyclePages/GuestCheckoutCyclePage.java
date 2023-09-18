@@ -287,9 +287,14 @@ public class GuestCheckoutCyclePage extends BasePage {
         cartPage.proceedToCheckout();
         DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
-
     }
-
+    public void accessGuestCheckoutFormWithoutCartValidation() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        cartPage.proceedToCheckout();
+        DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
+    }
     public void selectCity() {
         try {
             DataHelperAndWait.waitToBeVisible(cityMenu, webDriver);

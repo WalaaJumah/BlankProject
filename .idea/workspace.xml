@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RunMethod.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunMethod.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

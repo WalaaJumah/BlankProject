@@ -107,7 +107,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
 //        webDriver.manage().deleteCookieNamed("guestCartId");
-        kSA.accessGuestCheckoutForm();
+        kSA.accessGuestCheckoutFormWithoutCartValidation();
         kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -160,7 +160,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
 //        webDriver.manage().deleteCookieNamed("guestCartId");
-        kSA.accessGuestCheckoutForm();
+        kSA.accessGuestCheckoutFormWithoutCartValidation();
         kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -225,7 +225,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
 //        webDriver.manage().deleteCookieNamed("guestCartId");
-        kSA.accessGuestCheckoutForm();
+        kSA.accessGuestCheckoutFormWithoutCartValidation();
         kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),

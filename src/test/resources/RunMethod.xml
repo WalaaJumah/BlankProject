@@ -23,6 +23,7 @@
         <classes>
 
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 <!--                </methods>-->

@@ -124,7 +124,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethod() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -165,7 +165,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 28)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         egypt.accessGuestCheckoutForm();
@@ -187,7 +187,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With COD Payment Method ", priority = 26)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
-        egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        egyptGuestCheckoutCyclePage.accessGuestCheckoutFormWithoutCartValidation();
         egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -210,10 +210,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrder() throws IOException {
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         try {
-            egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+            egyptGuestCheckoutCyclePage.accessGuestCheckoutFormWithoutCartValidation();
         }
         catch (Exception e){
-            egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+            egyptGuestCheckoutCyclePage.accessGuestCheckoutFormWithoutCartValidation();
         }
         egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -288,10 +288,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationFailedOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         try {
-            egypt.accessGuestCheckoutForm();
+            egypt.accessGuestCheckoutFormWithoutCartValidation();
         }
         catch (Exception e){
-            egypt.accessGuestCheckoutForm();
+            egypt.accessGuestCheckoutFormWithoutCartValidation();
 
         }
         egypt.fillInShippingInformationInputField(
@@ -317,7 +317,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Not Available Option from Geidea Payment Gate Screen", priority = 61)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationNotAvailableOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -341,7 +341,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted Option from Geidea Payment Gate Screen", priority = 62)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationAttemptedOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -365,7 +365,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Error Parsing Authentication Response Option from Geidea Payment Gate Screen", priority = 63)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingErrorParsingAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -413,7 +413,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting MPI Processing Error Option from Geidea Payment Gate Screen", priority = 65)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingMPIProcessingErrorOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -437,7 +437,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted (No CAVV) Option from Geidea Payment Gate Screen", priority = 66)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutFormWithoutCartValidation();
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -521,10 +521,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         try {
-            egypt.accessGuestCheckoutForm();
+            egypt.accessGuestCheckoutFormWithoutCartValidation();
         }
         catch (Exception e){
-            egypt.accessGuestCheckoutForm();
+            egypt.accessGuestCheckoutFormWithoutCartValidation();
 
         }
         egypt.fillInShippingInformationInputField(
