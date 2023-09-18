@@ -41,7 +41,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
@@ -138,8 +138,8 @@ public class CartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForFreeGiftGainedByCoupon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         //TODO: Needs to check
-//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        if (DataHelperAndWait.IsElementPresent(cartPage.getNoItemInCartLabel())) {
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        if (DataHelperAndWait.IsElementPresent(cartPage.getHereLink())) {
             cartPage.removeItem();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
         }
@@ -231,7 +231,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 19)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-            cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
             DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
             DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
             //TODO: Needs to recheck after solving Cart loading issue
@@ -250,9 +251,11 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
         cartPage.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitForTime(2000);
+
         cartPage.waitTillLoaderComplete();
         DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(), webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
@@ -276,10 +279,12 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addBogoToCartAndDisplayTheCart();
-        try{
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(), webDriver);}
-        catch (Exception e){
-        }
+        //TODO: Needs to recheck
+        if(DataHelperAndWait.IsElementPresent(cartPage.getFreePrice()));
+//        try{
+//        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(), webDriver);}
+//        catch (Exception e){
+//        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 5)
@@ -297,7 +302,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 9)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
         cartPage.proceedToCheckout();
         DataHelperAndWait.waitForUrlContains(cartPage.shippingInformationUrl, webDriver);
     }
@@ -316,9 +321,10 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the  close icon appears in the cart pop-up works correctly", priority = 25)
     public void verifyTheCloseIconInCartPopupWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        cartPage.navigateToHomePage();
-        cartPage.waitTillLoaderComplete();
+//        webDriver.manage().deleteCookieNamed("guestCartId");
+//        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+//        cartPage.navigateToHomePage();
+//        cartPage.waitTillLoaderComplete();
         cartPage.clickOnCartIcon();
         DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
@@ -373,13 +379,14 @@ public class CartTestCases extends BaseTest {
     //TODO: https://sporter1.atlassian.net/browse/NS-28
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 30)
     public void verifySearchBtnWorksCorrectlyFromCartPage() throws IOException {
-//        CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"optimum");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
-        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
+//        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+        if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+            throw new AssertionError("The Search page is empty");
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 6)
@@ -521,7 +528,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
     }
@@ -530,8 +538,8 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }

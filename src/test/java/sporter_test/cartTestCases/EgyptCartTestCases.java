@@ -90,17 +90,22 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        //TODO: Needs To Review
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
+//        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
+//        cartPage.getCartIcon().click();
+//        cartPage.getViewCartInCartPopup().click();
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
+
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
-        cartPage.getCartIcon().click();
-        cartPage.getViewCartInCartPopup().click();
-//        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)

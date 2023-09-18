@@ -34,7 +34,7 @@ public class KSACartTestCases extends CartTestCases {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//        cartPage.navigateToCartPage();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "SAR");
         float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, "SAR");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, "SAR");
@@ -56,13 +56,15 @@ public class KSACartTestCases extends CartTestCases {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.navigateToCartPage();
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("invalidCouponCode"));
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("invalidCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(), webDriver);
 //        cartPage.removeItem();
