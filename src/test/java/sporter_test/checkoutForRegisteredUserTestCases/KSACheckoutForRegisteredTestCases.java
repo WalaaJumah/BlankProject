@@ -69,7 +69,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -98,7 +97,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -133,7 +131,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         kSA.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
@@ -173,7 +170,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         kSA.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
@@ -204,7 +200,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -233,7 +228,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -260,7 +254,6 @@ cartPage.proceedToCheckout();
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -291,7 +284,6 @@ kSA.clickOnPlaceOrderBtn(false);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -346,7 +338,6 @@ kSA.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -398,7 +389,6 @@ kSA.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -425,7 +415,6 @@ kSA.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         kSA.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
@@ -449,7 +438,6 @@ kSA.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getPickupInStoreMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getDoorToDoorMethod(),webDriver);
@@ -473,7 +461,6 @@ kSA.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-                DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);

@@ -58,7 +58,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-                DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -87,7 +86,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -159,7 +157,6 @@ egypt.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
-                DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -193,7 +190,6 @@ egypt.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -228,7 +224,6 @@ egypt.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -409,7 +404,6 @@ egypt.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -440,7 +434,6 @@ egypt.clickOnPlaceOrderBtn(true);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);

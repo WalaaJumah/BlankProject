@@ -71,7 +71,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -98,7 +97,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("fourToFiveBusinessDays"));    }
     @Test(enabled = false)
@@ -138,7 +136,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -175,7 +172,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qa.getFourFiveBussinessDay(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -210,7 +206,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -255,7 +250,6 @@ catch (Exception ee){
         }
         catch (Exception e){
                 DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);}
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -298,7 +292,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -331,7 +324,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -362,7 +354,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
@@ -389,7 +380,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -416,7 +406,6 @@ catch (Exception ee){
                     XmlReader.getXMLData("nationalID")
             );
         }
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
 //        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);

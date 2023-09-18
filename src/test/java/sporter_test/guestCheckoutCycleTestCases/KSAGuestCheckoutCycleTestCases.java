@@ -75,7 +75,6 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -98,7 +97,6 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -119,7 +117,6 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -152,7 +149,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -174,7 +170,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         try{
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);}
@@ -222,7 +217,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
     }
@@ -241,7 +235,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
@@ -297,7 +290,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(2000);
         kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);

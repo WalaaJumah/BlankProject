@@ -67,7 +67,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
@@ -88,7 +87,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -105,7 +103,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -140,7 +137,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jordanGuestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(jordanGuestCheckoutCyclePage.getFiveBusinessDays(),webDriver,XmlReader.getXMLData("fiveBusinessDays"));
     }
@@ -166,7 +162,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -187,7 +182,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -209,7 +203,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -227,7 +220,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -254,7 +246,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -275,10 +266,8 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -295,7 +284,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -314,7 +302,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
@@ -331,7 +318,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);

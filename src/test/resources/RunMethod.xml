@@ -21,9 +21,19 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"/>
-
-<!--                <methods>-->
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
+            <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 <!--                </methods>-->

@@ -72,7 +72,6 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         qa.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(qa.getPhoneErrMsg(),webDriver);
     }
@@ -90,7 +89,6 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -120,7 +118,6 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         qatar.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(qatar.getFourToFiveDayMethod(),webDriver);
     }
@@ -141,7 +138,6 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
     }
@@ -162,7 +158,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                    XmlReader.getXMLData("StreetTwoAddressName"),
                    XmlReader.getXMLData("nationalID")
            );
-            DataHelperAndWait.waitForTime(2000);
            qatar.clickOnContinueBtn();
            DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
            DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
@@ -189,7 +184,6 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
@@ -213,7 +207,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -259,7 +252,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -282,7 +274,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
@@ -311,9 +302,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-         DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
-        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
@@ -357,7 +346,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -379,7 +367,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
@@ -399,10 +386,8 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getEditShippingInfoBtn(),webDriver);
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getEditShippingInfoBtn(),webDriver);
     }
@@ -420,7 +405,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         WebElementsAssertion.assertionElementNotEnable(jo.getContinueShippingMethodsBtn(), webDriver);
     }
@@ -438,7 +422,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        DataHelperAndWait.waitForTime(2000);
         jo.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jo.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
