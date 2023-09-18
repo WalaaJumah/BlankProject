@@ -44,7 +44,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 3)
     public void addToCartAndViewCartFromPDP() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
@@ -126,7 +126,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 12)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+//        guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ");
         WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
 
@@ -196,7 +196,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-guestCheckoutCyclePage.accessGuestCheckoutForm();
+//guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
