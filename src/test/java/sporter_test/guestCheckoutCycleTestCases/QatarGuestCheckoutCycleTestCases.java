@@ -106,9 +106,8 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         qatar.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -126,9 +125,8 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 4-5 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 25)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         qatar.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -145,10 +143,9 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
 public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
        @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With COD Payment Method ", priority = 26)
     public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
-           JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
            QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
            qatar.accessGuestCheckoutForm();
-           jo.fillInShippingInformationInputField(
+           qatar.fillInShippingInformationInputField(
                    XmlReader.getXMLData("firstName"),
                    XmlReader.getXMLData("lastName"),
                    XmlReader.getXMLData("correctEmail"),
@@ -164,17 +161,16 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
            DataHelperAndWait.clickOnElement(qatar.getCODPaymentMethod(),webDriver);
            DataHelperAndWait.clickOnElement(qatar.getContinuePaymentMethodsBtn(),webDriver);
            qatar.clickOnPlaceOrderBtn(false);
-           jo.verifyTheDisplayedPageDoesNotHaveErrors();
+           qatar.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
 @Test(enabled = false)
 public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         qatar.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -194,10 +190,9 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
 public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {}
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        jo.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.accessGuestCheckoutForm();
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -207,12 +202,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        jo.clickOnContinueBtn();
+        qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
-        jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn(true);
-        jo.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
+        qatar.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        qatar.clickOnPlaceOrderBtn(true);
+        qatar.verifyTheDisplayedPageDoesNotHaveErrors();
 
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 //        DataHelperAndWait.waitForTime(2000);
@@ -239,10 +234,9 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 27)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
 //        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        jo.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.accessGuestCheckoutForm();
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -252,11 +246,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        jo.clickOnContinueBtn();
+        qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
-        jo.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        DataHelperAndWait.clickOnElement(jo.getCloseCheckoutErr(), webDriver);
+        DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
+        qatar.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(qatar.getCloseCheckoutErr(), webDriver);
     }
     @Test(enabled = false)
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
@@ -281,7 +275,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(enabled = false,groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -291,8 +284,8 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         cartPage.proceedToCheckout();
 //        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(jo.getCheckoutAsGuestBtn(),webDriver);
-        jo.fillInShippingInformationInputField(
+        DataHelperAndWait.clickOnElement(qatar.getCheckoutAsGuestBtn(),webDriver);
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -302,11 +295,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        jo.clickOnContinueBtn();
+        qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
-        jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn(true);
+        DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
+        qatar.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        qatar.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
@@ -334,9 +327,8 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
-        jo.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.accessGuestCheckoutForm();
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -346,18 +338,17 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        jo.clickOnContinueBtn();
+        qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getCODPaymentMethod(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getCreditCardPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(qatar.getCODPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(qatar.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
-        jo.accessGuestCheckoutForm();
-        jo.fillInShippingInformationInputField(
+        qatar.accessGuestCheckoutForm();
+        qatar.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -367,10 +358,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        jo.clickOnContinueBtn();
+        qatar.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.assertionElementNotEnable(jo.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
+        WebElementsAssertion.assertionElementNotEnable(qatar.getContinuePaymentMethodsBtn(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {

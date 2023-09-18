@@ -48,7 +48,26 @@ public class QatarGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo, String nationaLID) {
+//    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo, String nationaLID) {
+//        DataHelperAndWait.waitToBeVisible(getFirstNameField(), webDriver);
+//        DataHelperAndWait.updateAllText(getFirstNameField(), firstName);
+//        DataHelperAndWait.waitToBeVisible(getLastNameField(), webDriver);
+//        DataHelperAndWait.updateAllText(getLastNameField(), lastName);
+//        DataHelperAndWait.waitToBeVisible(getEmailField(), webDriver);
+//        DataHelperAndWait.updateAllText(getEmailField(), email);
+//        DataHelperAndWait.waitToBeVisible(getPhoneField(), webDriver);
+//        DataHelperAndWait.updateAllText(getPhoneField(), phone);
+////        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+////        DataHelperAndWait.updateAllText(addressNameField,address);
+//        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+//        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+//        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+//        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+//        DataHelperAndWait.waitToBeVisible(nationalIDField, webDriver);
+//        DataHelperAndWait.updateAllText(nationalIDField, nationaLID);
+//
+//    }
+    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo, String nationalID) {
         DataHelperAndWait.waitToBeVisible(getFirstNameField(), webDriver);
         DataHelperAndWait.updateAllText(getFirstNameField(), firstName);
         DataHelperAndWait.waitToBeVisible(getLastNameField(), webDriver);
@@ -64,10 +83,9 @@ public class QatarGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         DataHelperAndWait.waitToBeVisible(nationalIDField, webDriver);
-        DataHelperAndWait.updateAllText(nationalIDField, nationaLID);
+        DataHelperAndWait.updateAllText(nationalIDField, nationalID);
 
     }
-
     public void navigateToShippingMethodsPage() throws IOException {
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(

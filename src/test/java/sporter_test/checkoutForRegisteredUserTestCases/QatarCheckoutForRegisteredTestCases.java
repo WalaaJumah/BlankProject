@@ -17,6 +17,7 @@ import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.JordanCheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.QatarCheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
+import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.QatarHomePage;
 import xml_reader.XmlReader;
 
@@ -147,7 +148,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         qa.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         try {
             cartPage.navigateToHomePage();
@@ -158,11 +158,11 @@ catch (Exception ee){
 }
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
-            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(qa.getSavedAddressOption(),webDriver);
 
         }
         catch (Exception e){
-            jo.fillInShippingInformationInputField(
+            qa.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
@@ -385,7 +385,7 @@ catch (Exception ee){
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information when the phone number length is small ", priority = 17)
     public void verifyTheRegisteredUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        QatarGuestCheckoutCyclePage guestCheckoutCyclePage = new QatarGuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

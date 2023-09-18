@@ -259,7 +259,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         LocalTime currentTime = LocalTime.now();
 
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+//        LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(12, 0);
