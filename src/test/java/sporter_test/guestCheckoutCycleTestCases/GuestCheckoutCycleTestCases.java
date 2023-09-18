@@ -466,7 +466,7 @@ guestCheckoutCyclePage.accessGuestCheckoutFormWithoutCartValidation();
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutFormWithoutCartValidation();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
