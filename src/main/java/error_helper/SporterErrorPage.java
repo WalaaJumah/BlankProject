@@ -21,6 +21,7 @@ public class SporterErrorPage extends BasePage {
     public static final String pageNotFoundEn = "we are sorry";
     public static final String pageNotFoundMsg = "The page you requested was not found on this store. You can go to homepage or search here";
     public static final String productsCannotFindMsg = "We can't find products matching the selection";
+    public static final String InvalidSSLCertificateMsg = "Invalid SSL certificate";
     public static final String generatedContentErrorMsg = "We're sorry, an error has occurred while generating this content";
     public static final String error503 = "Error 503 Backend fetch failed";
     public static final String locationError = "Sorry But There is No Available Shipping Methods For your Location";

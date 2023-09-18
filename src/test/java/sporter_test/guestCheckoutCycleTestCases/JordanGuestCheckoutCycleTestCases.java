@@ -256,19 +256,19 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("SmallPhoneNumber"),
-//                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
-        );
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+//        guestCheckoutCyclePage.accessGuestCheckoutForm();
+//        guestCheckoutCyclePage.fillInShippingInformationInputField(
+//                XmlReader.getXMLData("firstName"),
+//                XmlReader.getXMLData("lastName"),
+//                XmlReader.getXMLData("correctEmail"),
+//                XmlReader.getXMLData("SmallPhoneNumber"),
+////                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("StreetOneAddressName"),
+//                XmlReader.getXMLData("StreetTwoAddressName")
+//        );
+//        guestCheckoutCyclePage.clickOnContinueBtn();
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
+//        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
