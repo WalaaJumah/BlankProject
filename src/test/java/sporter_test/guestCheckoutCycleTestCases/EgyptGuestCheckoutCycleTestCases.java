@@ -61,7 +61,6 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -85,7 +84,6 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
-        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -114,7 +112,6 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(), webDriver);
             DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(), webDriver);
@@ -137,7 +134,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -182,7 +178,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -201,14 +196,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
         egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         egyptGuestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
-        DataHelperAndWait.waitForTime(2000);
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         egyptGuestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -230,7 +223,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
         egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -262,14 +254,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
         egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         egyptGuestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
-        DataHelperAndWait.waitForTime(2000);
 
 //        DataHelperAndWait.waitForTime(10000);
 //        String mainWindow= webDriver.getWindowHandle();
@@ -537,7 +527,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
             egypt.accessGuestCheckoutForm();
 
         }
-        DataHelperAndWait.waitForTime(1000);
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),

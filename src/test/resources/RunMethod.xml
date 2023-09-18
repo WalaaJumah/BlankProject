@@ -7,7 +7,7 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Account_Registration_suite" preserve-order="true">
-        <parameter name="environment" value="https://WWW.sporter.com"/>
+        <parameter name="environment" value="https://stg.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
@@ -22,7 +22,7 @@
 <!--                </groups>-->
         <classes>
 
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 <!--                </methods>-->

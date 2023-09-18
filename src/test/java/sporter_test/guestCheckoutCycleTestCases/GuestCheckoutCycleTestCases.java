@@ -333,7 +333,6 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
         guestCheckoutCyclePage.SelectAbuDhabiCityCity();
-        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         //TODO:Tocheckit
         try{
