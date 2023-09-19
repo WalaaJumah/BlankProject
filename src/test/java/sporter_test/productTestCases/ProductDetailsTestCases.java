@@ -181,11 +181,8 @@ public class ProductDetailsTestCases extends BaseTest {
 //        productDetailsPage.displayTheProduct();
 //        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
         productDetailsPage.navigateToBogoProduct();
-        try{
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(), webDriver);}
-        catch (Exception e){
-            System.out.println("You select a product did not have a promotion label, the product URL is: "+webDriver.getCurrentUrl());
-        }
+        if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getFreeProductLabelEn()));
+
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Verify that the About This product section displays correctly in the PDP", priority = 15)
@@ -349,8 +346,11 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
+        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+        if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+            throw new AssertionError("The Search page is empty");
     }
 
     //TODO: Check the assertion

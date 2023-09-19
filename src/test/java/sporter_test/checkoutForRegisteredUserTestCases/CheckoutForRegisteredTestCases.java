@@ -39,7 +39,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Validate the system keeps the products in the Cart after login  ", priority = 2)
     public void verifyTheProductsKeepInCartAfterSignedIn() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounter(),webDriver);
         int oldCartCounter=DataHelperAndWait.convertTheStringToInt(cartPage.getItemsCounter(),webDriver);
         DataHelperAndWait.waitForTime(2000);
@@ -382,7 +382,7 @@ catch (Exception e){
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        GuestCheckoutCyclePage egypt= new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         egypt.navigateToCheckoutPage();
         try{

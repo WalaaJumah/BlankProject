@@ -383,7 +383,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"optimum");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
-//        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
             throw new AssertionError("The Search page is empty");

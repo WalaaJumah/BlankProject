@@ -71,7 +71,6 @@ public class QatarCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         } catch (Exception e) {
             DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
         }
-        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);

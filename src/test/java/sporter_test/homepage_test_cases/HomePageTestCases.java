@@ -358,9 +358,11 @@ public class HomePageTestCases extends BaseTest {
         if(DataHelperAndWait.IsElementPresent(productDetailsPage.getSearchField())) {
             DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-            productDetailsPage.waitTillLoaderComplete();
-            WebElementsAssertion.validateTheCurrentUrlContainsString("search", webDriver);
+            DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
             productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+            if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+                throw new AssertionError("The Search page is empty");
         }
     }
 }

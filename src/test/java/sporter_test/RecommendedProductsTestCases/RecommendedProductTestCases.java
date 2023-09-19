@@ -52,6 +52,7 @@ public class RecommendedProductTestCases extends BaseTest {
     public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(), webDriver);
         productDetailsPage.waitTillLoaderComplete();

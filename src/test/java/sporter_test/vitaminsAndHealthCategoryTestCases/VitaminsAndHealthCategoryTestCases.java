@@ -549,15 +549,13 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"whey");
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "whey");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1000);
-        try{
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver);}
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
-        }
+        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
-
+        productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+        if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+            throw new AssertionError("The Search page is empty");
     }
+
 }

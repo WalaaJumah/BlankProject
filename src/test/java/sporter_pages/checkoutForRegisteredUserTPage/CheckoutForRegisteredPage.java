@@ -59,8 +59,10 @@ public class CheckoutForRegisteredPage extends BasePage {
         PageFactory.initElements(webDriver, this);
 
         _guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-//        _cartPage = new CartPage(webDriver);
-    }
+        if(_cartPage == null)
+        {
+            _cartPage = new CartPage(webDriver);
+        }    }
     
     public CheckoutForRegisteredPage(WebDriver webDriver,GuestCheckoutCyclePage guestCheckoutCyclePage) {
         super(webDriver);

@@ -145,18 +145,11 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 4-5 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 27)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         QatarCheckoutForRegisteredPage qa= new QatarCheckoutForRegisteredPage(webDriver);
-        qa.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+//        qa.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        try {
-            cartPage.navigateToHomePage();
-            DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        }
-catch (Exception ee){
-            cartPage.navigateToCartPage();
-}
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(qa.getSavedAddressOption(),webDriver);
 

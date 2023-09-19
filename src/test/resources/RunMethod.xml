@@ -7,7 +7,7 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Account_Registration_suite" preserve-order="true">
-        <parameter name="environment" value="https://stg.sporter.com"/>
+        <parameter name="environment" value="https://www.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
@@ -15,17 +15,23 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
-                        <groups>
-                    <run>
-                        <include name="All Smoke Testing Result"/>
-                    </run>
-                </groups>
+<!--                        <groups>-->
+<!--                    <run>-->
+<!--                        <include name="All Smoke Testing Result"/>-->
+<!--                    </run>-->
+<!--                </groups>-->
         <classes>
 
-            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
-<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
-<!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
-<!--                </methods>-->
+            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.OmanHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"></class>
+            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"></class>
+
 
 
 

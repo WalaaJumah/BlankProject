@@ -108,8 +108,8 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1000);
-        registerPage.getEmailErrorMs().isDisplayed();
+        if(!DataHelperAndWait.IsElementPresent(registerPage.getEmailErrorMs()))
+        throw new AssertionError("Email Error Msg is missing");
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify the system redirect the customer to Personal information form after clicking on the Create Account Button", priority = 10)
