@@ -156,7 +156,13 @@ public class ProductDetailsPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-
+    public void displayTheProduct(String productUrl) throws IOException {
+        webDriver.navigate().to(BaseURL + productUrl);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.waitForTime(500);
+        checkIfProductOOS();
+    }
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {
         String productUrl1 = "";

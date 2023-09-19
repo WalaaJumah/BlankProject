@@ -269,8 +269,11 @@ public String getTitle() {
         }
     }
     public void checkIfProductOOS()  {
-            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgEn), "The product is OOS " + webDriver.getCurrentUrl());
-            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgAr), "The product is OOS " + webDriver.getCurrentUrl());
+        pageSource = webDriver.getPageSource();
+        if(pageSource.contains(SporterErrorPage.OOSMsgEn))
+            throw new AssertionError("The product is OOS " + webDriver.getCurrentUrl());
+        if(pageSource.contains(SporterErrorPage.OOSMsgAr))
+        throw new AssertionError("The product is OOS " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct() {
         if (webDriver.getCurrentUrl().contains("-sa/")) {

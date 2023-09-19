@@ -57,10 +57,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
+            cartPage.increaseQty();
+            cartPage.increaseQty();
         cartPage.proceedToCheckout();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
@@ -70,9 +68,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-            DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
+            cartPage.increaseQty();
             cartPage.proceedToCheckout();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
@@ -93,15 +89,11 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
 //        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.waitForTime(2000);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.displayTheProduct(cartPage.productUrlJordanWithHighPrice);
         productDetailsPage.addToCart();
 //        productDetailsPage.keepShopping();
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
-        webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice2);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.displayTheProduct(cartPage.productUrlJordanWithHighPrice2);
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }

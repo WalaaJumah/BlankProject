@@ -22,15 +22,11 @@
 <!--                </groups>-->
         <classes>
 
-            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.OmanHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"></class>
-            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+
 
 
 
