@@ -381,12 +381,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(enabled = false,groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        try{registerPage.logout();}catch (Exception e3){}
-        webDriver.manage().deleteAllCookies();
-        webDriver.manage().deleteAllCookies();
-        DataHelperAndWait.waitForTime(2000);
         registerPage.navigateToRegistrationPage();
-        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
