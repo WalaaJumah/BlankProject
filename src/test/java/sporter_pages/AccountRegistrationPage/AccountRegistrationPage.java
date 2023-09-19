@@ -110,17 +110,19 @@ public class AccountRegistrationPage extends BasePage {
     public void navigateToRegistrationPage() throws IOException {
         webDriver.manage().deleteAllCookies();
         webDriver.navigate().to(BaseURL + registerAccountLink);
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(2000);
         verifyTheDisplayedPageDoesNotHaveErrors();
-        try {
-            if (this.getLastNameField().isDisplayed()) {
-                webDriver.navigate().refresh();
-                verifyTheDisplayedPageDoesNotHaveErrors();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.waitToBeInVisible(this.getLastNameField(),webDriver);
+//        try {
+//            DataHelperAndWait.waitToBeInVisible(this.getLastNameField(),webDriver);
+//            if (this.getLastNameField().isDisplayed()) {
+//                webDriver.navigate().refresh();
+//                verifyTheDisplayedPageDoesNotHaveErrors();
+//            }
+//        } catch (Exception e) {
+//            e.getMessage();
+//        }
+//        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void logout() {
