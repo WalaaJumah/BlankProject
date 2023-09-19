@@ -252,7 +252,6 @@ public class CartPage extends BasePage {
     public boolean IsEmptyCart() throws IOException {
         navigateToCartPage();
         try {
-            DataHelperAndWait.waitForTime(3500);
             if(hereLink == null)
                 return false;
 

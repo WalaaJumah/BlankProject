@@ -232,6 +232,10 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
             cartPage.proceedToCheckout();
         }
         try {
+            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
+
+        }
+        catch (Exception e){
             jo.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -240,9 +244,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"),
                     XmlReader.getXMLData("nationalID"));
-        }
-        catch (Exception e){
-                DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);}
+                }
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
