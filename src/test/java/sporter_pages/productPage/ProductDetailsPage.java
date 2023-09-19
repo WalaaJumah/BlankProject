@@ -8,16 +8,17 @@ package sporter_pages.productPage;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import core.WebElementsAssertion;
+import error_helper.SporterErrorPage;
 import lombok.Getter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import sporter_pages.homepage_classes.HomePage;
 
 import java.io.IOException;
@@ -160,9 +161,46 @@ public class ProductDetailsPage extends BasePage {
         webDriver.navigate().to(BaseURL + productUrl);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForTime(500);
         checkIfProductOOS();
     }
+       public void displayTheProductWithSoftAssertion(String productUrl) throws IOException {
+        webDriver.navigate().to(BaseURL + productUrl);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+           String pageSource1 = webDriver.getPageSource();
+           String pageTitle = webDriver.getTitle();
+           if(pageSource1.contains(SporterErrorPage.OOSMsgEn))
+               System.out.println("The product OOS: "+webDriver.getCurrentUrl());
+           if(pageSource1.contains(SporterErrorPage.OOSMsgAr))
+               System.out.println("The product OOS: "+webDriver.getCurrentUrl());
+           if(pageTitle.equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle))
+           System.out.println("Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+           if(pageSource1.contains(SporterErrorPage.productsCannotFindMsg))
+           System.out.println("The page is empty and the URL is " + webDriver.getCurrentUrl());
+           if(pageSource1.contains(SporterErrorPage.exceptionPageMsg))
+           System.out.println("An error has happened during application run" + webDriver.getCurrentUrl());
+           if(pageSource1.contains(SporterErrorPage.exceptionPageMsg2))
+           System.out.println("An error occurred on client and the URL is" + webDriver.getCurrentUrl());
+           if(pageSource1.contains(SporterErrorPage.offerNotAvailableMsg))
+           System.out.println("The  offer is not available" + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.pageNotFoundMsg))
+           System.out.println(SporterErrorPage.pageNotFoundMsg + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.productsCannotFindMsg))
+           System.out.println(SporterErrorPage.productsCannotFindMsg + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.generatedContentErrorMsg))
+           System.out.println(SporterErrorPage.generatedContentErrorMsg + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.backendError))
+           System.out.println(SporterErrorPage.backendError + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.error503))
+           System.out.println(SporterErrorPage.error503 + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.pageUnderMaintenanceMsg))
+           System.out.println(SporterErrorPage.pageUnderMaintenanceMsg + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.pageUnderMaintenanceMsg))
+           System.out.println(SporterErrorPage.pageUnderMaintenanceMsg + webDriver.getCurrentUrl());
+         if(pageSource1.contains(SporterErrorPage.InvalidSSLCertificateMsg))
+           System.out.println(SporterErrorPage.InvalidSSLCertificateMsg + webDriver.getCurrentUrl());
+    }
+
+
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {
         String productUrl1 = "";

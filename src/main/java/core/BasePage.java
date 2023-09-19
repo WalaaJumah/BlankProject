@@ -49,6 +49,7 @@ public class BasePage {
     public static String productUrlIraq5 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
 
     public static String ksaDomainArabic = "/ar-sa";
+    public static String iraqDomain = "/en-iq";
     public static String productUrl9 = "/cellucor-c4-26162";
 
     public static String productUrl7 = "/dymatize-iso-100-7164/";
@@ -81,6 +82,7 @@ public class BasePage {
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
+    public final String EgyptDomain = "/en-eg";
     public final String aeArabicCurrency = "د.إ";
     public final String aeEnglishCurrency = "AED";
     public final String kSAEnglishCurrency = "SAR";
@@ -94,14 +96,13 @@ public class BasePage {
     public final String QARCurrency = "QAR";
     public final String kSAArabicCurrency = "ر.س";
     public final String getkSAEnglishCurrency = "SAR";
-    public final String omanDomain = "/en-om";
-    public final String bahrainDomain = "/en-bh";
-    public final String iraqDomain = "/en-iq";
-    public final String kuwaitDomain = "/en-kw";
-    public final String egyptDomain = "/en-eg";
-    public final String jordanDomain = "/en-jo";
-    public final String qatarDomain = "/en-qa";
-    public final String saudiDomainEnglish = "/en-sa";
+    public static final String omanDomain = "/en-om";
+    public static final String bahrainDomain = "/en-bh";
+    public static final String kuwaitDomain = "/en-kw";
+    public static final String egyptDomain = "/en-eg";
+    public static final String jordanDomain = "/en-jo";
+    public static final String qatarDomain = "/en-qa";
+    public static final String saudiDomainEnglish = "/en-sa";
     public final String registerAccountLink = "/register/signup";
     public final String loginLink = "/register/login";
     public final String forgetPasswordURL = "/forget_Password";
@@ -181,10 +182,10 @@ public class BasePage {
     public final String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl = "catalogsearch/result/?q=";
-    public final String bogoUrlKSA = "/the-pack-bcaas-flow-32568";
-    public final String bogoUrlQatar = "/catalog-pro-32569-32568";
+    public static final String bogoUrlKSA = "/the-pack-bcaas-flow-32568";
+    public static  final String bogoUrlQatar = "/catalog-pro-32569-32568";
     public final String bogoUrlEgypt = "/cellucor-c4";
-    public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
+    public static final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/sports";
     public final String toysAndGamesUrl = "/toys-and-games";
@@ -268,11 +269,31 @@ public String getTitle() {
             this.getStatusCode(currentURL);
         }
     }
+    public void verifyTheDisplayedPageDoesNotHaveErrorsWithReDefiningSourcePage() throws IOException {
+        String pageSource1 = webDriver.getPageSource();
+        String currentURL = webDriver.getCurrentUrl();
+            Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.productsCannotFindMsg), "This page is Empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.backendError), "503 error and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.pageUnderMaintenanceMsg), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.gatewayTimeOut), "Gateway TimeOut Error" + webDriver.getCurrentUrl());
+            Assert.assertFalse(pageSource1.contains(SporterErrorPage.InvalidSSLCertificateMsg), "Invalid SSL certificate" + webDriver.getCurrentUrl());
+//            this.getStatusCode(currentURL);
+        }
+
+
     public void checkIfProductOOS()  {
-        pageSource = webDriver.getPageSource();
-        if(pageSource.contains(SporterErrorPage.OOSMsgEn))
+        String pageSource1 = webDriver.getPageSource();
+        if(pageSource1.contains(SporterErrorPage.OOSMsgEn))
             throw new AssertionError("The product is OOS " + webDriver.getCurrentUrl());
-        if(pageSource.contains(SporterErrorPage.OOSMsgAr))
+        if(pageSource1.contains(SporterErrorPage.OOSMsgAr))
         throw new AssertionError("The product is OOS " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct() {
