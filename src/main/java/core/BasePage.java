@@ -58,10 +58,10 @@ public class BasePage {
     public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
     public static String productUrlKSA3 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
     public static String productUrlKSA4 = "/nutrend-amino-power-liquid-54398/";
-    public static String productUrlKSA5 = "/organic-larder-rice-cakes-with-yogurt-coating-25150/";
+    public static String productUrlKSA5 = "/canderel-sweetener-jar-with-surcalose-54742";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
-    public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
-    public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
+    public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";
+    public static String productUrlKSAWithHighPrice2 = "/redcon1-isotope-51866";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6200/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
@@ -185,7 +185,7 @@ public class BasePage {
     public static final String bogoUrlKSA = "/the-pack-bcaas-flow-32568";
     public static  final String bogoUrlQatar = "/catalog-pro-32569-32568";
     public final String bogoUrlEgypt = "/cellucor-c4";
-    public static final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
+    public static final String product2UrlLessQty = "/quest-nutrition-bars-pack-of-12-00715";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/sports";
     public final String toysAndGamesUrl = "/toys-and-games";
