@@ -55,6 +55,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,30);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 

@@ -28,6 +28,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getForgetPasswordLink(), webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,30);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getEmailField(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify All fields, labels & Components appear correctly in the Forget Password Page", priority = 2)
