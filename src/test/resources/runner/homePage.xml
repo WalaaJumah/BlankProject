@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name=" Test" thread-count="1" >-->
-<suite name="guest_checkout_flow_suite">
+<suite name="cart_suite">
     <listeners>
         <!-- <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name="guest_checkout_flow_suite" preserve-order="true">
+    <test name="cart_rules_suite" preserve-order="true">
         <parameter name="environment" value="https://stg.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
@@ -20,12 +20,17 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.BahrainHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.OmanHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
+
+
 
         </classes>
     </test>
