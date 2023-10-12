@@ -42,6 +42,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.displayTheProduct();
+
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getQuantityField(),webDriver);
         DataHelperAndWait.updateAllText(productDetailsPage.getQuantityField(),"4");
         productDetailsPage.addToCart();
@@ -88,22 +89,28 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA1);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA1);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA2);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA2);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA3);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA3);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA4);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA4);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA5);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA5);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA6);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA6);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
@@ -114,10 +121,12 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA2);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA2);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSA1);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSA1);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
@@ -135,10 +144,17 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        cartPage.increaseQty();
-        cartPage.increaseQty();
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSAWithHighPrice3);
+        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+
+         webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice3);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
+        productDetailsPage.addToCart();
+
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
@@ -149,7 +165,10 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.displayTheProduct(cartPage.productUrlKSAWithHighPrice3);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice3);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
