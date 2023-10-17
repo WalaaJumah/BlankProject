@@ -9,7 +9,7 @@ package sporter_test.homepage_test_cases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
@@ -18,7 +18,6 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
 
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
@@ -369,7 +368,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 // New Test Cases:
-@Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions={ExpectedConditions.class})
+@Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions = NoSuchElementException.class)
 public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner() {
     HomePage homePage = new HomePage(webDriver);
     webDriver.navigate().to("https://www.sporter.com/en-iq/female/");
