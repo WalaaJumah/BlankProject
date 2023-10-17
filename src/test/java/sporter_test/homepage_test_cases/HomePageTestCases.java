@@ -9,6 +9,7 @@ package sporter_test.homepage_test_cases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
@@ -17,6 +18,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
@@ -366,6 +368,29 @@ public class HomePageTestCases extends BaseTest {
                 throw new AssertionError("The Search page is empty");
         }
     }
+// New Test Cases:
+@Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions={ExpectedConditions.class})
+public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner() {
+    HomePage homePage = new HomePage(webDriver);
+    webDriver.navigate().to("https://www.sporter.com/en-iq/female/");
+    if(homePage.getHomePageRotatingSliderPagingControlSection().isDisplayed()){
+        DataHelperAndWait.IsElementPresent(homePage.getNextArrowInHomePageRotatingSlider());
+    }
+   else{
+        for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 }
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 27)
 //    public void verifyNextBtnInTrendingOnSporterSectionWorks() {

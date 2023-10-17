@@ -37,6 +37,8 @@ public class HomePage extends BasePage {
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//div[@id='crouselContainer']//div[@class='swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal']/span")
     private List<WebElement> homePageRotatingSliderPagingList;
+    @FindBy(xpath = "//div[starts-with(@class,'swiper-pagination swiper-pagination')]")
+    private WebElement homePageRotatingSliderPagingControlSection;
 
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
