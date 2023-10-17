@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.footerSections.FooterSection;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -380,7 +381,19 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         }
     }
 }
-
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 41)
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage() throws IOException {
+        FooterSection footerSection = new FooterSection(webDriver);
+//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
+            WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getPageBottomBlocksList().get(i), webDriver);
+        }
+    }
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the copy Right label appears correctly ", priority = 42)
+    public void verifyCopyRightLabelAppearCorrectly(){
+        FooterSection footerSection = new FooterSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getCopyRightLabel(),webDriver);
+    }
 
 
 

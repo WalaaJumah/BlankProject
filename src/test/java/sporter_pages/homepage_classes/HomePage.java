@@ -35,6 +35,24 @@ public class HomePage extends BasePage {
     private List<WebElement> homePageRotatingSliderList;
     @FindBy(id = "crouselContainer")
     private WebElement homePageRotatingSlider;
+    @FindBy(id = "NewsLetter_container")
+    private WebElement joinNewsLetterSection;
+    @FindBy(xpath = "//input[starts-with(@id,'email_input')]")
+    private WebElement emailFieldInJoinNewsletter;
+    @FindBy(xpath = "(//div[@id='circle'])[1]")
+    private WebElement maleRadioButton;
+    @FindBy(xpath = "(//div[@id='circle'])[2]")
+    private WebElement femaleRadioButton;
+    @FindBy(id = "subscribeBtn")
+    private WebElement joinButton;
+    @FindBy(xpath = "//div[starts-with(@class,'email_emailError')]")
+    private WebElement emailErrorMsg;
+    @FindBy(id = "newsLetterhead")
+    private WebElement newsLetterHeader;
+    @FindBy(id = "newsLettertail")
+    private WebElement newsLettertail;
+
+
     @FindBy(xpath = "//div[@id='crouselContainer']//div[@class='swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal']/span")
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(xpath = "//div[starts-with(@class,'swiper-pagination swiper-pagination')]")
@@ -42,7 +60,7 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
-      @FindBy(xpath = "//div[@id='AdvertiseContainersecond']//a")
+    @FindBy(xpath = "//div[@id='AdvertiseContainersecond']//a")
     private List<WebElement> underShopByCategoryBanners;
 
     @FindBy(xpath = "//ul[@id='TopCategoryList']/li[1]")
@@ -197,6 +215,7 @@ public class HomePage extends BasePage {
     private WebElement NextPageBtn;
     @FindBy(xpath = "//div[@id='trendContainer']//a")
     private List<WebElement> categoriesInsideTrendingOnSporterSection;
+
     public HomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -376,18 +395,18 @@ public class HomePage extends BasePage {
 
     public void switchCountry(WebElement countryElement) {
         try {
-            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
-            WebElement countryList=webDriver.findElement(By.id("downArrow"));
-            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver, 20);
+            WebElement countryList = webDriver.findElement(By.id("downArrow"));
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver, 20);
             DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
         } catch (Exception e) {
             webDriver.navigate().refresh();
-            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
-            WebElement countryList=webDriver.findElement(By.id("downArrow"));
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver, 20);
+            WebElement countryList = webDriver.findElement(By.id("downArrow"));
             DataHelperAndWait.isDisplayed(countryList, webDriver);
-            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver, 20);
             this.countryList.click();
             countryElement.click();
         }

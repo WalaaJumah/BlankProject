@@ -18,7 +18,7 @@
         <classes>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases">
                 <methods>
-                    <include name="verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner"/>
+                    <include name="verifyCopyRightLabelAppearCorrectly"/>
                 </methods>
             </class>
 <!--            <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>-->
