@@ -170,7 +170,17 @@ Cash on Delivery Service Available</twoBusinessDayIraq>
         <tamaraPositiveCard>4242424242424242</tamaraPositiveCard>
         <tamaraPositiveCardDate>1231</tamaraPositiveCardDate>
         <tamaraPositiveCVV>100</tamaraPositiveCVV>
-
     </TamaraPayment>
+    <NewsLetterSection>
+        <NewsLetterHeaderEN>JOIN OUR NEWSLETTER</NewsLetterHeaderEN>
+        <NewsLetterHeaderAr>اشترك في النشرة البريدية</NewsLetterHeaderAr>
+        <NewsLetterTailEn>Receive the latest news, offers and deals going on at Sporter</NewsLetterTailEn>
+        <NewsLetterTailAr>انضم إلى بريد الرسائل، ليصلك أحدث العروض وآخر والأخبار عبر البريد الإلكتروني</NewsLetterTailAr>
+        <EmailRequiredMsgEn>This is a required field.</EmailRequiredMsgEn>
+        <EmailRequiredMsgAr>هذه الخانة مطلوبة</EmailRequiredMsgAr>
+        <InCorrectEmailFormateMsgEn>Please enter a valid email address (Ex: johndoe@domain.com).</InCorrectEmailFormateMsgEn>
+        <InCorrectEmailFormateMsgAr>الرجاء إدخال عنوان بريد إلكتروني صحيح (على سبيل المثال: johndoe@domain.com).</InCorrectEmailFormateMsgAr>
+
+    </NewsLetterSection>
 
 </Data>
