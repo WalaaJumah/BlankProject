@@ -18,7 +18,7 @@
         <classes>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
                 <methods>
-                    <include name="verifyAllTextInsideJoinNewsLetterSectionAppearsCorrectly"/>
+                    <include name="verifyInAbilityToJoinNewsLetterWithoutFillingEmailField"/>
                 </methods>
             </class>
 <!--            <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>-->

@@ -404,7 +404,6 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the text of Header & description inside Join Our NewsLetter Section appearing correctly ", priority = 44)
     public void verifyAllTextInsideJoinNewsLetterSectionAppearsCorrectly(){
         HomePage homePage = new HomePage(webDriver);
-//        DataHelperAndWait.waitForTime(2000);
         if(webDriver.getCurrentUrl().contains(".com/ar-")) {
             WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("NewsLetterHeaderAr"));
             WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLettertail(), webDriver, XmlReader.getXMLData("NewsLetterTailAr"));
@@ -414,6 +413,24 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
             WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLettertail(), webDriver, XmlReader.getXMLData("NewsLetterTailEn"));
         }
 
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter without filling the email field ", priority = 45)
+    public void verifyInAbilityToJoinNewsLetterWithoutFillingEmailField(){
+        HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgAr"));
+        else
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter with incorrect Email formate ", priority = 46)
+    public void verifyInAbilityToJoinNewsLetterWithoutIncorrectEmailFormate(){
+        HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgAr"));
+        else
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
     }
 
 
