@@ -371,7 +371,6 @@ public class HomePageTestCases extends BaseTest {
 @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions = NoSuchElementException.class)
 public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner() {
     HomePage homePage = new HomePage(webDriver);
-    webDriver.navigate().to("https://www.sporter.com/en-iq/female/");
     if(homePage.getHomePageRotatingSliderPagingControlSection().isDisplayed()){
         DataHelperAndWait.IsElementPresent(homePage.getNextArrowInHomePageRotatingSlider());
     }
