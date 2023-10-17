@@ -56,14 +56,14 @@ public class BasePage {
     public static String productUrlKSA1 = "/fade-fit-protein-munchies-54805/";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
     public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
-    public static String productUrlKSA3 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
+    public static String productUrlKSA3 = "/organic-larder-tomato-puree-25091";
     public static String productUrlKSA4 = "/nutrend-amino-power-liquid-54398/";
     public static String productUrlKSA5 = "/canderel-sweetener-jar-with-surcalose-54742";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";
     public static String productUrlKSAWithHighPrice2 = "/redcon1-isotope-51866";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6200/";
+    public static String productUrlEgypt = "/dymatize-iso-100-7164";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
