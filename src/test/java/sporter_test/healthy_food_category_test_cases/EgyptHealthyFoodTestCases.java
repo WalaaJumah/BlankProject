@@ -31,7 +31,7 @@ public class EgyptHealthyFoodTestCases extends HealthyFoodTestCases {
         countryCode = "20";
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         EgyptHealthyFoodPage egyptHealthyFoodPage = new EgyptHealthyFoodPage(webDriver);
         egyptHealthyFoodPage.clickOnHealthyFoodMainMenu();
