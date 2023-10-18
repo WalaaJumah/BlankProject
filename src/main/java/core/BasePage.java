@@ -55,9 +55,9 @@ public class BasePage {
     public static String productUrl7 = "/dymatize-iso-100-7164/";
     public static String productUrlKSA1 = "/fade-fit-protein-munchies-54805/";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
-    public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
-    public static String productUrlKSA3 = "/organic-larder-tomato-puree-25091";
-    public static String productUrlKSA4 = "/nutrend-amino-power-liquid-54398/";
+    public static String productUrlKSA2 = "/organic-larder-brown-fusilli-25030";
+    public static String productUrlKSA3 = "/pandomar-squid-tentacles-in-organic-olive-oil-25187";
+    public static String productUrlKSA4 = "/loma-linda-tuno-lemon-pepper-59015";
     public static String productUrlKSA5 = "/canderel-sweetener-jar-with-surcalose-54742";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";

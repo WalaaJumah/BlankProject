@@ -29,7 +29,7 @@ public class EgyptHealthyFoodPage extends HealthyFoodPage {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(this.getHealthyFoodMenu(), webDriver);
 //        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(this.getHealthyFoodMenu(), webDriver);
 //        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
