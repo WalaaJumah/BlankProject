@@ -140,6 +140,7 @@ cartPage.proceedToCheckout();
         DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(), webDriver);
         kSA.waitTillLoaderComplete();
         kSA.clickOnPlaceOrderBtn(false);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,5);
         if(DataHelperAndWait.IsElementPresent((kSA.getSuccessPage())) ){
             orderNumber = DataHelperAndWait.extractDigitsFromString(kSA.getSuccessPage(), webDriver);
             System.out.println(orderNumber);
