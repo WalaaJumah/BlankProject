@@ -89,6 +89,7 @@ public class LoginTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+        DataHelperAndWait.waitForTime(1500);
         loginPage.clickOnLoginBtn();
 
  }

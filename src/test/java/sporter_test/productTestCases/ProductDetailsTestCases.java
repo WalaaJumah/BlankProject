@@ -77,6 +77,7 @@ public class ProductDetailsTestCases extends BaseTest {
         CartPage cartPage= new CartPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
+        DataHelperAndWait.waitForTime(2000);
         cartPage.waitTillQtyValueChanges("2");
         WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(), webDriver, "value", "2");
     }
