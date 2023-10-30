@@ -6,7 +6,7 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Full  Testing on Production " preserve-order="true">
+    <test name=" Smoke  Testing on Production " preserve-order="true">
         <parameter name="environment" value="https://www.sporter.com"/>          <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
@@ -20,10 +20,11 @@
                 </groups>
 
         <classes>
-            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+            <class name="sporter_test.cartTestCases.BahrainCartTestCases"></class>
+
+            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
+            <class name="sporter_test.footer_test_cases.QatarFooterTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
 
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
@@ -35,18 +36,19 @@
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+
             <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
 
 
-            <class name="sporter_test.cartTestCases.BahrainCartTestCases"></class>
 
-            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
-            <class name="sporter_test.footer_test_cases.QatarFooterTestCases"></class>
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
 <!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
