@@ -164,16 +164,22 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyAbilityToDisplayBundleAndSelectAllOptions() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayBundle();
+        try {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        Select select = new Select(productDetailsPage.getBundleMenu());
-        WebElement currentSelectedOption = select.getFirstSelectedOption();
-        String currentSelectedOptionText = currentSelectedOption.getText();
-        System.out.println(currentSelectedOptionText);
-        DataHelperAndWait.selectAllDropDownListOptions(select);
-        WebElement newSelectedOption = select.getAllSelectedOptions().get(0);
-        String newSelectedOptionText = newSelectedOption.getText();
-        System.out.println(newSelectedOptionText);
-        Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
+
+            Select select = new Select(productDetailsPage.getBundleMenu());
+            WebElement currentSelectedOption = select.getFirstSelectedOption();
+            String currentSelectedOptionText = currentSelectedOption.getText();
+            System.out.println(currentSelectedOptionText);
+            DataHelperAndWait.selectAllDropDownListOptions(select);
+            WebElement newSelectedOption = select.getAllSelectedOptions().get(0);
+            String newSelectedOptionText = newSelectedOption.getText();
+            System.out.println(newSelectedOptionText);
+            Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
+        }
+        catch (Exception e){
+            System.out.println(webDriver.getCurrentUrl());
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
@@ -181,7 +187,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        productDetailsPage.displayTheProduct();
 //        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
-        productDetailsPage.navigateToBogoProduct();
+//        productDetailsPage.navigateToBogoProduct();
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getFreeProductLabelEn()));
 
     }

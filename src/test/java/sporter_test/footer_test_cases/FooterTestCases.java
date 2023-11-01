@@ -20,6 +20,7 @@ public class FooterTestCases extends BaseTest {
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the all links below Contact us appears correctly ", priority = 1)
     public void verifyContactUsListAppearsCorrectlyCorrectly(){
         FooterSection footerSection = new FooterSection(webDriver);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.waitToBeVisible(footerSection.getContactUsList().get(0),webDriver);
         for (int i = 0; i < footerSection.getContactUsList().size(); i++) {
             WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getContactUsList().get(i), webDriver);
