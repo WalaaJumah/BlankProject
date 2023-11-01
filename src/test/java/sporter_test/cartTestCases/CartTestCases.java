@@ -385,6 +385,7 @@ public class CartTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+        DataHelperAndWait.waitForTime(1500);
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
             throw new AssertionError("The Search page is empty");
     }
