@@ -73,13 +73,11 @@ public class MegaMenuPage extends BasePage {
     public void makeSureToDisplayShopByMenu() throws IOException {
         try {
             Actions action = new Actions(webDriver);
-            DataHelperAndWait.waitForTime(700);
             action.moveToElement(this.getShopByMenu()).perform();
             WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             Actions action = new Actions(webDriver);
-            action.moveToElement(this.getShopByMenu()).perform();
             action.moveToElement(this.getShopByMenu()).perform();
             WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
