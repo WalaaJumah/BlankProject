@@ -38,7 +38,7 @@ public class BasePage {
     public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
-    public static String bogoProductIraq = "/catalog-pro-32569-32569/";
+    public static String bogoProductIraq = "/chikalab-protein-bar-box-of-12";
     public static String productUrlIraq = "/betancourt-nutrition-b-nox-androrush-34834/";
     public static String productUrlIraqHighPrice = "/evl-nutrition-100-isolate-protein-55121/";
     public static String productUrlIraqHighPrice2 = "/evl-nutrition-stacked-protein-55117/";
