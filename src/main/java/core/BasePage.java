@@ -63,7 +63,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";
     public static String productUrlKSAWithHighPrice2 = "/redcon1-isotope-51866";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6200";
+    public static String productUrlEgypt = "/dymatize-iso-100-6764";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
