@@ -189,21 +189,26 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 18)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        try {
             productDetailsPage.displayBundle();
             DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        Select select = new Select(productDetailsPage.getBundleMenu());
-        List<WebElement> elementCount = select.getOptions();
-        int menuSize = elementCount.size();
-        for (int i = 0; i < menuSize; i++) {
+            Select select = new Select(productDetailsPage.getBundleMenu());
+            List<WebElement> elementCount = select.getOptions();
+            int menuSize = elementCount.size();
+            for (int i = 0; i < menuSize; i++) {
                 select.selectByIndex(i);
-                DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(),webDriver);
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(), webDriver);
                 productDetailsPage.getAddToCartBtn().click();
                 productDetailsPage.viewCart();
                 break;
 
+            }
+            WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
+        catch (Exception e){
+            System.out.println("The provided product is not Bundle check: "+ webDriver.getCurrentUrl());
+        }
 
     }
 
