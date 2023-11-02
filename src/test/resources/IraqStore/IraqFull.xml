@@ -4,15 +4,15 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-                <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--                <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Iraq  Full Test Production" preserve-order="true">
-        <parameter name="environment" value="https://www.sporter.com"/>
-        <parameter name="browser" value="chrome"/>
+        <parameter name="environment" value="https://STG.sporter.com"/>          <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
-        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
+        <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
             <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
 
@@ -23,7 +23,7 @@
             <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
             <class name="sporter_test.productTestCases.IraqProductDetailsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.IraqRecommendedProductTestCases"/>
+<!--            <class name="sporter_test.RecommendedProductsTestCases.IraqRecommendedProductTestCases"/>-->
             <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.IraqLoginTestCases"/>
 
