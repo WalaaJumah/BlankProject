@@ -89,12 +89,14 @@ public class MegaMenuPage extends BasePage {
     public void clickOnVitaminsAndHealthMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
+            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
             actions.moveToElement(this.vitaminsAndHealthMenu).perform();
            this.vitaminsAndHealthMenu.click();
 //            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
+
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
             actions.moveToElement(this.vitaminsAndHealthMenu).perform();
             DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
