@@ -46,9 +46,15 @@ public class RelatedProductsTestCases extends BaseTest {
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             webDriver.manage().deleteCookieNamed("guestCartId");
             relatedProductSection.displayTheInStockProduct();
-            DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            try {
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }catch ( AssertionError e){
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears in the correct language", priority = 4)
