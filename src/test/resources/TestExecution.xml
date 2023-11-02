@@ -20,6 +20,7 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"/>
             <class name="sporter_test.cartTestCases.BahrainCartTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->

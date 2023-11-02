@@ -302,7 +302,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 9)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         DataHelperAndWait.waitForUrlContains(cartPage.shippingInformationUrl, webDriver);
     }
