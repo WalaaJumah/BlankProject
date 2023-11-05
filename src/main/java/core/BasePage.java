@@ -63,7 +63,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";
     public static String productUrlKSAWithHighPrice2 = "/redcon1-isotope-51866";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/dymatize-iso-100-7164/";
+    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6202";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
@@ -183,7 +183,7 @@ public class BasePage {
     public final String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl = "catalogsearch/result/?q=";
     public static final String bogoUrlKSA = "/optimum-gold-standard-100-whey-6202";
-    public static  final String bogoUrlQatar = "/catalog-pro-32569-32568";
+    public static  final String bogoUrlQatar = "/optimum-gold-standard-100-whey-6202";
     public final String bogoUrlEgypt = "/cellucor-c4";
     public static final String product2UrlLessQty = "/quest-nutrition-bars-pack-of-12-00715";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
