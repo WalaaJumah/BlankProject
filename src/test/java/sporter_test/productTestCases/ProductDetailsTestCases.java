@@ -6,6 +6,7 @@
 
 package sporter_test.productTestCases;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
@@ -186,7 +187,25 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        productDetailsPage.displayTheProduct();
 //        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
-        productDetailsPage.navigateToBogoProduct();
+//        productDetailsPage.navigateToBogoProduct();
+        if (webDriver.getCurrentUrl().contains("-sa/")) {
+            webDriver.navigate().to(productDetailsPage.BaseURL + productDetailsPage.bogoUrlKSA);
+        } else if (webDriver.getCurrentUrl().contains("-eg/")) {
+            webDriver.navigate().to(productDetailsPage.BaseURL + productDetailsPage.productUrlEgypt);
+        } else if (webDriver.getCurrentUrl().contains("-qa/")) {
+            webDriver.navigate().to(productDetailsPage.BaseURL + productDetailsPage.bogoUrlQatar);
+        }
+        else if (webDriver.getCurrentUrl().contains("-kw/")) {
+            webDriver.navigate().to(productDetailsPage.BaseURL + productDetailsPage.bogoProduct);
+        }
+        else if (webDriver.getCurrentUrl().contains("-iq/")) {
+            webDriver.navigate().to(productDetailsPage.BaseURL + productDetailsPage.bogoProductIraq);
+        }
+
+        else {
+            webDriver.navigate().to(BasePage.BaseURL + productDetailsPage.bogoProduct);
+
+        }
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getFreeProductLabelEn()));
 
     }
