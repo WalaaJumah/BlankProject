@@ -28,7 +28,7 @@ public class IraqRelatedProductsTestCases extends RelatedProductsTestCases {
         if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
         }
-        currency="$";
+        currency="USD";
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add the same SKU appears in Related product section twice & the site display error mSG ", priority = 9)
     public void verifyInabilityToAddSameSKUToCartTwiceFromRelatedProductSection() throws IOException {

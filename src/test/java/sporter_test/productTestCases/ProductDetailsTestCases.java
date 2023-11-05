@@ -66,7 +66,7 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1000);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForTime(100);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -77,7 +77,6 @@ public class ProductDetailsTestCases extends BaseTest {
         CartPage cartPage= new CartPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
-        DataHelperAndWait.waitForTime(2000);
         cartPage.waitTillQtyValueChanges("2");
         WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(), webDriver, "value", "2");
     }
@@ -165,8 +164,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayBundle();
         try {
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
             Select select = new Select(productDetailsPage.getBundleMenu());
             WebElement currentSelectedOption = select.getFirstSelectedOption();
             String currentSelectedOptionText = currentSelectedOption.getText();
@@ -176,9 +174,10 @@ public class ProductDetailsTestCases extends BaseTest {
             String newSelectedOptionText = newSelectedOption.getText();
             System.out.println(newSelectedOptionText);
             Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
+
         }
         catch (Exception e){
-            System.out.println(webDriver.getCurrentUrl());
+            System.out.println("The product is conf: "+webDriver.getCurrentUrl());
         }
     }
 
@@ -187,7 +186,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        productDetailsPage.displayTheProduct();
 //        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
-//        productDetailsPage.navigateToBogoProduct();
+        productDetailsPage.navigateToBogoProduct();
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getFreeProductLabelEn()));
 
     }

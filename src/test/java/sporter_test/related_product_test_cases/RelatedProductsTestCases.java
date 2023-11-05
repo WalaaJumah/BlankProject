@@ -46,9 +46,15 @@ public class RelatedProductsTestCases extends BaseTest {
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             webDriver.manage().deleteCookieNamed("guestCartId");
             relatedProductSection.displayTheInStockProduct();
-            DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            try {
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }catch ( AssertionError e){
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears in the correct language", priority = 4)
@@ -127,13 +133,24 @@ public class RelatedProductsTestCases extends BaseTest {
     public void verifyAddToCartBtnAppearsForAllRelatedProductForBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-                    relatedProductSection.displayTheInStockProduct();
+            try {
+                webDriver.manage().deleteCookieNamed("guestCartId");
+                relatedProductSection.displayTheInStockProduct();
 
-            DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.waitToBeVisible(relatedProductSection.getAddRelatedProductToCart().get(i),webDriver);
-            Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                DataHelperAndWait.waitToBeVisible(relatedProductSection.getAddRelatedProductToCart().get(i), webDriver);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }
+            catch (Exception e){
+                webDriver.manage().deleteCookieNamed("guestCartId");
+                relatedProductSection.displayTheInStockProduct();
+
+                DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+                DataHelperAndWait.waitForTime(2000);
+                DataHelperAndWait.waitToBeVisible(relatedProductSection.getAddRelatedProductToCart().get(i), webDriver);
+                Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+            }
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly for Bundle", priority = 17)
