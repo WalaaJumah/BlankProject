@@ -13,13 +13,15 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
 
         <classes>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
+
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
 
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
@@ -140,7 +142,6 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.KuwaitHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"></class>
             <class name="sporter_test.footer_test_cases.KuwaitFooterTestCases"></class>
             <!--        Egypt store-->
