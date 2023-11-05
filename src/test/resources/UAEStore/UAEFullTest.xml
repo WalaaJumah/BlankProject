@@ -6,20 +6,23 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Sporter 2.1 Full Testing on UAE" preserve-order="true">
-        <parameter name="environment" value="https://www.sporter.com"/>
-        <parameter name="browser" value="chrome"/>
+    <test name="  Full Testing on UAE" preserve-order="true">
+        <parameter name="environment" value="https://www.sporter.com"/>          <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
-        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
-        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
+        <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
+        <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
+        <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
+            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.UAELoginTestCases"/>
             <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
