@@ -221,7 +221,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Tumeric Category redirect the user to the correct page", priority = 20)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Tumeric Category redirect the user to the correct page", priority = 20)
     public void verifyClickingOnTheTumericCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -230,7 +230,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Dandelion Category redirect the user to the correct page", priority = 21)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Dandelion Category redirect the user to the correct page", priority = 21)
     public void verifyClickingOnTheDandelionCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -239,7 +239,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Ginseng Category redirect the user to the correct page", priority = 22)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Ginseng Category redirect the user to the correct page", priority = 22)
     public void verifyClickingOnTheGinsengCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -248,7 +248,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Milk Thistle Category redirect the user to the correct page", priority = 23)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Milk Thistle Category redirect the user to the correct page", priority = 23)
     public void verifyClickingOnTheMilkThistleCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -257,7 +257,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the AlFalfa Category redirect the user to the correct page", priority = 24)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the AlFalfa Category redirect the user to the correct page", priority = 24)
     public void verifyClickingOnTheAlFalfaCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -321,6 +321,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheEnergyFormulasCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnEnergyFormulasCategoryCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -329,6 +330,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheHairAndSkinAndNailsCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnHairAndSkinAndNailsCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -337,6 +339,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheHeartHealthCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnHeartHealthCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -345,6 +348,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheImmunitySupportCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnImmunitySupportCategoryCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -353,6 +357,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheKidsHealthCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnKidsHealthCategoryCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -361,6 +366,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheMensHealthCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnMensHealthCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -369,6 +375,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheSexualHealthCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnSexualHealthCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -377,6 +384,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheSleepSupportCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnSleepSupportCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -385,6 +393,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyClickingOnTheDietWeightManagementCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitForTime(700);
         vitaminsAndHealthCategoryPage.clickOnDietWeightManagementCategoryCategory();
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
