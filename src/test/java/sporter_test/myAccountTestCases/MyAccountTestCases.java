@@ -33,23 +33,12 @@ public class MyAccountTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        try {
-            DataHelperAndWait.waitForTime(1500);
-            myAccountPage.clickOnAccountProfileIcon();
-            DataHelperAndWait.waitForTime(2500);
+        myAccountPage.clickOnAccountProfileIcon();
+        DataHelperAndWait.waitForTime(2500);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
-        }
-        catch (Exception e){
-            myAccountPage.clickOnAccountProfileIcon();
-            DataHelperAndWait.waitForTime(2500);
-            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
-        }
 
     }
 

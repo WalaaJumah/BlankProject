@@ -38,7 +38,7 @@ public class BasePage {
     public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
-    public static String bogoProductIraq = "/chikalab-protein-bar-box-of-12";
+    public static String bogoProductIraq = "/catalog-pro-32569-32569/";
     public static String productUrlIraq = "/betancourt-nutrition-b-nox-androrush-34834/";
     public static String productUrlIraqHighPrice = "/evl-nutrition-100-isolate-protein-55121/";
     public static String productUrlIraqHighPrice2 = "/evl-nutrition-stacked-protein-55117/";
@@ -56,14 +56,14 @@ public class BasePage {
     public static String productUrlKSA1 = "/fade-fit-protein-munchies-54805/";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
     public static String productUrlKSA2 = "/organic-larder-brown-fusilli-25030";
-    public static String productUrlKSA3 = "/smuthe-myfiber-boost-55797";
+    public static String productUrlKSA3 = "/pandomar-squid-tentacles-in-organic-olive-oil-25187";
     public static String productUrlKSA4 = "/loma-linda-tuno-lemon-pepper-59015";
     public static String productUrlKSA5 = "/canderel-sweetener-jar-with-surcalose-54742";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/redcon1-isotope-51867";
     public static String productUrlKSAWithHighPrice2 = "/redcon1-isotope-51866";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-nutrition-gold-standard-100-isolate-protein-whey";
+    public static String productUrlEgypt = "/dymatize-iso-100-7164/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
@@ -320,7 +320,7 @@ public String getTitle() {
 
     public void displayBundle() throws IOException {
         try{
-        webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
+//        webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
         this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());}
