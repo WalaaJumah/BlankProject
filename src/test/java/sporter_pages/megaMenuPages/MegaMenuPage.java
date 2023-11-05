@@ -78,6 +78,7 @@ public class MegaMenuPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             Actions action = new Actions(webDriver);
+            action.moveToElement(this.getSportsSupplementsMenu()).perform();
             action.moveToElement(this.getShopByMenu()).perform();
             WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();

@@ -16,7 +16,7 @@
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
             <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>-->
             <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>

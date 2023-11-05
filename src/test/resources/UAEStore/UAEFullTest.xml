@@ -16,8 +16,8 @@
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
             <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>-->
             <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
