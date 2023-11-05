@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
 <!--                <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--                <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+                <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
     <test name=" Iraq  Full Test Production" preserve-order="true">
         <parameter name="environment" value="https://www.sporter.com"/>          <parameter name="browser" value="chrome"/>
@@ -14,13 +14,14 @@
         <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
-            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
-
-            <class name="sporter_test.cartTestCases.IraqCartTestCases">
-            </class>
-<!--            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases"></class>-->
             <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
+            <class name="sporter_test.cartTestCases.IraqCartTestCases"></class>
+
+            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>
+
+
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases"></class>-->
             <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
             <class name="sporter_test.productTestCases.IraqProductDetailsTestCases"/>
