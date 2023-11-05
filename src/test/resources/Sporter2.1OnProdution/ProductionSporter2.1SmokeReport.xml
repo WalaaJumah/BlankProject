@@ -13,11 +13,11 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="All Smoke Testing Result"/>-->
-<!--            </run>-->
-<!--        </groups>-->
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
 
         <classes>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
