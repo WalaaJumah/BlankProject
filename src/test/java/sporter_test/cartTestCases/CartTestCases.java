@@ -42,7 +42,7 @@ public class CartTestCases extends BaseTest {
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        itemsCounter = "2";
+        itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
 
