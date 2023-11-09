@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Smoke  Testing on Production " preserve-order="true">
         <parameter name="environment" value="https://www.sporter.com"/>          <parameter name="browser" value="chrome"/>
@@ -14,11 +14,11 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
-                <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+<!--                <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
@@ -167,22 +167,22 @@
             <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
 
-<!--                        <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>-->
-<!--                        <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases"></class>-->
+                        <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>
+                        <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases"></class>
             <class name="sporter_test.cartTestCases.IraqCartTestCases">
             </class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>

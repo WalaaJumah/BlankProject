@@ -26,6 +26,11 @@ public class HomePage extends BasePage {
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "downArrow")
     private WebElement countryList;
+    @FindBy(id = "popUpMsg")
+    private WebElement subscriptionErrorMsg;
+     @FindBy(id = "AddToCartErrContainer")
+    private WebElement errorMsgPopUp;
+
     //declare all locators related to the Cart Page
     @FindBy(id = "SloderNavigationNext")
     private WebElement nextArrowInHomePageRotatingSlider;
@@ -410,5 +415,10 @@ public class HomePage extends BasePage {
             this.countryList.click();
             countryElement.click();
         }
+    }
+    public void fillInEmailField(String email){
+        DataHelperAndWait.waitToBeVisible(emailFieldInJoinNewsletter, webDriver);
+        DataHelperAndWait.clickOnElement(emailFieldInJoinNewsletter,webDriver);
+        DataHelperAndWait.typeTextInElement(emailFieldInJoinNewsletter,webDriver,email);
     }
 }

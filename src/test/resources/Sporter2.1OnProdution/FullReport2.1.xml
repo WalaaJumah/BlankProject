@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Full  Testing on qa1 " preserve-order="true">
         <parameter name="environment" value="https://qa1.sporter.com"/>          <parameter name="browser" value="chrome"/>
@@ -12,11 +12,11 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="All Smoke Testing Result"/>-->
-<!--            </run>-->
-<!--        </groups>-->
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
         <classes>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
             <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>

@@ -114,6 +114,7 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the main options in the Mega Menu are retrieved correctly", priority = 7)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         if(webDriver.getCurrentUrl().contains(".com/en-")) {
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsEn"));
@@ -322,7 +323,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 39)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 200)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -421,17 +422,62 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         if(webDriver.getCurrentUrl().contains(".com/ar-"))
             WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgAr"));
         else
-            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter with incorrect Email formate ", priority = 46)
-    public void verifyInAbilityToJoinNewsLetterWithoutIncorrectEmailFormate(){
+    public void verifyInAbilityToJoinNewsLetterWithIncorrectEmailFormate() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        homePage.fillInEmailField(XmlReader.getXMLData("incorrectEmailFormate"));
         DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
         if(webDriver.getCurrentUrl().contains(".com/ar-"))
-            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgAr"));
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorAr"));
         else
-            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorEn"));
     }
+    String email="";
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to join Newsletter when selected Female Gender ", priority = 47)
+    public void verifyAbilityToJoinNewsLetterWithSelectingFemaleOption() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        email=DataHelperAndWait.generateRandomEmail();
+        DataHelperAndWait.clickOnElement(homePage.getFemaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSubscriptionErrorMsg(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to join Newsletter when selected Male Gender ", priority = 48)
+    public void verifyAbilityToJoinNewsLetterWithSelectingMaleOption() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getMaleRadioButton(),webDriver);
+        homePage.fillInEmailField(DataHelperAndWait.generateRandomEmail());
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSubscriptionErrorMsg(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter when used email already subscribed with selected Female Option", priority = 49)
+    public void verifyInAbilityToJoinNewsLetterWithSelectingFemaleOptionForEmailAlreadySubscribed() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getFemaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getErrorMsgPopUp(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter when used email already subscribed with selected Male Option", priority = 50)
+    public void verifyInAbilityToJoinNewsLetterWithSelectingMaleOptionForEmailAlreadySubscribed() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getMaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getErrorMsgPopUp(),webDriver);
+    }
+
+
 
 
 
