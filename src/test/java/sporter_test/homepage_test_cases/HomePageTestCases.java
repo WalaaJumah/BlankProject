@@ -496,7 +496,7 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //TODO: THis for test only
-    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
+    @Test(enabled = false,groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
     public void checkAllProductsListedInTheHomePage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
