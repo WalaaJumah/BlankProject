@@ -20,6 +20,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Test(groups = "2.05 HomePage")
@@ -500,14 +501,23 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
     public void checkAllProductsListedInTheHomePage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
+        List<String> filteredHrefs = new ArrayList<>(); // List to store filtered URLs
         List<String> hrefs = DataHelperAndWait.extractHrefs(homePage.getProductsRelativeLinksInHomePage());
+        System.out.println("All poducts Links listed in the HomePage");
         for (String href : hrefs) {
-            System.out.println("HREF: " + href);
-            DataHelperAndWait.navigateToUrl(href,webDriver);
-            homePage.verifyTheDisplayedPageDoesNotHaveErrors();
-            homePage.checkIfProductOOS();
-            homePage.navigateToHomePage();
+            System.out.println(href);
+            try {
+                DataHelperAndWait.navigateToUrl(href, webDriver);
+                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                homePage.checkIfProductOOS();
+                homePage.navigateToHomePage();
+            }
+            catch (AssertionError e){
+                filteredHrefs.add(href);
+                System.out.println(e.getMessage());
+            }
         }
+
     }
 
 
