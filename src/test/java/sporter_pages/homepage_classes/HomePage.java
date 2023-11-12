@@ -220,6 +220,8 @@ public class HomePage extends BasePage {
     private WebElement NextPageBtn;
     @FindBy(xpath = "//div[@id='trendContainer']//a")
     private List<WebElement> categoriesInsideTrendingOnSporterSection;
+    @FindBy(xpath = "//a[starts-with(@class,'product_product')]")
+    private List<WebElement> productsRelativeLinksInHomePage;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
