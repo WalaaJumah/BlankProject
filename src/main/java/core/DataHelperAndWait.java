@@ -531,5 +531,16 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
          // Check if the entire text matches the Arabic pattern
          return matcher.matches();
         }
+    public static List<String> extractHrefs(List<WebElement> elements) {
+        List<String> hrefs = new ArrayList<>();
 
+        for (WebElement element : elements) {
+            String href = element.getAttribute("href");
+            if (href != null && !href.isEmpty()) {
+                hrefs.add(href);
+            }
+        }
+
+        return hrefs;
+    }
 }
