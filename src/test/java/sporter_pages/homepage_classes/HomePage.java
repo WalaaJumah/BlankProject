@@ -423,4 +423,5 @@ public class HomePage extends BasePage {
         DataHelperAndWait.clickOnElement(emailFieldInJoinNewsletter,webDriver);
         DataHelperAndWait.typeTextInElement(emailFieldInJoinNewsletter,webDriver,email);
     }
+
 }
