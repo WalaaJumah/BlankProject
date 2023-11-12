@@ -476,6 +476,25 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getErrorMsgPopUp(),webDriver);
     }
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the correct placeholder appears in the Search field", priority = 51)
+    public void verifyTheCorrectPlaceHolderAppearsInTheSearchFieldFromHomePageModule() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        if(webDriver.getCurrentUrl().contains(".com/en-"))
+            WebElementsAssertion.assertionAttributeTrueForElement(headerSection.getSearchField(), webDriver, "placeholder",XmlReader.getXMLData("SearchPlaceHolderEn") );
+        else
+            WebElementsAssertion.assertionAttributeTrueForElement(headerSection.getSearchField(), webDriver, "placeholder",XmlReader.getXMLData("SearchPlaceHolderAr") );
+    }
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure Switching Language from HomePage is not display any error", priority = 300)
+    public void verifySwitchLanguageFromHomePageIsNotDisplayAnyError() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(),webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+
 
 
 

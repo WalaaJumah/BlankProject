@@ -39,8 +39,8 @@ public class HeaderSection extends BasePage {
     private WebElement cartIcon;
     @FindBy(id = "SearchButton")
     private WebElement searchBtn;
-    @FindBy(id = "searchInput")
-    private WebElement searchField;
+//    @FindBy(id = "searchInput")
+//    private WebElement searchField;
     @FindBy(xpath = "//form[contains(@class,'SearchBox')]")
     private WebElement searchSectionForm;
     @FindBy(xpath = "//div[@id='CountrySelector']//ul/li/a")
@@ -51,6 +51,9 @@ public class HeaderSection extends BasePage {
     private WebElement LanguageBtn;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartLinkInCartPopUp;
+     @FindBy(xpath = "//input[contains(@class,'searchBox')]")
+    private WebElement searchField;
+
     public HeaderSection(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);

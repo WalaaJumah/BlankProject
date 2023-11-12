@@ -182,5 +182,11 @@ Cash on Delivery Service Available</twoBusinessDayIraq>
         <InCorrectEmailFormateMsgAr>الرجاء إدخال عنوان بريد إلكتروني صحيح (على سبيل المثال: johndoe@domain.com).</InCorrectEmailFormateMsgAr>
 
     </NewsLetterSection>
+    <PlaceHolder>
+        <SearchPlaceHolderEn>Search Products, Brands...</SearchPlaceHolderEn>
+        <SearchPlaceHolderAr>البحث عن منتجات,علامات تجاريه</SearchPlaceHolderAr>
+
+
+    </PlaceHolder>
 
 </Data>
