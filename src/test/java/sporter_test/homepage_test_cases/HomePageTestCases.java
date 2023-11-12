@@ -20,6 +20,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.util.List;
 
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
@@ -493,6 +494,20 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(),webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    //TODO: THis for test only
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
+    public void checkAllProductsListedInTheHomePage() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        List<String> hrefs = DataHelperAndWait.extractHrefs(homePage.getProductsRelativeLinksInHomePage());
+        for (String href : hrefs) {
+            System.out.println("HREF: " + href);
+            DataHelperAndWait.navigateToUrl(href,webDriver);
+            homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            homePage.checkIfProductOOS();
+            homePage.navigateToHomePage();
+        }
     }
 
 
