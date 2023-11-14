@@ -15,10 +15,11 @@
         <parameter name="bundleProductUrl" value="/quest-nutrition-bars-box-of-4-53776"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <classes>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+
             <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"></class>
 <!--            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>-->
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>-->
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>

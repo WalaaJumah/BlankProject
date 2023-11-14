@@ -22,6 +22,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import xml_reader.XmlReader;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 
 import static org.testng.Assert.assertEquals;
@@ -374,6 +375,8 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
         if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
             throw new AssertionError("The Search page is empty");
     }

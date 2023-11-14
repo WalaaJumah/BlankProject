@@ -102,11 +102,19 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
 //        cartPage.getCartIcon().click();
 //        cartPage.getViewCartInCartPopup().click();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
-
         CartPage cartPage = new CartPage(webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
+try {
+
+    DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+    DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
+    WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
+}
+catch (Exception e){
+    cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+    DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+    DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
+    WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
+}
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {

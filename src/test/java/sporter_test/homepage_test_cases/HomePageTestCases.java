@@ -361,7 +361,8 @@ public class HomePageTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
             productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
             productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
-            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.waitForTime(2500);
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
             if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
                 throw new AssertionError("The Search page is empty");
         }

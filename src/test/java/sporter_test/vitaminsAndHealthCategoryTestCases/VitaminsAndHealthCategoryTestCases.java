@@ -39,6 +39,8 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         }
 
         catch (Exception e){
+            megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+            megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
             megaMenuPage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
@@ -54,6 +56,8 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         }
 
         catch (Exception e){
+            megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
+            megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
             megaMenuPage.waitTillLoaderComplete();
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
 
