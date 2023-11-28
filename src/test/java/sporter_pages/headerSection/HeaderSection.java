@@ -35,6 +35,8 @@ public class HeaderSection extends BasePage {
     private WebElement searchSection;
     @FindBy(id = "UserIconContainer")
     private WebElement accountProfileIcon;
+      @FindBy(id = "RegisterOptionslabel")
+    private WebElement RegisterOptionslabel;
     @FindBy(id = "CartIconContainer")
     private WebElement cartIcon;
     @FindBy(id = "SearchButton")
