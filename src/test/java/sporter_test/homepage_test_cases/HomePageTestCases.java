@@ -497,7 +497,7 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //TODO: THis for test only
-    @Test(enabled = false,groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
     public void checkAllProductsListedInTheHomePage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -516,6 +516,11 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
                 filteredHrefs.add(href);
                 System.out.println(e.getMessage());
             }
+        }
+        if(filteredHrefs.size()>0) {
+            System.out.println("The following products either have 404 not found page issue or OOS or have error, pleas check:");
+            for (String incorrectProducts : filteredHrefs)
+                System.out.println(incorrectProducts);
         }
 
     }
