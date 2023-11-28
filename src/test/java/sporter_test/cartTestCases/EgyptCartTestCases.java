@@ -44,7 +44,12 @@ public class EgyptCartTestCases extends CartTestCases {
     @Test(enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {
     }
-
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
+    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
+    }
 @Test(enabled = false)
 public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
     CartPage cartPage = new CartPage(webDriver);

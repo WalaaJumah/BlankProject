@@ -50,4 +50,10 @@ public class BahrainCartTestCases extends CartTestCases{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
+    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
+    }
 }

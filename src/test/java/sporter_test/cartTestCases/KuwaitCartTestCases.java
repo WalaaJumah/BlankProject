@@ -8,6 +8,7 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -31,6 +32,12 @@ public class KuwaitCartTestCases extends CartTestCases{
         }
         storeCountry="Kuwait";
         System.out.println(webDriver.getCurrentUrl());
+    }
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
+    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {

@@ -543,4 +543,18 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
+      @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
+    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+          CartPage cartPage = new CartPage(webDriver);
+          cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+          WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
+    }
+        @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
+    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+          CartPage cartPage = new CartPage(webDriver);
+          cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+          WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(),webDriver);
+
+    }
+
 }
