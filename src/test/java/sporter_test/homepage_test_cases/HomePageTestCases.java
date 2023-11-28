@@ -504,6 +504,7 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         List<String> filteredHrefs = new ArrayList<>(); // List to store filtered URLs
         List<String> hrefs = DataHelperAndWait.extractHrefs(homePage.getProductsRelativeLinksInHomePage());
         System.out.println("All poducts Links listed in the HomePage");
+        System.out.println("No.Of Products in the HomePage= "+hrefs.size());
         for (String href : hrefs) {
             System.out.println(href);
             try {
@@ -518,7 +519,7 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
             }
         }
         if(filteredHrefs.size()>0) {
-            System.out.println("The following products either have 404 not found page issue or OOS or have error, pleas check:");
+            System.out.println("The following products( "+filteredHrefs.size()+") either have 404 not found page issue or OOS or have error, pleas check:");
             for (String incorrectProducts : filteredHrefs)
                 System.out.println(incorrectProducts);
         }

@@ -16,11 +16,27 @@
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
         <classes>
-            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases">
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
                 <methods>
                     <include name="checkAllProductsListedInTheHomePage"/>
                 </methods>
             </class>
+                 <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases">
+                <methods>
+                    <include name="checkAllProductsListedInTheHomePage"/>
+                </methods>
+            </class>
+                      <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases">
+                <methods>
+                    <include name="checkAllProductsListedInTheHomePage"/>
+                </methods>
+            </class>
+                             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases">
+                <methods>
+                    <include name="checkAllProductsListedInTheHomePage"/>
+                </methods>
+            </class>
+
 <!--            <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>-->
 
 
