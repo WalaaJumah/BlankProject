@@ -488,13 +488,21 @@ public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOn
         else
             WebElementsAssertion.assertionAttributeTrueForElement(headerSection.getSearchField(), webDriver, "placeholder",XmlReader.getXMLData("SearchPlaceHolderAr") );
     }
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure clicking on the My Account icon works correctly from the HomePage", priority = 53)
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the My Account icon works correctly from the HomePage", priority = 53)
     public void verifyClickingOnMyAccountIconWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         HeaderSection headerSection= new HeaderSection(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(headerSection.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getRegisterOptionslabel(),webDriver);
+    }
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the Cart icon works correctly from the HomePage", priority = 54)
+    public void verifyClickingOnCartIconWorksCorrectly() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartEmptyLabel(),webDriver);
     }
 
 

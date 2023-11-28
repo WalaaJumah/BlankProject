@@ -41,6 +41,8 @@ public class HeaderSection extends BasePage {
     private WebElement cartIcon;
     @FindBy(id = "SearchButton")
     private WebElement searchBtn;
+     @FindBy(id = "cartEmptyLabel")
+    private WebElement cartEmptyLabel;
 //    @FindBy(id = "searchInput")
 //    private WebElement searchField;
     @FindBy(xpath = "//form[contains(@class,'SearchBox')]")

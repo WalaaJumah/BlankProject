@@ -18,22 +18,22 @@
         <classes>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
                 <methods>
-                    <include name="verifyClickingOnMyAccountIconWorksCorrectly"/>
+                    <include name="verifyClickingOnCartIconWorksCorrectly"/>
                 </methods>
             </class>
                  <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases">
                 <methods>
-                    <include name="verifyClickingOnMyAccountIconWorksCorrectly"/>
+                    <include name="verifyClickingOnCartIconWorksCorrectly"/>
                 </methods>
             </class>
                       <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases">
                 <methods>
-                    <include name="verifyClickingOnMyAccountIconWorksCorrectly"/>
+                    <include name="verifyClickingOnCartIconWorksCorrectly"/>
                 </methods>
             </class>
                              <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases">
                 <methods>
-                    <include name="verifyClickingOnMyAccountIconWorksCorrectly"/>
+                    <include name="verifyClickingOnCartIconWorksCorrectly"/>
                 </methods>
             </class>
 

@@ -100,7 +100,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,8 +171,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/Sporter2.1OnProdution/FullReport2.1.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
