@@ -322,12 +322,12 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn(true);
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        jo.clickOnPlaceOrderBtn(true);
+//        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+//        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
 }

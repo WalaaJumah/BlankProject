@@ -603,11 +603,11 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
-        guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
-DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
-        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
+//        guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
+//DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+//        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }

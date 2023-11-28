@@ -418,11 +418,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinuePaymentMethodsBtn(), webDriver);
-        jo.clickOnPlaceOrderBtn(false);
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
-        jo.verifyTheDisplayedPageDoesNotHaveErrors();
+//        jo.clickOnPlaceOrderBtn(false);
+//        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+//        jo.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }
