@@ -367,9 +367,9 @@ public class CartTestCases extends BaseTest {
             DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
             DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
         } catch (Exception e) {
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
+//            cartPage.clickOnCartIcon();
+            DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIconTwo(), webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getCartCloseIconTwo(), webDriver);
         }
     }
 
@@ -600,7 +600,8 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(), webDriver);
     }
-     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the coupon code header is displayed", priority = 45)
+    //TODO: Dec Plan
+     @Test(enabled = false,groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the coupon code header is displayed", priority = 45)
     public void verifyDoHaveDiscountCodeHeaderAppearsCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();

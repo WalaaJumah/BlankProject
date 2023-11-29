@@ -89,7 +89,7 @@ catch (Exception e){
         String itemsCounter = "1";
         try{
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);}
-        catch (AssertionError e){
+        catch (Exception e){
             System.out.println("There's a Bogo Rule open");
         }
     }
