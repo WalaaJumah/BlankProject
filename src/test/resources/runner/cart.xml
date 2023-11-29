@@ -21,16 +21,16 @@
         <!--                    </run>-->
         <!--                </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.KSACartTestCases"/>
-            <class name="sporter_test.cartTestCases.QatarCartTestCases"/>
-            <class name="sporter_test.cartTestCases.OmanCartTestCases"/>
+
             <class name="sporter_test.cartTestCases.IraqCartTestCases"/>
             <class name="sporter_test.cartTestCases.EgyptCartTestCases"/>
             <class name="sporter_test.cartTestCases.BahrainCartTestCases"/>
             <class name="sporter_test.cartTestCases.JordanCartTestCases"/>
             <class name="sporter_test.cartTestCases.KuwaitCartTestCases"/>
             <class name="sporter_test.cartTestCases.UAECartTestCases"/>
-
+            <class name="sporter_test.cartTestCases.KSACartTestCases"/>
+            <class name="sporter_test.cartTestCases.QatarCartTestCases"/>
+            <class name="sporter_test.cartTestCases.OmanCartTestCases"/>
 
 
 

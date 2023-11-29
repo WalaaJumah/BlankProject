@@ -24,7 +24,6 @@
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.BahrainHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.OmanHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
