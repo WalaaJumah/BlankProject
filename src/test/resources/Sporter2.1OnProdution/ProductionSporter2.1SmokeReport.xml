@@ -9,9 +9,9 @@
     <test name=" Smoke  Testing on Production " preserve-order="true">
         <parameter name="environment" value="https://www.sporter.com"/>          <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
+        <parameter name="bogoProduct" value="//optimum-gold-standard-100-whey-6202"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
-        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <parameter name="bundleProductUrl" value="/bombbar-protein-pancake-box-of-10"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
 <!--                <groups>-->
