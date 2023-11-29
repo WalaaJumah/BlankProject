@@ -42,6 +42,13 @@ public class IraqCartTestCases extends CartTestCases {
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
     }
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
+    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(),webDriver);
+
+    }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);

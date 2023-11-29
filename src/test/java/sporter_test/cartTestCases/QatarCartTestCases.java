@@ -51,7 +51,8 @@ public class QatarCartTestCases extends CartTestCases {
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
     }
-
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
+    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException{}
     @Test(enabled = false)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
     }

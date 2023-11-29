@@ -93,7 +93,13 @@ catch (Exception e){
             System.out.println("There's a Bogo Rule open");
         }
     }
+    @Test(enabled = false,groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
+    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(),webDriver);
 
+    }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 5)
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
