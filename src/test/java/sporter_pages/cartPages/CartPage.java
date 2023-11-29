@@ -164,6 +164,8 @@ public class CartPage extends BasePage {
     private WebElement closeCouponSuccessfulMsg;
     @FindBy(xpath = "(//div[starts-with(@class,'cartItem_freeGift')])[1]")
     private WebElement freeFromSporterLabelInProductCard;
+    @FindBy(xpath = "//div[@id='discountCode']/div")
+    private WebElement doHaveDiscountCode;
 
     public CartPage(WebDriver webDriver) {
         super(webDriver);

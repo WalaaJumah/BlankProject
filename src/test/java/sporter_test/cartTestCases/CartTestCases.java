@@ -38,15 +38,15 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try {
             itemsCounter = "2";
             WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
+        } catch (AssertionError e) {
         }
-        catch (AssertionError e){}
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 31)
@@ -55,21 +55,21 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try {
             WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
-        }
-        catch (AssertionError e){
+        } catch (AssertionError e) {
             WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "2");
         }
     }
+
     //TODO:Needs To Be rechecked
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 32)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 32)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         try {
             itemsCounter = "(2 Of 2 Items )";
             DataHelperAndWait.waitToBeVisible(cartPage.getItemCounterInCartPopUp(), webDriver);
+        } catch (AssertionError e) {
         }
-        catch (AssertionError e){}
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 3)
@@ -81,7 +81,7 @@ public class CartTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 4)
-    public void verifyDecreaseQtyBtnInCartPageWorking(){
+    public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartPage();
         cartPage.decreaseQty();
@@ -109,8 +109,7 @@ public class CartTestCases extends BaseTest {
         try {
             cartPage.navigateToCartPage();
             DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("The product URL i incorrect or the product disabled");
         }
     }
@@ -123,7 +122,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 11)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 11)
     public void verifyHereLinkInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
 //        DataHelperAndWait.waitForTime(2000);
@@ -131,7 +130,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 12)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         if (DataHelperAndWait.IsElementPresent(cartPage.getFreeFromSporterLabelInProductCard())) {
@@ -140,11 +139,10 @@ public class CartTestCases extends BaseTest {
                 cartPage.addBogoToCartAndDisplayTheCart();
                 WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreeFromSporterLabelInProductCard(), webDriver);
                 WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("The product is OOS");
             }
-    }
+        }
     }
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
@@ -156,7 +154,7 @@ public class CartTestCases extends BaseTest {
         cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 14)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForFreeGiftGainedByCoupon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         //TODO: Needs to check
@@ -188,7 +186,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 17)
     public void verifyRemoveItemBtnWorksWhenCartContainsMoreThanItem() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -213,24 +211,24 @@ public class CartTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         try {
             productDetailsPage.displayBundle();
-                DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-                Select select = new Select(productDetailsPage.getBundleMenu());
-                List<WebElement> elementCount = select.getOptions();
-                int menuSize = elementCount.size();
-                for (int i = 0; i < menuSize; i++) {
-                    select.selectByIndex(i);
-                    DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(), webDriver);
-                    productDetailsPage.getAddToCartBtn().click();
-                    productDetailsPage.viewCart();
-                    break;
-
-                }
-                WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
-            }
-            //TODO: Needs to review
-            catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
+            Select select = new Select(productDetailsPage.getBundleMenu());
+            List<WebElement> elementCount = select.getOptions();
+            int menuSize = elementCount.size();
+            for (int i = 0; i < menuSize; i++) {
+                select.selectByIndex(i);
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(), webDriver);
+                productDetailsPage.getAddToCartBtn().click();
+                productDetailsPage.viewCart();
+                break;
 
             }
+            WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
+        }
+        //TODO: Needs to review
+        catch (Exception e) {
+
+        }
         webDriver.manage().deleteCookieNamed("guestCartId");
 
     }
@@ -260,14 +258,15 @@ public class CartTestCases extends BaseTest {
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-            cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
-            DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
-            DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
-            //TODO: Needs to recheck after solving Cart loading issue
+        cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
+        DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
+        DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(), "999");
+        //TODO: Needs to recheck after solving Cart loading issue
         cartPage.proceedToCheckout();
         cartPage.waitTillCartSpinnerDisappear(webDriver);
-            DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
+        DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }
+
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
 //    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 18)
 //    public void verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS() {
@@ -302,14 +301,13 @@ public class CartTestCases extends BaseTest {
                 cartPage.addBogoToCartAndDisplayTheCart();
                 DataHelperAndWait.isDisplayed(cartPage.getFreeFromSporterLabelInProductCard(), webDriver);
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 22)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 22)
     public void verifyTheFreeGiftIsDoesNotHavePrice() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -318,8 +316,7 @@ public class CartTestCases extends BaseTest {
             cartPage.checkIfProductOOS();
             //TODO: Needs to recheck
             if (DataHelperAndWait.IsElementPresent(cartPage.getFreePrice())) ;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("The product is OOS");
         }
 //        try{
@@ -332,8 +329,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        if(DataHelperAndWait.IsElementPresent(cartPage.getWeAcceptLabel()))
-        {
+        if (DataHelperAndWait.IsElementPresent(cartPage.getWeAcceptLabel())) {
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
@@ -348,7 +344,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.waitForUrlContains(cartPage.shippingInformationUrl, webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -370,8 +366,7 @@ public class CartTestCases extends BaseTest {
             cartPage.clickOnCartIcon();
             DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
             DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             cartPage.clickOnCartIcon();
             DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
             DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
@@ -379,7 +374,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
+    @Test(enabled = false, groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -391,7 +386,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
-    @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
+    @Test(enabled = false, groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -402,7 +397,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 28)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 28)
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -411,8 +406,7 @@ public class CartTestCases extends BaseTest {
 ////ToDO: Needs to revisit after fixing the Bogo
 //        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
 //        cartPage.removeItem();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("The product is OOS");
         }
     }
@@ -430,20 +424,20 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: https://sporter1.atlassian.net/browse/NS-28
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 30)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 30)
     public void verifySearchBtnWorksCorrectlyFromCartPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"optimum");
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "optimum");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
-        if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+        if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
             throw new AssertionError("The Search page is empty");
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 6)
-    public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage(){
+    public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel(), webDriver);
@@ -473,7 +467,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
+    @Test(enabled = false, groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
     public void verifyAbilityToApplyFreeGiftCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -483,7 +477,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
+    @Test(enabled = false, groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
     public void verifyAbilityToCancelTheCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(), webDriver);
@@ -509,7 +503,7 @@ public class CartTestCases extends BaseTest {
 //            webDriver.switchTo().alert().dismiss();
 //    }
 //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From cart Page", priority = 36)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From cart Page", priority = 36)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
 //        CartPage cartPage = new CartPage(webDriver);
@@ -525,10 +519,9 @@ public class CartTestCases extends BaseTest {
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
-        }
-        catch (Exception e){
-            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl+"/",webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl + "/", webDriver);
         }
     }
 
@@ -541,9 +534,8 @@ public class CartTestCases extends BaseTest {
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try {
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
-        }
-        catch (Exception e){
-            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl + "/", webDriver);
         }
     }
 
@@ -555,10 +547,9 @@ public class CartTestCases extends BaseTest {
         megaMenuPage.clickOnHealthyFoodMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
-        }
-        catch (Exception e){
-            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl, webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl + "/", webDriver);
         }
     }
 
@@ -571,23 +562,22 @@ public class CartTestCases extends BaseTest {
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
-        }
-        catch (Exception e){
-            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl+"/", webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl, webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl + "/", webDriver);
         }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
     }
 
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 42)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 42)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
@@ -596,17 +586,25 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
-      @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
-    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
-          CartPage cartPage = new CartPage(webDriver);
-          cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-          WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(),webDriver);
-    }
-        @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
-    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException {
-          CartPage cartPage = new CartPage(webDriver);
-          cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-          WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(),webDriver);
 
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tamara Widget appears correctly in the cart page ", priority = 43)
+    public void verifyTamaraWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTamaraWidget(), webDriver);
     }
+
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure Tabby Widget appears correctly in the cart page ", priority = 44)
+    public void verifyTabbyWidgetAppearsCorrectlyInTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getTabbyWidget(), webDriver);
+    }
+     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the coupon code header is displayed", priority = 45)
+    public void verifyDoHaveDiscountCodeHeaderAppearsCorrectly() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getDoHaveDiscountCode(), webDriver);
+    }
+
 }
