@@ -182,8 +182,8 @@ public class BasePage {
     public final String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl = "catalogsearch/result/?q=";
-    public static final String bogoUrlKSA = "/the-pack-bcaas-flow-32568";
-    public static  final String bogoUrlQatar = "/catalog-pro-32569-32568";
+    public static final String bogoUrlKSA = "//optimum-gold-standard-100-whey-6202";
+    public static  final String bogoUrlQatar = "//optimum-gold-standard-100-whey-6202";
     public final String bogoUrlEgypt = "/cellucor-c4";
     public static final String product2UrlLessQty = "/quest-nutrition-bars-pack-of-12-00715";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
