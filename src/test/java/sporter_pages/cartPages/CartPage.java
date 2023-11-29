@@ -63,7 +63,7 @@ public class CartPage extends BasePage {
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
 //    @FindBy(id = "CartIconContainer")
-    @FindBy(xpath = "//div[@id='CartIconInnerContainer']/span[@id='CartIconContainerqty']")
+    @FindBy(xpath = "(//div[@id='CartIconInnerContainer'])[1]")
     private WebElement cartIcon;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartInCartPopup;
