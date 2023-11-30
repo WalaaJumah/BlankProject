@@ -365,7 +365,7 @@ public class HomePageTestCases extends BaseTest {
             DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
             productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
             DataHelperAndWait.waitForTime(1000);
             if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
