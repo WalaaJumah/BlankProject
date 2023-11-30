@@ -34,6 +34,8 @@ public class MegaMenuPage extends BasePage {
     private WebElement vitaminsAndHealthInShopByMenu;
        @FindBy(xpath = "//ul/li[@id='cat_2583']/a")
     private WebElement vitaminsAndHealthMenu;
+       @FindBy(xpath = "//ul/li[@id='cat_686']/a")
+    private WebElement vitaminsAndHealthMenuTwo;
 
 //    @FindBy(id = "cat_583")
     @FindBy(xpath = "//ul/li[@id='cat_583']/a")
@@ -89,16 +91,31 @@ public class MegaMenuPage extends BasePage {
     public void clickOnVitaminsAndHealthMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
-            DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
-            actions.moveToElement(this.vitaminsAndHealthMenu).perform();
-           this.vitaminsAndHealthMenu.click();
+            try {
+                DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
+                actions.moveToElement(this.vitaminsAndHealthMenu).perform();
+                this.vitaminsAndHealthMenu.click();
 //            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
-            verifyTheDisplayedPageDoesNotHaveErrors();
-        } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
-            actions.moveToElement(this.vitaminsAndHealthMenu).perform();
-            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
-            verifyTheDisplayedPageDoesNotHaveErrors();
+                verifyTheDisplayedPageDoesNotHaveErrors();
+            } catch (Exception e) {
+                DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
+                actions.moveToElement(this.vitaminsAndHealthMenu).perform();
+                DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
+                verifyTheDisplayedPageDoesNotHaveErrors();
+            }
+        } catch (Exception ee) {
+            try {
+                DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenuTwo, webDriver);
+                actions.moveToElement(this.vitaminsAndHealthMenuTwo).perform();
+                this.vitaminsAndHealthMenuTwo.click();
+//            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
+                verifyTheDisplayedPageDoesNotHaveErrors();
+            } catch (Exception e) {
+                DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenuTwo, webDriver);
+                actions.moveToElement(this.vitaminsAndHealthMenuTwo).perform();
+                DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenuTwo, webDriver);
+                verifyTheDisplayedPageDoesNotHaveErrors();
+            }
         }
     }
 
