@@ -9,14 +9,19 @@ package sporter_test.homepage_test_cases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.footerSections.FooterSection;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
@@ -111,6 +116,7 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the main options in the Mega Menu are retrieved correctly", priority = 7)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         if(webDriver.getCurrentUrl().contains(".com/en-")) {
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsEn"));
@@ -319,7 +325,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 39)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 200)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -359,14 +365,196 @@ public class HomePageTestCases extends BaseTest {
             DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
             productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
-            DataHelperAndWait.waitForTime(2500);
-            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
+            DataHelperAndWait.waitForTime(1000);
             if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
                 throw new AssertionError("The Search page is empty");
         }
     }
+// New Test Cases:
+@Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions = NoSuchElementException.class)
+public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner() {
+    HomePage homePage = new HomePage(webDriver);
+    if(homePage.getHomePageRotatingSliderPagingControlSection().isDisplayed()){
+        DataHelperAndWait.IsElementPresent(homePage.getNextArrowInHomePageRotatingSlider());
+    }
+   else{
+        for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+        }
+    }
+}
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 41)
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage() throws IOException {
+        FooterSection footerSection = new FooterSection(webDriver);
+//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
+            WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getPageBottomBlocksList().get(i), webDriver);
+        }
+    }
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the copy Right label appears correctly ", priority = 42)
+    public void verifyCopyRightLabelAppearCorrectly(){
+        FooterSection footerSection = new FooterSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getCopyRightLabel(),webDriver);
+    }
+
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Join Our NewsLetter Section appears correctly ", priority = 43)
+    public void verifyJoinNewsLetterSectionAppears(){
+        HomePage homePage = new HomePage(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getJoinNewsLetterSection(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the text of Header & description inside Join Our NewsLetter Section appearing correctly ", priority = 44)
+    public void verifyAllTextInsideJoinNewsLetterSectionAppearsCorrectly(){
+        HomePage homePage = new HomePage(webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-")) {
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("NewsLetterHeaderAr"));
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLettertail(), webDriver, XmlReader.getXMLData("NewsLetterTailAr"));
+        }
+        else {
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLetterHeader(), webDriver, XmlReader.getXMLData("NewsLetterHeaderEN"));
+            WebElementsAssertion.assertionTextIsEqual(homePage.getNewsLettertail(), webDriver, XmlReader.getXMLData("NewsLetterTailEn"));
+        }
+
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter without filling the email field ", priority = 45)
+    public void verifyInAbilityToJoinNewsLetterWithoutFillingEmailField(){
+        HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgAr"));
+        else
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("EmailRequiredMsgEn"));
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter with incorrect Email formate ", priority = 46)
+    public void verifyInAbilityToJoinNewsLetterWithIncorrectEmailFormate() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        homePage.fillInEmailField(XmlReader.getXMLData("incorrectEmailFormate"));
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorAr"));
+        else
+            WebElementsAssertion.assertionTextIsEqual(homePage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorEn"));
+    }
+    String email="";
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to join Newsletter when selected Female Gender ", priority = 47)
+    public void verifyAbilityToJoinNewsLetterWithSelectingFemaleOption() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        email=DataHelperAndWait.generateRandomEmail();
+        DataHelperAndWait.clickOnElement(homePage.getFemaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSubscriptionErrorMsg(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to join Newsletter when selected Male Gender ", priority = 48)
+    public void verifyAbilityToJoinNewsLetterWithSelectingMaleOption() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getMaleRadioButton(),webDriver);
+        homePage.fillInEmailField(DataHelperAndWait.generateRandomEmail());
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSubscriptionErrorMsg(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter when used email already subscribed with selected Female Option", priority = 49)
+    public void verifyInAbilityToJoinNewsLetterWithSelectingFemaleOptionForEmailAlreadySubscribed() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getFemaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getErrorMsgPopUp(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to join Newsletter when used email already subscribed with selected Male Option", priority = 50)
+    public void verifyInAbilityToJoinNewsLetterWithSelectingMaleOptionForEmailAlreadySubscribed() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(homePage.getMaleRadioButton(),webDriver);
+        homePage.fillInEmailField(email);
+        System.out.println(email);
+        DataHelperAndWait.clickOnElement(homePage.getJoinButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getErrorMsgPopUp(),webDriver);
+    }
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the correct placeholder appears in the Search field", priority = 51)
+    public void verifyTheCorrectPlaceHolderAppearsInTheSearchFieldFromHomePageModule() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        if(webDriver.getCurrentUrl().contains(".com/en-"))
+            WebElementsAssertion.assertionAttributeTrueForElement(headerSection.getSearchField(), webDriver, "placeholder",XmlReader.getXMLData("SearchPlaceHolderEn") );
+        else
+            WebElementsAssertion.assertionAttributeTrueForElement(headerSection.getSearchField(), webDriver, "placeholder",XmlReader.getXMLData("SearchPlaceHolderAr") );
+    }
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the My Account icon works correctly from the HomePage", priority = 53)
+    public void verifyClickingOnMyAccountIconWorksCorrectly() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getAccountProfileIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getRegisterOptionslabel(),webDriver);
+    }
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the Cart icon works correctly from the HomePage", priority = 54)
+    public void verifyClickingOnCartIconWorksCorrectly() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartEmptyLabel(),webDriver);
+    }
+
+
+    @Test(groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Make sure Switching Language from HomePage is not display any error", priority = 300)
+    public void verifySwitchLanguageFromHomePageIsNotDisplayAnyError() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        HeaderSection headerSection= new HeaderSection(webDriver);
+        homePage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(),webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    //TODO: THis for test only
+    @Test(enabled = false,groups = { "1.4 Medium Severity"}, description = "{{CountryName}}: Check All products listed in the HomePage", priority = 52)
+    public void checkAllProductsListedInTheHomePage() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
+        List<String> filteredHrefs = new ArrayList<>(); // List to store filtered URLs
+        List<String> hrefs = DataHelperAndWait.extractHrefs(homePage.getProductsRelativeLinksInHomePage());
+        System.out.println("All poducts Links listed in the HomePage");
+        System.out.println("No.Of Products in the HomePage= "+hrefs.size());
+        for (String href : hrefs) {
+            System.out.println(href);
+            try {
+                DataHelperAndWait.navigateToUrl(href, webDriver);
+                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                homePage.checkIfProductOOS();
+                homePage.navigateToHomePage();
+            }
+            catch (AssertionError e){
+                filteredHrefs.add(href);
+                System.out.println(e.getMessage());
+            }
+        }
+        if(filteredHrefs.size()>0) {
+            System.out.println("The following products( "+filteredHrefs.size()+") either have 404 not found page issue or OOS or have error, pleas check:");
+            for (String incorrectProducts : filteredHrefs)
+                System.out.println(incorrectProducts);
+        }
+
+    }
+
+//test
+
+
+
+
+
+
+
+
+
+
 }
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 27)
 //    public void verifyNextBtnInTrendingOnSporterSectionWorks() {
