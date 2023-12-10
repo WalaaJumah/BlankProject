@@ -86,25 +86,37 @@ public class HomePage extends BasePage {
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(id = "crousel_imagesContainer")
     private WebElement homePageSideBanner;
-    @FindBy(id = "AdvertiseLink0first")
+//    @FindBy(id = "AdvertiseLink0first")
+    //the id changed in Release 30
+    @FindBy(id = "Advertise0img2")
     private WebElement homePageHorizontalBanner;
     @FindBy(id = "ShopByCategoryTitle")
     private WebElement shopByCategoryHeader;
-    @FindBy(id = "CategoryProductsTitle_mostSelling")
+//    @FindBy(id = "CategoryProductsTitle_mostSelling")
+    //new id assigned in release30
+    @FindBy(id = "CategoryProductsTitle_5")
     private WebElement topSellingStacksHeader;
-    @FindBy(id = "CategoryProductsTitle_topSeller")
+//    @FindBy(id = "CategoryProductsTitle_topSeller")
+    //new id assigned in release30
+    @FindBy(id = "CategoryProductsTitle_6")
     private WebElement topSellerHeader;
     @FindBy(id = "ShopByCategoryContainer")
     private WebElement shopByCategorySections;
-    @FindBy(css = "#Swiper_mostSelling > div.swiper-wrapper")
+//    @FindBy(css = "#Swiper_mostSelling > div.swiper-wrapper")
+    //new id assigned in release30
+    @FindBy(id = "Swiper_5")
     private WebElement topSellingStacksSections;
-    @FindBy(id = "Swiper_topSeller")
+//    @FindBy(id = "Swiper_topSeller")
+    //New id assigned in release#30
+    @FindBy(id = "Swiper_6")
     private WebElement topSellerSections;
     @FindBy(xpath = "//ul[@id='OptionsContainer_topSeller']/li")
     private List<WebElement> topSellerCategoriesTabs;
     @FindBy(xpath = "//ul[@id='OptionsContainerOptions_newArrival']/li")
     private List<WebElement> newArrivalsCategoriesTabs;
-    @FindBy(id = "OptionsContainerOptions_allmostSelling")
+//    @FindBy(id = "OptionsContainerOptions_allmostSelling")
+    //New ID assigned iin release30
+    @FindBy(id = "OptionsContainerOptions_all5")
     private WebElement viewAllBtnInTopSellingStacksSection;
     @FindBy(id = "OptionsContainerOptions_0topSeller")
     private WebElement sportSupplementsLinkInTopSellers;
@@ -140,9 +152,13 @@ public class HomePage extends BasePage {
     private WebElement nextBtnInTrendingOnSporterSection;
     @FindBy(id = "//div[@class='trending-swiper-button-prev']/i")
     private WebElement previousBtnInTrendingOnSporterSection;
-    @FindBy(id = "CategoryProductsTitle_newArrival")
+//    @FindBy(id = "CategoryProductsTitle_newArrival")
+    //new id assigned in release30
+    @FindBy(id = "CategoryProductsTitle_8")
     private WebElement newArrivalsHeader;
-    @FindBy(id = "Swiper_newArrival")
+//    @FindBy(id = "Swiper_newArrival")
+    //New Id assigned in Release30
+    @FindBy(id = "Swiper_8")
     private WebElement newArrivalsSection;
     @FindBy(id = "OptionsContainerOptions_allnewArrival")
     private WebElement newArrivalsAllLink;

@@ -323,7 +323,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 39)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 100)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();

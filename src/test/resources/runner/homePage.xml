@@ -4,7 +4,7 @@
 <suite name="cart_suite">
     <listeners>
         <!-- <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name="homepage_test_suite(production)" preserve-order="true">
         <parameter name="environment" value="https://www.sporter.com"/>
@@ -20,7 +20,6 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
@@ -29,6 +28,7 @@
             <class name="sporter_test.homepage_test_cases.OmanHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
 
 
 
