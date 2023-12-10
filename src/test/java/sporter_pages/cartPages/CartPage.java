@@ -17,9 +17,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
-import sporter_pages.headerSection.HeaderSection;
-import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -47,6 +44,10 @@ public class CartPage extends BasePage {
     private WebElement freeFromSporterSection;
     @FindBy(xpath = "(//div[@id='removeItemBtn'])[1]")
     private WebElement removeItemBtn;
+    @FindBy(xpath = "//div[starts-with(@class,'tamara-product-widget')]")
+    private WebElement tamaraWidget;
+    @FindBy(id = "TabbyPromo")
+    private WebElement tabbyWidget;
     @FindBy(id = "cartItemPrice")
     private List<WebElement> priceInCartPage;
     @FindBy(id = "cartItemPrice")
@@ -62,7 +63,7 @@ public class CartPage extends BasePage {
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
 //    @FindBy(id = "CartIconContainer")
-    @FindBy(xpath = "//div[@id='CartIconInnerContainer']/span[@id='CartIconContainerqty']")
+    @FindBy(xpath = "(//div[@id='CartIconInnerContainer'])[1]")
     private WebElement cartIcon;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartInCartPopup;
@@ -100,6 +101,8 @@ public class CartPage extends BasePage {
     private WebElement qtyField;
     @FindBy(xpath = "(//input[starts-with(@id,'cartItemQty')])[1]")
     private WebElement firstQtyField;
+    @FindBy(css = "#CartListContainericon > path")
+    private WebElement cartCloseIconTwo;
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
     @FindBy(id = "FaShoppingCart")
@@ -162,6 +165,9 @@ public class CartPage extends BasePage {
     private WebElement closeCouponSuccessfulMsg;
     @FindBy(xpath = "(//div[starts-with(@class,'cartItem_freeGift')])[1]")
     private WebElement freeFromSporterLabelInProductCard;
+    @FindBy(xpath = "//div[@id='discountCode']/div")
+    private WebElement doHaveDiscountCode;
+
     public CartPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -182,28 +188,32 @@ public class CartPage extends BasePage {
 
         }
     }
-    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+
+    public void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(4));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
 
     }
+
     public void addToCartAndDisplayTheCart() throws IOException {
-        if(IsEmptyCart()) {
+        if (IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
         }
     }
-      public void addToCartAndDisplayTheCartWithoutCartEmptyValidation() throws IOException {
-            productDetailsPage.displayTheProduct();
-            productDetailsPage.addToCart();
-            productDetailsPage.viewCart();
+
+    public void addToCartAndDisplayTheCartWithoutCartEmptyValidation() throws IOException {
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
     }
 
     public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
-        if(IsEmptyCart())
+        if (IsEmptyCart())
             addToCartAndDisplayTheCart();
     }
+
     public void addToCartAndDisplayTheCartForOos() throws IOException {
         productDetailsPage.displayTheProductHaveLessQty();
         productDetailsPage.addToCart();
@@ -239,8 +249,7 @@ public class CartPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
             this.waitTillCartSpinnerDisappear(webDriver);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             this.addToCartAndDisplayTheCart();
             webDriver.navigate().to(BaseURL + cartURL);
             verifyTheDisplayedPageDoesNotHaveErrors();
@@ -252,14 +261,13 @@ public class CartPage extends BasePage {
     public boolean IsEmptyCart() throws IOException {
         navigateToCartPage();
         try {
-            if(hereLink == null)
+            if (hereLink == null)
                 return false;
 
 
-            return hereLink.isDisplayed() ;
+            return hereLink.isDisplayed();
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             return false;
         }
     }
@@ -273,14 +281,14 @@ public class CartPage extends BasePage {
     public void removeItem() {
 //        this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeClickable(removeItemBtn, webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(removeItemBtn,webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(removeItemBtn, webDriver);
 //        DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
 //        this.removeItemBtn.click();
         this.waitTillCartSpinnerDisappear(webDriver);
     }
 
     public void clearCart() throws IOException {
-        if(IsEmptyCart())
+        if (IsEmptyCart())
             this.removeItem();
     }
 
@@ -325,10 +333,10 @@ public class CartPage extends BasePage {
         //TODO: Need to recheck after solving it by Moamen
 //      this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitForTime(500);
-        DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(),webDriver);
+        DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(), webDriver);
 
 
-        DataHelperAndWait.JsExecutorToClickOnElement(this.getProceedCheckoutBtn(),webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(this.getProceedCheckoutBtn(), webDriver);
 //        this.getProceedCheckoutBtn().click();
 //        this.waitTillCartSpinnerDisappear(webDriver);
 //        if(IsEmptyCart())
@@ -345,17 +353,19 @@ public class CartPage extends BasePage {
 //            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //        }
     }
+
     public void increaseQty() {
 //        DataHelperAndWait.clickOnElement(getIncreaseQtyBtn(), webDriver);
 //        waitTillCartSpinnerDisappear(webDriver);
-        DataHelperAndWait.waitToBeClickable(getIncreaseQtyBtn(),webDriver);
+        DataHelperAndWait.waitToBeClickable(getIncreaseQtyBtn(), webDriver);
 
 
-        DataHelperAndWait.JsExecutorToClickOnElement(this.getIncreaseQtyBtn(),webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(this.getIncreaseQtyBtn(), webDriver);
         waitTillCartSpinnerDisappear(webDriver);
 
     }
-    public void decreaseQty(){
+
+    public void decreaseQty() {
         DataHelperAndWait.clickOnElement(getDecreaseQtyBtn(), webDriver);
         waitTillCartSpinnerDisappear(webDriver);
     }

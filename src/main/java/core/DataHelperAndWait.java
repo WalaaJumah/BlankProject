@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
@@ -22,7 +23,7 @@ import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=27;
+    private static int WaitTime=18;
 
 
     //test21add
@@ -531,5 +532,34 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
          // Check if the entire text matches the Arabic pattern
          return matcher.matches();
         }
+    public static List<String> extractHrefs( List<WebElement> elements) {
+//        List<String> hrefs = new ArrayList<>();
+//
+//        for (WebElement element : elements) {
+//            String href = element.getAttribute("href");
+//            if (href != null && !href.isEmpty()) {
+//                hrefs.add(href);
+//            }
+//        }
+//
+//        return hrefs;
+            List<String> hrefs = new ArrayList<>();
+            for (WebElement element : elements) {
+                String href = element.getAttribute("href");
 
+                if (href != null && !href.isEmpty()) {
+                    if (isRelativeUrl(href)) {
+                        href=BasePage.BaseURL+href;
+                    }
+                    hrefs.add(href);
+                }
+            }
+
+            return hrefs;
+
+    }
+    public static boolean isRelativeUrl(String url) {
+        // Check if the URL is relative by looking for common indicators of relative URLs
+        return !url.matches("^(http|https|ftp|ftps)://.*$");
+    }
 }
