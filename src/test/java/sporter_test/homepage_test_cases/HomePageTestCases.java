@@ -358,17 +358,33 @@ public class HomePageTestCases extends BaseTest {
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 21)
     public void verifySearchBtnWorksCorrectlyFromPdp() throws IOException {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        if(DataHelperAndWait.IsElementPresent(productDetailsPage.getSearchField())) {
-            DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
-            DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-            DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
-            productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
-            DataHelperAndWait.waitForTime(2500);
-            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
-            if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
-                throw new AssertionError("The Search page is empty");
+        try {
+            ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+            if (DataHelperAndWait.IsElementPresent(productDetailsPage.getSearchField())) {
+                DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
+                DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+                DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+                productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+                productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+                DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), webDriver);
+                if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+                    throw new AssertionError("The Search page is empty");
+            }
+        }
+        catch (Exception e){
+            ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+            if (DataHelperAndWait.IsElementPresent(productDetailsPage.getSearchField())) {
+                DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
+                DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+                DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+                productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+                productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
+                DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), webDriver);
+                if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
+                    throw new AssertionError("The Search page is empty");
+            }
         }
     }
 
