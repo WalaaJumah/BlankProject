@@ -49,7 +49,7 @@ public class CartTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 31)
-    public void verifyTheCounterInCartIconWorksCorrectly() {
+    public void verifyTheCounterInCartIconWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         try {
             WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "2");

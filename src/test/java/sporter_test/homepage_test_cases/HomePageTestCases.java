@@ -10,7 +10,6 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.footerSections.FooterSection;
@@ -116,7 +115,6 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the main options in the Mega Menu are retrieved correctly", priority = 7)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         if(webDriver.getCurrentUrl().contains(".com/en-")) {
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsEn"));
@@ -325,7 +323,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 200)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 39)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -365,13 +363,15 @@ public class HomePageTestCases extends BaseTest {
             DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
             DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-//            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
             productDetailsPage.waitTillCartSpinnerIconDisappear(webDriver);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitForTime(2500);
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
             if(!DataHelperAndWait.IsElementPresent(productDetailsPage.getProductCard()))
                 throw new AssertionError("The Search page is empty");
         }
     }
+
 // New Test Cases:
 @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Next Arrow appears on the HomePage rotating slider is not displayed in case there's one Banner Only", priority = 40,expectedExceptions = NoSuchElementException.class)
 public void verifyTheNextArrowAppearsAtRotatingBannersIsNotDisplayedWhenTheresOnlyOneBanner() {

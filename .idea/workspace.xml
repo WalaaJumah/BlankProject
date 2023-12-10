@@ -103,7 +103,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml">
     <configuration name="C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/IraqStore/IraqFull.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" />
@@ -144,9 +144,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/TestExecution.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/homePage.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -155,19 +155,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/KSAStore/KSAFullTest.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/QatarStore/QatarFull.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/IraqStore/IraqFull.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/homePage.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/KSAStore/KSAFullTest.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/QatarStore/QatarFull.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/SporterApprovedFrameWork/src/test/resources/IraqStore/IraqFull.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/TestExecution.xml" />
       </list>
     </recent_temporary>
   </component>
