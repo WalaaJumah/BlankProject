@@ -126,31 +126,31 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins & Health side Banners is displayed ", priority = 9)
     public void verifyVitaminsAndHealthSideBannerIsDisplayed() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getFirstSideBanner(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSecondSideBanner(), webDriver);
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the first side banner works correctly", priority = 10)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
-        womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(homePage.getFirstSideBanner(), webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Second side banner works correctly", priority = 11)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
-        womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(homePage.getSecondSideBanner(), webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Fish Oil & Omegas Category redirect the user to the correct page", priority = 12)

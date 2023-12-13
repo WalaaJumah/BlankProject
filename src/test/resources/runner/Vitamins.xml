@@ -4,10 +4,10 @@
 <suite name="cart_suite">
     <listeners>
         <!-- <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name="cart_rules_suite" preserve-order="true">
-        <parameter name="environment" value="https://stg.sporter.com"/>
+        <parameter name="environment" value="https://www.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
@@ -20,7 +20,7 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>-->
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.OmanVitaminsAndHealthCategoryTestCases"/>

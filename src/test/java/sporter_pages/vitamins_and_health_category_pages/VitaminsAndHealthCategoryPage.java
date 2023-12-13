@@ -23,27 +23,31 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[1]")
+//    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[1]")
+    @FindBy(id = "ShopByCategoryItemtitle0")
     private WebElement fishOilAndOmegasCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[2]")
+//    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[2]")
+    @FindBy(id = "ShopByCategoryItemtitle1")
     private WebElement multiVitaminsCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[3]")
+//    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[3]")
+    @FindBy(id = "ShopByCategoryItemtitle2")
     private WebElement vitaminsAZCategory;
        @FindBy(id = "tab-294-all294")
     private WebElement vitaminsAZSection;
 
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[4]")
+//    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[4]")
+    @FindBy(id = "ShopByCategoryItemtitle3")
     private WebElement mineralsCategory;
        @FindBy(id = "tab-295-all295")
     private WebElement mineralsSection;
 
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[5]")
+    @FindBy(id = "ShopByCategoryItemtitle4")
     private WebElement antioxidantsCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[6]")
+    @FindBy(id = "ShopByCategoryItemtitle5")
     private WebElement superFoodsCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[7]")
+    @FindBy(id = "ShopByCategoryItemtitle6")
     private WebElement collagenCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[8]")
+    @FindBy(id = "ShopByCategoryItemtitle7")
     private WebElement melatoninCategory;
     @FindBy(xpath = "(//ul[@class='trending-products']/li//a)[1]")
     private WebElement tumericCategory;
@@ -55,62 +59,64 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement milkThistleCategory;
     @FindBy(xpath = "(//ul[@class='trending-products']/li//a)[5]")
     private WebElement alfalfaCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='0']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_0']/a)[1]")
     private WebElement beautyCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='1']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_1']/a)[1]")
     private WebElement boneAndJointCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='2']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_2']/a)[]")
     private WebElement brainSupportCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='3']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_3']/a)[1]")
     private WebElement detoxAndLiverSupportCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='4']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_4']/a)[1]")
     private WebElement digestiveSupportCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='5']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_5']/a)[1]")
     private WebElement energyFormulasCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='6']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_6']/a)[1]")
     private WebElement hairAndSkinAndNailsCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='7']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_7']/a)[1]")
     private WebElement heartHealthCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='8']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_8']/a)[1]")
     private WebElement immunitySupportCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='9']//a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_9']/a)[1]")
     private WebElement kidsHealthCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='10']//a)[2]")
+    @FindBy(xpath = "(//div[@id='TrendItem_10']/a)[1]")
     private WebElement mensHealthCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='11']//a)[2]")
+    @FindBy(xpath = "(//div[@id='TrendItem_11']/a)[1]")
     private WebElement sexualHealthCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='12']//a)[2]")
+    @FindBy(xpath = "(//div[@id='TrendItem_12']/a)[1]")
     private WebElement sleepSupportCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='13']//a)[2]")
+    @FindBy(xpath = "(//div[@id='TrendItem_13']/a)[1]")
     private WebElement dietWeightManagementCategory;
     @FindBy(xpath = "(//div[@data-swiper-slide-index='14']//a)[2]")
     private WebElement womenHealthCategory;
-    @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
+//    @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
+    @FindBy(id = "ControllersrtArrow_trends")
     private WebElement nextIconInShopByHealthNeedSection;
-    @FindBy(id = "tab-296-all296")
+//    @FindBy(id = "tab-296-all296")
+    @FindBy(id = "Swiper_8")
     private WebElement antioxodantsSection;
-    @FindBy(id = "tab-297-all297")
+    @FindBy(id = "Swiper_9")
     private WebElement superFoodsSection;
     @FindBy(id = "tab-298-all298")
     private WebElement melatoninSection;
     @FindBy(id = "tab-299-all299")
     private WebElement collagenSection;
 
-    @FindBy(xpath = "(//ul/li/a[@class='view-all'])[1]")
+    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all4']/a")
     private WebElement viewAllFishOil;
-    @FindBy(xpath = "(//ul/li/a[@class='view-all'])[2]")
+    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all5']/a")
     private WebElement viewAllMultivitamins;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[3]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all6']/a")
     private WebElement viewAllVitaminsA_Z;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[4]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all7']/a")
     private WebElement viewAllMinerals;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[5]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all8']/a")
     private WebElement viewAllAntioxidants;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[6]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all9']/a")
     private WebElement viewAllSuperFoods;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[7]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all7']/a")
     private WebElement viewAllMelatonin;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[7]")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all10']/a")
     private WebElement viewAllCollagen;
 
 
