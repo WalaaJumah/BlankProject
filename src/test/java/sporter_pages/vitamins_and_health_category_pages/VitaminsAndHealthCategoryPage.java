@@ -63,7 +63,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement beautyCategory;
     @FindBy(xpath = "(//div[@id='TrendItem_1']/a)[1]")
     private WebElement boneAndJointCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_2']/a)[]")
+    @FindBy(xpath = "(//div[@id='TrendItem_2']/a)[1]")
     private WebElement brainSupportCategory;
     @FindBy(xpath = "(//div[@id='TrendItem_3']/a)[1]")
     private WebElement detoxAndLiverSupportCategory;
