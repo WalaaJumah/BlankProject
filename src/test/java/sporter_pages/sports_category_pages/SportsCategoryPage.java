@@ -24,46 +24,46 @@ public class SportsCategoryPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(xpath = "(//div[@class='trending-title']/h2)[1]")
+    @FindBy(id = "Trendscontainer_title")
     private WebElement trendingInSportsSectionTitle;
-    @FindBy(xpath = "//div[@class='swiper-container swiper-container-horizontal trending']")
+    @FindBy(id = "Trendscontainer")
     private WebElement trendingInSportsSection;
-        @FindBy(xpath = "//div[@class='swiper-container swiper-container-horizontal trending swiper-container-rtl']")
+        @FindBy(id = "Trendscontainer")
     private WebElement trendingInSportsArabicSection;
 
-    @FindBy(xpath = "(//div[@class='product-img']/a)[6]")
+    @FindBy(xpath = "(//div[@id='TrendItem_0']/a)[1]")
     private WebElement mensApparelCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[7]")
+    @FindBy(xpath = "(//div[@id='TrendItem_1']/a)[1]")
     private WebElement womenApparelCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[8]")
+    @FindBy(xpath = "(//div[@id='TrendItem_2']/a)[1]")
     private WebElement shakersAndBottelsCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[9]")
+    @FindBy(xpath = "(//div[@id='TrendItem_3']/a)[1]")
     private WebElement swimmingCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[10]")
+    @FindBy(xpath = "(//div[@id='TrendItem_4']/a)[1]")
     private WebElement boxingAndMMACategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[11]")
+    @FindBy(xpath = "(//div[@id='TrendItem_5']/a)[1]")
     private WebElement capsAndHatCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[12]")
+    @FindBy(xpath = "(//div[@id='TrendItem_6']/a)[1]")
     private WebElement bagsAndBackpacksCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[13]")
+    @FindBy(xpath = "(//div[@id='TrendItem_7']/a)[1]")
     private WebElement sportsTechCategory;
-    @FindBy(xpath = "(//div[@class='product-img']/a)[14]")
+    @FindBy(xpath = "(//div[@id='TrendItem_8']/a)[1]")
     private WebElement MensPersonalCareCategory;
-    @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
+    @FindBy(id = "ControllersrtArrow_trends")
     private WebElement nextIconInShopByHealthNeedSection;
-    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[1]")
+    @FindBy(id = "AdvertiseLink03")
     private WebElement menCategory;
-    @FindBy(xpath = "(//ul[@class='clearfix']/li[2]/a)[1]")
+    @FindBy(id = "AdvertiseLink13")
     private WebElement womenCategory;
-    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[2]")
+    @FindBy(id = "AdvertiseContainer4")
     private WebElement sportsTechMainCategory;
-    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[3]")
+    @FindBy(id = "AdvertiseLink05")
     private WebElement kidsCategory;
-    @FindBy(xpath = "(//ul[@class='clearfix']/li[2]/a)[2]")
+    @FindBy(id = "AdvertiseLink15")
     private WebElement sportsCategory;
-    @FindBy(xpath = "(//div[@class='trending-title']/h2)[2]")
+    @FindBy(id = "CategoryProductsTitle_6")
     private WebElement recommendedProductsTitleSection;
-    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[2]")
+    @FindBy(id = "Swiper_6")
     private WebElement recommendedProductsSection;
     public void clickOnSportsMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);

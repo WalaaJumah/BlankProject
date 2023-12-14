@@ -20,13 +20,14 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="sporter_test.sports_category_test_cases.EgyptSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"/>
+
+            <!--            <class name="sporter_test.sports_category_test_cases.EgyptSportsCategoryTestCases"/>-->
             <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.OmanSportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"/>
-            <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"/>
 

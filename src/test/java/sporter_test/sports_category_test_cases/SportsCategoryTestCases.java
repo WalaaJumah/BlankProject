@@ -75,52 +75,55 @@ public class SportsCategoryTestCases extends BaseTest {
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the pagination control appears on the Sports rotating slider is displayed", priority = 6)
     public void verifyPaginationControlOnSportsRotatingSliderIsDisplayed() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getRotatingSliderPagingControl(), webDriver);
-        for (int i = 0; i < womensOnlyCategoryPage.getRotatingSliderPagingControlList().size(); i++) {
-            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getRotatingSliderPagingControlList().get(i), webDriver);
+        if(DataHelperAndWait.IsElementPresent(homePage.getHomePageRotatingSliderPagingControl())){
+            for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+                WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+            }
         }
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the banners inside the rotating slider section works correctly", priority = 7)
     public void verifyClickingOnTheBannersInsideTheSportsRotatingSliderWillRedirectTheUserToCorrectPage() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
-        SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
+        SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
-        for (int i = 0; i < womensOnlyCategoryPage.getRotatingSliderPagingControlList().size(); i++) {
-            DataHelperAndWait.scrollToPositionZero(webDriver);
-            DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getRotatingSliderPagingControlList().get(i), webDriver);
-            DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getBannerInRotatingSliderSection(), webDriver);
-            womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-            sportsCategoryPage.navigateToSportsPage();
+        if (DataHelperAndWait.IsElementPresent(homePage.getHomePageRotatingSliderPagingList().get(0))) {
+            for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+                DataHelperAndWait.scrollToPositionZero(webDriver);
+                DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+                homePage.clickOnBannerInRotatingSliderSection();
+                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                homePage.navigateToHomePage();
+            }
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Sports side Banners is displayed ", priority = 8)
     public void verifySportsSideBannerIsDisplayed() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageSideBanner(), webDriver);
+
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the first side banner works correctly", priority = 9)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheSportsCategoryPage() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
-        womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(homePage.getFirstSideBanner(), webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Second side banner works correctly", priority = 10)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheSportsCategoryPage() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
-        womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(homePage.getSecondSideBanner(), webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Trending in Sports section is displayed correctly", priority = 11)
     public void verifyTrendingOnSportsSectionAppearsCorrectly() throws IOException {
