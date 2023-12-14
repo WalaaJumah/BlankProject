@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.vitamins_and_health_category_pages.JordanVitaminsAndHealthCategoryPage;
+import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 
 import java.io.IOException;
 
@@ -37,5 +38,12 @@ public class JordanVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthC
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(3000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMelatoninSection(), webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
+    public void verifyTheCollagenAtLeastAProduct() throws IOException {
+        JordanVitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new JordanVitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+//        DataHelperAndWait.waitForTime(3000);
+        WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getCollagenSection(), webDriver);
     }
 }

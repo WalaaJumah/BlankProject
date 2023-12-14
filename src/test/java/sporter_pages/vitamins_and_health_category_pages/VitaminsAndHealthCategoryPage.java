@@ -32,13 +32,13 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
 //    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[3]")
     @FindBy(id = "ShopByCategoryItemtitle2")
     private WebElement vitaminsAZCategory;
-       @FindBy(id = "tab-294-all294")
+       @FindBy(id = "Swiper_6")
     private WebElement vitaminsAZSection;
 
 //    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[4]")
     @FindBy(id = "ShopByCategoryItemtitle3")
     private WebElement mineralsCategory;
-       @FindBy(id = "tab-295-all295")
+       @FindBy(id = "Swiper_7")
     private WebElement mineralsSection;
 
     @FindBy(id = "ShopByCategoryItemtitle4")
@@ -79,15 +79,15 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement immunitySupportCategory;
     @FindBy(xpath = "(//div[@id='TrendItem_9']/a)[1]")
     private WebElement kidsHealthCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_10']/a)[1]")
+    @FindBy(xpath = "(//img[@id='TrendItemImg_10'])[2]")
     private WebElement mensHealthCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_11']/a)[1]")
+    @FindBy(xpath = "(//img[@id='TrendItemImg_11'])[2]")
     private WebElement sexualHealthCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_12']/a)[1]")
+    @FindBy(xpath = "(//img[@id='TrendItemImg_12'])[2]")
     private WebElement sleepSupportCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_13']/a)[1]")
+    @FindBy(xpath = "(//img[@id='TrendItemImg_13'])[2]")
     private WebElement dietWeightManagementCategory;
-    @FindBy(xpath = "(//div[@data-swiper-slide-index='14']//a)[2]")
+    @FindBy(xpath = "(//img[@id='TrendItemImg_14'])[2]")
     private WebElement womenHealthCategory;
 //    @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
     @FindBy(id = "ControllersrtArrow_trends")
@@ -97,9 +97,9 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement antioxodantsSection;
     @FindBy(id = "Swiper_9")
     private WebElement superFoodsSection;
-    @FindBy(id = "tab-298-all298")
+    @FindBy(id = "Swiper_10")
     private WebElement melatoninSection;
-    @FindBy(id = "tab-299-all299")
+    @FindBy(id = "Swiper_11")
     private WebElement collagenSection;
 
     @FindBy(xpath = "//li[@id='OptionsContainerOptions_all4']/a")

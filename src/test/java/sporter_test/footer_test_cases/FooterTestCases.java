@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Test(groups = "2.18 Footer Section")
 
-public class FooterTestCases extends BaseTest {
+public class  FooterTestCases extends BaseTest {
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the all links below Contact us appears correctly ", priority = 1)
     public void verifyContactUsListAppearsCorrectlyCorrectly(){
         FooterSection footerSection = new FooterSection(webDriver);
