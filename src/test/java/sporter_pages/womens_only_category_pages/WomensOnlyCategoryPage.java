@@ -33,62 +33,62 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement firstSideBanner;
     @FindBy(xpath = "(//div[@class='nutritious-right']/a)[2]")
     private WebElement secondSideBanner;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']/li//a[2])[1]")
+    @FindBy(id = "ShopByCategoryItem0")
     private WebElement supplementForHerCategory;
-    @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']/li//a[2])[2]")
+    @FindBy(id = "ShopByCategoryItem1")
     private WebElement womensDailyVitaminsCategory;
-   @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']/li//a[2])[3]")
+   @FindBy(id = "ShopByCategoryItem2")
     private WebElement ladyFriendlySnacksAndFoodCategory;
-   @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']/li//a[2])[4]")
+   @FindBy(id = "ShopByCategoryItem3")
     private WebElement makeupForActiveLifeStyleCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[1]")
+   @FindBy(xpath = "//div[@id='TrendItem_0']/a")
     private WebElement hairSkinAndNailsCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[2]")
+   @FindBy(xpath = "//div[@id='TrendItem_1']/a")
     private WebElement weightLossCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[3]")
+   @FindBy(xpath = "//div[@id='TrendItem_2']/a")
     private WebElement moodSupportCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[4]")
+   @FindBy(xpath = "//div[@id='TrendItem_3']/a")
     private WebElement detoxAndCleanseCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[5]")
+   @FindBy(xpath = "//div[@id='TrendItem_4']/a")
     private WebElement pmsReliefCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[6]")
+   @FindBy(xpath = "//div[@id='TrendItem_5']/a")
     private WebElement energyAndEnduranceCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[7]")
+   @FindBy(xpath = "//div[@id='TrendItem_6']/a")
     private WebElement prenatalCareCategory;
-   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[8]")
+   @FindBy(xpath = "//div[@id='TrendItem_7']/a")
     private WebElement muscleAndWeightGainCategory;
-  @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[9]")
+  @FindBy(xpath = "//div[@id='TrendItem_8']/a")
     private WebElement fashionAndStyleCategory;
-  @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[10]")
+  @FindBy(xpath = "//div[@id='TrendItem_9']/a")
     private WebElement personalCareCategory;
-  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[1]")
+  @FindBy(xpath = "//li[@id='OptionsContainerOptions_all4']")
     private WebElement viewAllInSupplementForHerSection;
-  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[2]")
+  @FindBy(xpath = "//li[@id='OptionsContainerOptions_all5']")
     private WebElement viewAllInWomensVitaminsSection;
-  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[3]")
+  @FindBy(xpath = "//li[@id='OptionsContainerOptions_all6']")
     private WebElement viewAllInWorkoutInStyleSection;
-    @FindBy(xpath = "(//ul/li/a[@class='view-all'])[4]")
+    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all7']")
     private WebElement viewAllInLadyFriendlySnacksAndFoodSection;
-  @FindBy(id = "tab-257-all257")
+  @FindBy(id = "Swiper_4")
     private WebElement supplementForHerSection;
-    @FindBy(id = "tab-264-all264")
+    @FindBy(id = "Swiper_4")
     private WebElement supplementForHerSectionAr;
 
-  @FindBy(id = "tab-258-all258")
+  @FindBy(id = "Swiper_5")
     private WebElement womensVitaminsSection;
-   @FindBy(id = "tab-265-all265")
+   @FindBy(id = "Swiper_5")
     private WebElement womensVitaminsSectionAR;
 
-  @FindBy(id = "tab-259-all259")
+  @FindBy(id = "Swiper_6")
     private WebElement workoutInStyleSection;
-    @FindBy(id = "tab-266-all266")
+    @FindBy(id = "Swiper_6")
     private WebElement workoutInStyleSectionAr;
 
-  @FindBy(id = "tab-260-all260")
+  @FindBy(id = "Swiper_7")
     private WebElement ladyFriendlySnacksAndFoodSection;
-   @FindBy(id = "tab-267-all267")
+   @FindBy(id = "Swiper_7")
     private WebElement ladyFriendlySnacksAndFoodSectionAr;
-  @FindBy(xpath = "//div[@class='brand-video-header']")
+  @FindBy(xpath = "//div[@class='iFrame_container__KuLsV']")
     private WebElement femaleGallerySection;
 
 

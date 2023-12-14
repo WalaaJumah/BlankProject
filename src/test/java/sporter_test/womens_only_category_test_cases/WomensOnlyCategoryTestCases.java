@@ -103,25 +103,27 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Only side Banners is displayed ", priority = 9)
     public void verifyWomenOnlySideBannerIsDisplayed() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
 //        womensOnlyCategoryPage.navigateToWomenOnlyPage();
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getFirstSideBanner(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSecondSideBanner(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the first side banner works correctly", priority = 10)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheWomenOnlyCategoryPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getFirstSideBanner(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Second side banner works correctly", priority = 11)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheWomenOnlyCategoryPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getSecondSideBanner(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Supplements For Her Category redirect the user to the correct page", priority = 12)
