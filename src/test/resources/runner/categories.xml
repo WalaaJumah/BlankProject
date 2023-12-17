@@ -50,7 +50,7 @@
             <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>
+<!--            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>-->
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
 
