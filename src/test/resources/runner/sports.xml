@@ -13,6 +13,7 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
         <!--        <groups>-->
         <!--            <run>-->

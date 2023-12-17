@@ -39,15 +39,15 @@ public class SportsCategoryPage extends BasePage {
     private WebElement shakersAndBottelsCategory;
     @FindBy(xpath = "(//div[@id='TrendItem_3']/a)[1]")
     private WebElement swimmingCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_4']/a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_4']/a)[2]")
     private WebElement boxingAndMMACategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_5']/a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_5']/a)[2]")
     private WebElement capsAndHatCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_6']/a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_6']/a)[2]")
     private WebElement bagsAndBackpacksCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_7']/a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_7']/a)[2]")
     private WebElement sportsTechCategory;
-    @FindBy(xpath = "(//div[@id='TrendItem_8']/a)[1]")
+    @FindBy(xpath = "(//div[@id='TrendItem_8']/a)[2]")
     private WebElement MensPersonalCareCategory;
     @FindBy(id = "ControllersrtArrow_trends")
     private WebElement nextIconInShopByHealthNeedSection;
