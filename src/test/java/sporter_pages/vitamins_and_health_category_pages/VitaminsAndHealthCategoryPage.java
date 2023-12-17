@@ -102,7 +102,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     @FindBy(id = "Swiper_11")
     private WebElement collagenSection;
 
-    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all4']/a")
+    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all5']/a")
     private WebElement viewAllFishOil;
     @FindBy(xpath = "//li[@id='OptionsContainerOptions_all5']/a")
     private WebElement viewAllMultivitamins;
