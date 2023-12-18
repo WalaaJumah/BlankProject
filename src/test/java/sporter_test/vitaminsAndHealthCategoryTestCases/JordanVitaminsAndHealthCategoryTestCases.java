@@ -33,10 +33,9 @@ public class JordanVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthC
         countryCode = "962";
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
-    public void verifyTheMelatoninAtLeastAProduct() throws IOException {
+    public void verifyTheMelatoninAtLeastAProduct() throws IOException, InterruptedException {
         JordanVitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new JordanVitaminsAndHealthCategoryPage(webDriver);
-        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.waitForTime(3000);
+        Thread.sleep(2500);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMelatoninSection(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
