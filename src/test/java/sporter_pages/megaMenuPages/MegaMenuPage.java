@@ -32,17 +32,17 @@ public class MegaMenuPage extends BasePage {
     private WebElement sportsMenuFromShopBy;
     @FindBy(xpath = "//ul/li[@id='cat_686']/a")
     private WebElement vitaminsAndHealthInShopByMenu;
-       @FindBy(xpath = "//ul/li[@id='cat_2583']/a")
+       @FindBy(xpath = "//ul/li[@id='menu_health-vitamins_']/a")
     private WebElement vitaminsAndHealthMenu;
 
 //    @FindBy(id = "cat_583")
-    @FindBy(xpath = "//ul/li[@id='cat_583']/a")
+    @FindBy(xpath = "//ul/li[@id='menu_sport-supplements_']/a")
     private WebElement sportsSupplementsMenu;
     //        @FindBy(id = "cat_618")
 //    private WebElement healthyFoodMenu;
-    @FindBy(xpath = "//ul/li[@ID='cat_618']/a")
+    @FindBy(xpath = "//ul/li[@id='menu_healthy-food_']/a")
     private WebElement healthyFoodMenu;
-    @FindBy(xpath = "//ul/li[@id='cat_3082']/a")
+    @FindBy(xpath = "//ul/li[@id='menu_sports_']/a")
     private WebElement sportsMenu;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;

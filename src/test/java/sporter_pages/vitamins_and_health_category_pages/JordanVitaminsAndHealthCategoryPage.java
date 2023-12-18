@@ -22,8 +22,8 @@ public class JordanVitaminsAndHealthCategoryPage extends VitaminsAndHealthCatego
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(id = "Swiper_10")
+    @FindBy(id = "(//div[starts-with(@class,'swiper-wrapper')])[7]")
     private WebElement melatoninSection;
-    @FindBy(id = "Swiper_10")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[10]")
     private WebElement collagenSection;
 }
