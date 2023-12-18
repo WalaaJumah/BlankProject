@@ -97,7 +97,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement antioxodantsSection;
     @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[9]")
     private WebElement superFoodsSection;
-    @FindBy(id = "(//div[starts-with(@class,'swiper swiper-initialized') and //div[starts-with(@class,'swiper-wrapper')]])[9]")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper swiper-initialized') and //div[starts-with(@class,'swiper-wrapper')]])[9]")
     private WebElement melatoninSection;
     @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[10]")
     private WebElement collagenSection;
