@@ -562,4 +562,9 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
         // Check if the URL is relative by looking for common indicators of relative URLs
         return !url.matches("^(http|https|ftp|ftps)://.*$");
     }
+    public static void zoomOut(WebDriver driver, int zoomFactor) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        String script = "document.body.style.transform = 'scale(" + 1.0 / zoomFactor + ")';";
+        jsExecutor.executeScript(script);
+    }
 }
