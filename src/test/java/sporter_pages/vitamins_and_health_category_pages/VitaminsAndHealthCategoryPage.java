@@ -145,6 +145,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
 
         do {
             this.clickOnNextIconInShopByHealthNeedSection();
+            DataHelperAndWait.waitForTime(500);
         }
         while (!energyFormulasCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(energyFormulasCategory, webDriver);

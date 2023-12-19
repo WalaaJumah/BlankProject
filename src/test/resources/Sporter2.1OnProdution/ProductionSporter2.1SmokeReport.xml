@@ -20,6 +20,14 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.BahrainVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KSAVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
+
+
+
+
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
@@ -66,7 +74,6 @@
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
             <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
 
@@ -77,14 +84,12 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.UAEHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.footer_test_cases.UAEFooterTestCases"></class>
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
             <class name="sporter_test.footer_test_cases.KSAFooterTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KSAVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"></class>
             <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.KSALoginTestCases"/>
@@ -98,7 +103,6 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.footer_test_cases.JordanFooterTestCases"></class>
             <!-- Bahrain Store-->
             <class name="sporter_test.homepage_test_cases.BahrainHomePageTestCases"/>
@@ -111,7 +115,6 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.BahrainHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.BahrainVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"></class>
             <class name="sporter_test.footer_test_cases.BahrainFooterTestCases"></class>
             <!-- Oman Store-->
