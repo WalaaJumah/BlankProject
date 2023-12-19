@@ -26,11 +26,11 @@ public class MegaMenuPage extends BasePage {
     private WebElement SportsSupplementsMenuFromShopBy;
     @FindBy(id = "SortItem_Vitamins & Health")
     private WebElement vitaminsAndHealthMenuFromShopBy;
-    @FindBy(id = "cat_618")
+    @FindBy(xpath = "//ul/li[@id='menu_healthy-food_']/a")
     private WebElement healthyFoodMenuFromShopBy;
-    @FindBy(xpath = "//div[@id='SortCategories_']/a[@id='cat_3082']")
+    @FindBy(xpath = "//li[@id='menu_sports_']/a")
     private WebElement sportsMenuFromShopBy;
-    @FindBy(xpath = "//ul/li[@id='cat_686']/a")
+    @FindBy(xpath = "//ul/li[@id='menu_health-vitamins_']/a")
     private WebElement vitaminsAndHealthInShopByMenu;
        @FindBy(xpath = "//ul/li[@id='menu_health-vitamins_']/a")
     private WebElement vitaminsAndHealthMenu;
@@ -52,17 +52,17 @@ public class MegaMenuPage extends BasePage {
     private WebElement subCategoriesSectionInMegaMenu;
     @FindBy(id = "TopCategoryList")
     private List<WebElement> megaMenuList;
-    @FindBy(xpath = "//li[@id='menu_105']//a")
+    @FindBy(xpath = "//ul/li[@id='menu_healthy-food_']/a")
     private WebElement healthyFoodMainMenu;
-    @FindBy(xpath = "//li[@id='menu_146']//a")
+    @FindBy(xpath = "//li[@id='menu_sports_']//a")
     private WebElement sportsMainMenu;
     @FindBy(xpath = "//ul[@id='TopCategoryList']//a")
     private List<WebElement> mainCategoriesInMegaMenu;
     @FindBy(id = "SortCategoriesContainer")
     private WebElement ShopBySubMenu;
-    @FindBy(id = "cat_1343")
+    @FindBy(id = "menu_female_")
     private WebElement womensOnlyMenu;
-      @FindBy(xpath = "//a[@id='cat_1343']")
+      @FindBy(xpath = "//a[@id='menu_female_']")
     private WebElement womensOnlyMenuFromShopBy;
 
     public MegaMenuPage(WebDriver webDriver) {

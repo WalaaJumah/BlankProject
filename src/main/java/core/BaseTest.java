@@ -98,7 +98,7 @@ public class BaseTest {
                      ChromeOptions options = new ChromeOptions();
 //                     options.addArguments("headless");
 //                     options.addArguments("disable-gpu");
-                    //                    options.addArguments("--force-device-scale-factor=0.9");
+                                        options.addArguments("--force-device-scale-factor=0.9");
                     options.addArguments("--disable-notifications");
                      options.addArguments("window-size=1200,1100");
                      webDriver = new ChromeDriver(options);
