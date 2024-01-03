@@ -104,6 +104,7 @@ public class AccountRegistrationPage extends BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError), "FaceBook is inactive " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError2), "FaceBook is unavailable " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError3), "Error Accessing App,We're sorry, but the application you're trying to use doesn't exist or has been disabled. " + webDriver.getCurrentUrl());
     }
 
 

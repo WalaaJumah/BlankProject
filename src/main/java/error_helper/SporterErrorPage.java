@@ -34,6 +34,7 @@ public class SporterErrorPage extends BasePage {
     public static final String offerNotAvailableMsg = "this offer is not available in your country";
     public static final String facebookError = "App not active";
     public static final String facebookError2 = "Feature Unavailable";
+    public static final String facebookError3 = "Error Accessing App";
     public SporterErrorPage(WebDriver webDriver) {
         super(webDriver);
     }
