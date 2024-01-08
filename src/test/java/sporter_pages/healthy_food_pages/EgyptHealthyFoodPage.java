@@ -17,7 +17,7 @@ import sporter_pages.megaMenuPages.MegaMenuPage;
 @Getter
 public class EgyptHealthyFoodPage extends HealthyFoodPage {
 
-    @FindBy(xpath = "//ul/li[@ID='cat_618']/a")
+    @FindBy(xpath = "//ul/li[@id='menu_healthy-food_']/a")
     private WebElement healthyFoodMenu;
 
     public EgyptHealthyFoodPage(WebDriver webDriver) {

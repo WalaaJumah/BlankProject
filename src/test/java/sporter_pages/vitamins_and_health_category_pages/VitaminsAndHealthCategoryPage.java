@@ -93,13 +93,13 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     @FindBy(id = "ControllersrtArrow_trends")
     private WebElement nextIconInShopByHealthNeedSection;
 //    @FindBy(id = "tab-296-all296")
-    @FindBy(id = "Swiper_8")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[8]")
     private WebElement antioxodantsSection;
-    @FindBy(id = "Swiper_9")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[9]")
     private WebElement superFoodsSection;
-    @FindBy(id = "Swiper_10")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper swiper-initialized') and //div[starts-with(@class,'swiper-wrapper')]])[9]")
     private WebElement melatoninSection;
-    @FindBy(id = "Swiper_11")
+    @FindBy(xpath = "(//div[starts-with(@class,'swiper-wrapper')])[10]")
     private WebElement collagenSection;
 
     @FindBy(xpath = "//li[@id='OptionsContainerOptions_all5']/a")
@@ -116,7 +116,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement viewAllSuperFoods;
    @FindBy(xpath = "//li[@id='OptionsContainerOptions_all7']/a")
     private WebElement viewAllMelatonin;
-   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all10']/a")
+   @FindBy(xpath = "//li[@id='OptionsContainerOptions_all11']/a")
     private WebElement viewAllCollagen;
 
 
@@ -145,6 +145,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
 
         do {
             this.clickOnNextIconInShopByHealthNeedSection();
+            DataHelperAndWait.waitForTime(500);
         }
         while (!energyFormulasCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(energyFormulasCategory, webDriver);

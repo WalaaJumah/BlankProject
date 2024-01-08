@@ -459,7 +459,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
-    public void verifyTheMelatoninAtLeastAProduct() throws IOException {
+    public void verifyTheMelatoninAtLeastAProduct() throws IOException, InterruptedException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(3000);

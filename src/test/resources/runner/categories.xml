@@ -3,11 +3,11 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="cart_suite">
     <listeners>
-        <!-- <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+<!--         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+        <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
-    <test name="categories_suite" preserve-order="true">
-        <parameter name="environment" value="https://www.sporter.com"/>
+    <test name="categories_suite stg" preserve-order="true">
+        <parameter name="environment" value="https://stg.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
@@ -22,8 +22,7 @@
         <!--        </groups>-->
         <classes>
 
-<!--Vitamins & Health-->
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
+            <!--Vitamins & Health-->
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.OmanVitaminsAndHealthCategoryTestCases"/>
@@ -43,18 +42,18 @@
             <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"/>
 
-<!--            Women's Only-->
+            <!--            Women's Only-->
             <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.IraqWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
-<!--            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>-->
+            <!--            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>-->
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
 
-<!--            Sports Supplement-->
+            <!--            Sports Supplement-->
             <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"/>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"/>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"/>
@@ -65,7 +64,77 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"/>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"/>
 
-<!--            Healthy Food-->
+            <!--            Healthy Food-->
+            <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.KuwaitHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.BahrainHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.QatarHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.UAEHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"/>
+        </classes>
+    </test>
+    <test name="categories_suite qa1" preserve-order="true">
+        <parameter name="environment" value="https://qa1.sporter.com"/>
+        <parameter name="browser" value="chrome"/>
+        <!-- <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
+        <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+
+        <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name="All Smoke Testing Result"/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+
+            <!--Vitamins & Health-->
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.OmanVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.BahrainVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.QatarVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KSAVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.IraqVitaminsAndHealthCategoryTestCases"/>
+            <!--            Sports-->
+            <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"/>
+            <!--            <class name="sporter_test.sports_category_test_cases.EgyptSportsCategoryTestCases"/>-->
+            <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.OmanSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"/>
+
+            <!--            Women's Only-->
+            <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.IraqWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
+            <!--            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>-->
+            <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
+
+            <!--            Sports Supplement-->
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.QatarSportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"/>
+
+            <!--            Healthy Food-->
             <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"/>
             <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"/>
             <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"/>
