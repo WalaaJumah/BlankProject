@@ -1,9 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName sporter-web-automation
- * @classDescription This class contains all Assertion Methods
- */
-
 package core;
 
 import org.openqa.selenium.TimeoutException;
@@ -47,14 +41,8 @@ public class WebElementsAssertion {
     }
 
     public static boolean checkIfElementIsNull(WebElement webElement) {
-        if (webElement == null) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return webElement == null;
     }
-
     public static void assertionTextIsEqual(WebElement webElement, WebDriver webDriver, String text) {
         if(webElement==null)
             throw new RuntimeException("The element is null:"+webElement);
@@ -98,7 +86,7 @@ public class WebElementsAssertion {
 
     }
 
-    public static void assertionWebElementConatinsText(WebElement webElement, WebDriver webDriver, String expectedText) {
+    public static void assertionWebElementContainsText(WebElement webElement, WebDriver webDriver, String expectedText) {
         DataHelperAndWait.waitToBeVisible(webElement, webDriver);
         Assert.assertEquals(webElement.getText().contains(expectedText), expectedText, "The element does not contains : " + expectedText + "And the Actual Text is: " + webElement.getText() + " The URL is: " + webDriver.getCurrentUrl());
 

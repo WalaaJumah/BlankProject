@@ -1,7 +1,8 @@
 package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,100 +11,34 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
-//    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
-//    @Parameters({"environment"})
-//
-//    public BaseTest(@Optional("production") String environment) throws Exception {
-//      this.setupBrowser(environment);
-//        }
-
-
-    public static String environmentName;
+    //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public static String browserName;
-    public static String countryUrl;
-    //    public  String siteURL = "https://www.sporter.com";
-    public final String aeDomain = "/en-ae";
-    public final String websiteEnglishLanguage = "/en";
-    public final String websiteArabicLanguage = "/ar";
-    public final String stgSiteURL = "https://stg.sporter.com";
-    public final String stgTestSiteURL = "https://stg-test.sporter.com";
-    public final String staging2SiteURL = "https://staging2.sporter.com";
-    public final String cartURL = "/checkout/cart/";
-    public final String aeSiteURL = "/en-ae/";
-    public final String ksaSiteURL = "/ar-sa/";
-    public final String qatarSiteURL = "/en-qa/";
-    public final String checkoutLoginStepURL = "/checkout";
-    public final String freeCouponeCode = "spo15";
-    public final String discaountCouponeCode = "";
-    public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public WebDriver webDriver;
 
-    public void CloseInitialDialog() {
-        try {
-            WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
-            DataHelperAndWait.waitToBeClickable(btnCloseElement, webDriver);
-            if (btnCloseElement != null
-                    && btnCloseElement.isDisplayed()) {
-                DataHelperAndWait.clickOnElement(btnCloseElement, webDriver);
-            }
-        } catch (NoSuchElementException ex) {
-            try {
-                WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
-                if (btnCloseElement != null
-                        && btnCloseElement.isDisplayed()) {
-                    DataHelperAndWait.clickOnElement(btnCloseElement, webDriver);
-                }
-            } catch (Exception e) {
-                e.getMessage();
-            }
-        }
-    }
-
-    // The Below Method to run the TCs on Onc Browser like Chrome
-
     @BeforeClass(alwaysRun = true)
-    @Parameters({"environment", "browser", "country", "bogoProduct", "oOSProduct", "bundleProductUrl","enable_who_bought_this_also_bought_config"})
-    public void setupBrowser(String environment, String browser, @Optional("") String country, String bogoProduct, String oOSProduct, String bundleProductUrl, boolean enableWhoBoughtThisAlsoBoughtConfig) throws Exception {
-        environmentName = environment;
+    @Parameters({"baseUrl", "browser"})
+    public void setupBrowser(String baseUrl, String browser) throws Exception {
         this.browserName = browser;
-        BasePage.BaseURL = environment;
-        this.countryUrl = country;
-        BasePage.bogoProduct = bogoProduct;
-        BasePage.oOSProductUrl = oOSProduct;
-        BasePage.bundleUrl = bundleProductUrl;
-        BasePage.enableWhoBoughtThisAlsoBoughtConfig=enableWhoBoughtThisAlsoBoughtConfig;
+        BasePage.BaseURL = baseUrl;
         try {
             switch (browser) {
                 case "firefox":
-                    //selenium 4.10
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
                     webDriver = new FirefoxDriver(firefoxOptions);
                     break;
                 case "chrome":
-                    //Selenium Version4.10
-//                    WebDriverManager.chromedriver().setup();
-////                    ChromeOptions chromeOptions = new ChromeOptions();
-////                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-////                    webDriver = new ChromeDriver(chromeOptions);
-//                    webDriver = new ChromeDriver();
-//                    webDriver.navigate().to(BasePage.BaseURL);
-
-                     ChromeOptions options = new ChromeOptions();
+                    ChromeOptions options = new ChromeOptions();
 //                     options.addArguments("headless");
 //                     options.addArguments("disable-gpu");
-                                        options.addArguments("--force-device-scale-factor=0.9");
+                    options.addArguments("--force-device-scale-factor=0.9");
                     options.addArguments("--disable-notifications");
-                     options.addArguments("window-size=1200,1100");
-                     webDriver = new ChromeDriver(options);
-//                     webDriver.navigate().to("https://www.sporter.com");
-
+                    options.addArguments("window-size=1200,1100");
+                    webDriver = new ChromeDriver(options);
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
@@ -117,26 +52,23 @@ public class BaseTest {
             }
             webDriver.manage().window().maximize();
             webDriver.navigate().to(BasePage.BaseURL);
-//            webDriver.navigate().to(environment + "/" + country);
-//            this.//CloseInitialDialog();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             tearDown();
             switch (browser) {
                 case "firefox":
-                    //selenium 4.10
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
                     webDriver = new FirefoxDriver(firefoxOptions);
                     break;
                 case "chrome":
-                    //Selenium Version4.10
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-                    webDriver = new ChromeDriver(chromeOptions);
-                    webDriver.navigate().to("https://www.sporter.com");
+                    ChromeOptions options = new ChromeOptions();
+//                     options.addArguments("headless");
+//                     options.addArguments("disable-gpu");
+                    options.addArguments("--force-device-scale-factor=0.9");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("window-size=1200,1100");
+                    webDriver = new ChromeDriver(options);
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
@@ -149,10 +81,10 @@ public class BaseTest {
                     throw new Exception("Browser is not correct");
             }
             webDriver.manage().window().maximize();
-            webDriver.navigate().to(environment + "/" + country);
-//            this.//CloseInitialDialog();
+            webDriver.navigate().to(BasePage.BaseURL);
         }
     }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (webDriver != null)

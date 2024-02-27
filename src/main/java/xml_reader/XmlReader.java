@@ -1,8 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName sporter-web-automation
- * @classDescription This class is a XML reader
- */
 
 package xml_reader;
 
@@ -16,7 +11,7 @@ import java.util.ArrayList;
 
 public class XmlReader {
     public static String getXMLData(String dataFor) {
-        String nodeValue = null;
+        String nodeValue;
         try {
             File file = new File("src/test/resources/TestData.xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -30,7 +25,7 @@ public class XmlReader {
         return nodeValue;
     }
     public static String getXMLDataFromFile(String dataFor,String filePath) {
-        String nodeValue = null;
+        String nodeValue;
         try {
             File file = new File(filePath);
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

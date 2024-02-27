@@ -6,9 +6,7 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
-
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
@@ -17,10 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
-
 public  class DataHelperAndWait  {
 
     private static int WaitTime=15;
@@ -30,7 +25,7 @@ public  class DataHelperAndWait  {
 public static void navigateToUrl(String uRL, WebDriver webDriver) {
     webDriver.navigate().to(uRL);
 }
-    public static   void waitForElement(WebElement element, WebDriver webDriver) {
+    public static void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
