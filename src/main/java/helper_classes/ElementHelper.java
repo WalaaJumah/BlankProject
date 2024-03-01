@@ -1,9 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName price_comparison_tool
- * @classDescription
- */
-
 package helper_classes;
 
 import org.openqa.selenium.*;
@@ -51,14 +45,11 @@ public class ElementHelper {
     }
 
     public static ExpectedCondition<Alert> HandleAlertInner(WebDriver driver) {
-        return new ExpectedCondition<Alert>() {
-            @Override
-            public Alert apply(WebDriver driver) {
-                try {
-                    return driver.switchTo().alert();
-                } catch (NoAlertPresentException e) {
-                    return null;
-                }
+        return driver1 -> {
+            try {
+                return driver1.switchTo().alert();
+            } catch (NoAlertPresentException e) {
+                return null;
             }
         };
     }
@@ -192,7 +183,7 @@ public class ElementHelper {
                 element.sendKeys(character);
 
                 try {
-                    Thread.sleep(WaitHelper.getRandomWaitTimeInMiliSec(1, 3));
+                    Thread.sleep(WaitHelper.getRandomWaitTimeInMilliSec(1, 3));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -205,7 +196,7 @@ public class ElementHelper {
                 element.sendKeys(character);
 
                 try {
-                    Thread.sleep(WaitHelper.getRandomWaitTimeInMiliSec(1, 3));
+                    Thread.sleep(WaitHelper.getRandomWaitTimeInMilliSec(1, 3));
                 } catch (InterruptedException e1) {
                     e.printStackTrace();
                 }

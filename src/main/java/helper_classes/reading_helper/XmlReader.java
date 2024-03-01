@@ -1,9 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName sporter-web-automation
- * @classDescription This class is a XML reader
- */
-
 package helper_classes.reading_helper;
 
 import org.w3c.dom.Node;
@@ -17,7 +11,7 @@ import java.util.ArrayList;
 
 public class XmlReader {
     public static String getXMLData(String dataFor) {
-        String nodeValue = null;
+        String nodeValue;
         try {
 //            File file = new File("src/test/resources/DrNutritionData.xml");
             InputStream inputStream = XmlReader.class.getClassLoader().getResourceAsStream("DrNutritionData.xml");

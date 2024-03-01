@@ -1,18 +1,11 @@
-/**
- * @author w.jumaa
- * @projectName Talent-Seeker_Tool
- * @classDescription
- */
-
 package helper_classes.reading_helper;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
 public class PropertiesHelpers {
-    private static String filePath ="src/main/resources/ConfigFiles/config.properties";
+    private static final String filePath ="src/main/resources/ConfigFiles/config.properties";
     public static Properties loadProperties() {
         Properties properties = new Properties();
         try (FileInputStream fileInput = new FileInputStream(filePath)) {
@@ -23,6 +16,7 @@ public class PropertiesHelpers {
         }
         return properties;
     }
+
     static Properties prop = new Properties();
     public static String getValue(String key)  {
         try {
@@ -34,14 +28,15 @@ public class PropertiesHelpers {
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
+
     public static void printAllKeysAndValues(String filePath) throws IOException {
         File configFile = new File(filePath);
         InputStream stream = new FileInputStream(configFile);
         prop.load(stream);
         prop.forEach((key, value) -> System.out.println("Key : " + key + ", Value : " + value));
     }
+
     public static List<String> getListFromProperty(String propertyValue) {
              propertyValue = PropertiesHelpers.getValue(propertyValue);
             if (propertyValue != null && !propertyValue.isEmpty()) {
@@ -49,4 +44,5 @@ public class PropertiesHelpers {
             }
             return null;
     }
+
 }

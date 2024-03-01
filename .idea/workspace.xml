@@ -7,6 +7,13 @@
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update My Account">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/DataExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/DataExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/DataTypeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/DataTypeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/URLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/URLHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/PropertiesHelpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/PropertiesHelpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/XmlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/XmlReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/ConfigFiles/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/ConfigFiles/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/main/java/helper_classes",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/test/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -77,11 +84,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\main\java\helper_classes" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tamara_payment_method_pages" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test\tamara_payment_method_test_cases" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tabby_payment_method_pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources\test_runner" />
@@ -91,6 +98,7 @@
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="helper_classes.reading_helper" />
       <recent name="helper_classes" />
     </key>
   </component>

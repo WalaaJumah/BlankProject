@@ -1,14 +1,7 @@
-/**
- * @author w.jumaa
- * @projectName price_comparison_tool
- * @classDescription
- */
-
 package helper_classes;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -29,8 +22,7 @@ public class DataExtractor {
                 WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
                 String text = element.getText();
 //        String numberOnly= text.replaceAll("[^0-9]", "");
-                String numberOnly = text.replaceAll("[^0-9.]", "");
-                return numberOnly;
+                return text.replaceAll("[^0-9.]", "");
             }
         } catch (NumberFormatException e) {
             return "free";
@@ -45,8 +37,7 @@ public class DataExtractor {
                 WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
                 String text = element.getText();
 //        String numberOnly= text.replaceAll("[^0-9]", "");
-                String numberOnly = text.replaceAll("[^-\\d.]", "");
-                return numberOnly;
+                return text.replaceAll("[^-\\d.]", "");
             }
         } catch (Exception e) {
             return null;
@@ -57,30 +48,23 @@ public class DataExtractor {
     public static String extractFirstNumberFromString(WebElement element, WebDriver webDriver) {
         String input = element.getText();
         String[] parts = input.split(" ");
-        String firstNumber = parts[1];
-        return firstNumber;
+        return parts[1];
     }
 
     public static String extractFirstCurrencyFromString(WebElement element, WebDriver webDriver) {
         String input = element.getText();
-        String[] parts = input.split(" ");
-        String firstNumber = parts[0];
-        return firstNumber;
+        return input.split(" ")[0];
     }
 
 
     public static String extractLettersFromString(WebElement element, WebDriver webDriver, int WaitTime) {
         WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        String text = element.getText();
-        String numberOnly = text.replaceAll("[^a-zA-Z]", "");
-        return numberOnly;
+        return element.getText().replaceAll("[^a-zA-Z]", "");
     }
 
     public static String extractCharacterFromString(WebElement element, WebDriver webDriver, int WaitTime) {
         WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        String text = element.getText();
-        String character = text.replaceAll("[^0-9.]", "");
-        return character;
+        return element.getText().replaceAll("[^0-9.]", "");
     }
 
     public static String extractProductNameFromUrl(String url) {
@@ -159,10 +143,8 @@ public class DataExtractor {
             String input = element.getText();
             Pattern pattern = Pattern.compile("(\\d+)%");
             Matcher matcher = pattern.matcher(input);
-
             if (matcher.find()) {
-                String numberString = matcher.group(1);
-                return numberString;
+                return matcher.group(1);
             }
         }
         return null;

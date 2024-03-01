@@ -1,9 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName sporter-web-automation
- * @classDescription This class contains all Assertion Methods
- */
-
 package helper_classes;
 
 import helper_classes.reading_helper.XmlReader;
@@ -11,6 +5,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import java.util.List;
 
 public class AssertionHelper {
@@ -46,12 +41,7 @@ public class AssertionHelper {
     }
 
     public static boolean checkIfElementIsNull(WebElement webElement) {
-        if (webElement == null) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return webElement == null;
     }
 
     public static void assertionTextIsEqual(WebElement webElement, WebDriver webDriver, String text, int waitTime) {
@@ -93,7 +83,7 @@ public class AssertionHelper {
 
     }
 
-    public static void assertionWebElementConatinsText(WebElement webElement, WebDriver webDriver, String expectedText, int waitTime) {
+    public static void assertionWebElementContainsText(WebElement webElement, WebDriver webDriver, String expectedText, int waitTime) {
         WaitHelper.waitToBeVisible(webElement, webDriver, waitTime);
         Assert.assertEquals(webElement.getText().contains(expectedText), expectedText, "The element does not contains : " + expectedText + "And the Actual Text is: " + webElement.getText() + " The URL is: " + webDriver.getCurrentUrl());
 
@@ -116,5 +106,4 @@ public class AssertionHelper {
         }
 
     }
-
 }

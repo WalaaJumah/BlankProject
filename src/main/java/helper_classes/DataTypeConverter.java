@@ -1,9 +1,3 @@
-/**
- * @author w.jumaa
- * @projectName price_comparison_tool
- * @classDescription
- */
-
 package helper_classes;
 
 import org.openqa.selenium.WebDriver;
@@ -40,12 +34,9 @@ public class DataTypeConverter {
 
         int digitsAfterDecimal = str.length() - decimalIndex - 1;
         String strippedString = str.replace(".", "");
-
         double doubleValue = Double.parseDouble(strippedString);
         double divisor = Math.pow(10, digitsAfterDecimal);
-        double finalValue = doubleValue / divisor;
-
-        return finalValue;
+        return doubleValue / divisor;
     }
 
     public float convertTheStringToFloatLatest(WebElement element, WebDriver webDriver, String currency, int waitTime) {

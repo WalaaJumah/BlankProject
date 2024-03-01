@@ -36,9 +36,9 @@ public class WaitHelper {
         return random.nextInt((max - min) + 1) + min;
     }
 
-    public static void waitForTime(int milis) {
+    public static void waitForTime(int mills) {
         try {
-            Thread.sleep(milis);
+            Thread.sleep(mills);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class WaitHelper {
         Thread.sleep(randomWaitTime * 1000);
     }
 
-    public static int getRandomWaitTimeInMiliSec(int min, int max) throws InterruptedException, IOException {
+    public static int getRandomWaitTimeInMilliSec(int min, int max) throws InterruptedException, IOException {
         int randomWaitTime = getRandomNumberInRange(min, max);
         System.out.println("The Random Wait time is: " + randomWaitTime + " sec");
         return randomWaitTime * 100;
@@ -81,11 +81,11 @@ public class WaitHelper {
     }
 
     public static void fluentWait(WebElement element, int pollingEveryTime, WebDriver webDriver, int WaitTime) {
-        Wait<WebDriver> Fwait = new FluentWait<WebDriver>(webDriver)
+        Wait<WebDriver> FWait = new FluentWait<WebDriver>(webDriver)
                 .withTimeout(Duration.ofSeconds(WaitTime))
                 .pollingEvery(Duration.ofSeconds(pollingEveryTime))
                 .ignoring(NoSuchElementException.class);
-        WebElement waitElement = Fwait.until(new Function<WebDriver, WebElement>() {
+        WebElement waitElement = FWait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
                 if (element.isDisplayed()) {
                 }

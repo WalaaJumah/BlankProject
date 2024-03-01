@@ -33,16 +33,7 @@ public class BasePage {
         pageSource = webDriver.getPageSource();
         return pageSource;
     }
-    public void getStatusCode(String uRL) throws IOException {
-        HttpURLConnection cn = (HttpURLConnection) new
-                URL(uRL)
-                .openConnection();
-        cn.setRequestMethod("HEAD");
-        cn.connect();
-        int c = cn.getResponseCode();
-        System.out.println("Http status code: " + c);
-        Assert.assertNotEquals(c, 500, "Http status code: " + c);
-    }
+
     public void verifyTheDisplayedPageDoesNotHaveErrors(){
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(EurekaErrorPage.internalServerErrorEn), "Internal Server Error! Please Try Later page is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(EurekaErrorPage.internalServerErrorEn), "Internal Server Error! Please Try Later page is Displayed and the URL is" + webDriver.getCurrentUrl());
@@ -55,4 +46,3 @@ public class BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }
-
