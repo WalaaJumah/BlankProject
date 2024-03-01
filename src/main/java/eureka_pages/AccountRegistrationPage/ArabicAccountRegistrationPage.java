@@ -6,7 +6,6 @@
 
 package eureka_pages.AccountRegistrationPage;
 
-import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

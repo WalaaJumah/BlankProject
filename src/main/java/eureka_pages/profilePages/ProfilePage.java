@@ -7,7 +7,6 @@
 package eureka_pages.profilePages;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
