@@ -1,7 +1,3 @@
-/*
- * @author : Wala'a Mohammad
- *
- */
 package extent_report_listner;
 
 import com.relevantcodes.extentreports.ExtentReports;
