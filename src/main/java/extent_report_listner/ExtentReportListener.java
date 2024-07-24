@@ -1,3 +1,7 @@
+/*
+ * @author : Wala'a Mohammad
+ *
+ */
 package extent_report_listner;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -13,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
+//walaa
 public class ExtentReportListener implements IReporter {
     String pattern = "yyyy-MM-dd-hh-mm-ss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

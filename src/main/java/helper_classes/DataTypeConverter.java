@@ -1,26 +1,26 @@
 package helper_classes;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class DataTypeConverter {
-    public static float convertTheStringToFloat(WebElement element, WebDriver webDriver, String currency, int WaitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        String elementValue = element.getText();
+public class DataTypeConverter extends Helper {
+    public static float convertTheStringToFloat(By element, WebDriver webDriver, String currency) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
 
-    public static int convertTheStringToInt(WebElement element, WebDriver webDriver, int WaitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        String elementValue = element.getText();
+    public static int convertTheStringToInt(By element, WebDriver webDriver) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         return Integer.parseInt(elementValue);
     }
 
-    public static double convertStringToDouble(WebElement element, WebDriver webDriver, String currency, int WaitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        String elementValue = element.getText();
+    public static double convertStringToDouble(By element, WebDriver webDriver, String currency) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Double.parseDouble(elementValueWithoutSpace);
@@ -39,23 +39,23 @@ public class DataTypeConverter {
         return doubleValue / divisor;
     }
 
-    public float convertTheStringToFloatLatest(WebElement element, WebDriver webDriver, String currency, int waitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, waitTime);
-        String elementValue = element.getText();
+    public float convertTheStringToFloatLatest(By element, WebDriver webDriver, String currency) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
 
-    public int convertTheStringToIntLatest(WebElement element, WebDriver webDriver, int waitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, waitTime);
-        String elementValue = element.getText();
+    public int convertTheStringToIntLatest(By element, WebDriver webDriver) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         return Integer.parseInt(elementValue);
     }
 
-    public Double convertStringToDoubleLatest(WebElement element, WebDriver webDriver, String currency, int waitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, waitTime);
-        String elementValue = element.getText();
+    public Double convertStringToDoubleLatest(By element, WebDriver webDriver, String currency) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        String elementValue = webDriver.findElement(element).getText();
         String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Double.parseDouble(elementValueWithoutSpace);

@@ -1,4 +1,3 @@
-
 package xml_reader;
 
 import org.w3c.dom.Node;
@@ -13,7 +12,7 @@ public class XmlReader {
     public static String getXMLData(String dataFor) {
         String nodeValue;
         try {
-            File file = new File("src/test/resources/TestData.xml");
+            File file = new File("src/test/resources/ConfigFiles/TestData.xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             org.w3c.dom.Document document = documentBuilder.parse(file);
@@ -24,7 +23,8 @@ public class XmlReader {
 
         return nodeValue;
     }
-    public static String getXMLDataFromFile(String dataFor,String filePath) {
+
+    public static String getXMLDataFromFile(String dataFor, String filePath) {
         String nodeValue;
         try {
             File file = new File(filePath);
@@ -38,6 +38,7 @@ public class XmlReader {
 
         return nodeValue;
     }
+
     public static ArrayList<String> getChildNodeValuesAsArray(String dataFor) {
 
         ArrayList<String> array = new ArrayList<>();

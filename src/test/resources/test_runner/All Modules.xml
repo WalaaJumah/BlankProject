@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name="HomePage">
+    <listeners>
+        <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+        <!--        <listener class-name="org.testng.reporters.EmailableReporter"/>-->
+    </listeners>
+    <test name="Automation Report " preserve-order="true">
+        <parameter name="baseUrl" value="https://www.eurekajo.com/"/>
+
+        <parameter name="browser" value="chrome"/>
+
+        <parameter name="ApartmentAdNumber" value="15099"/>
+        <parameter name="VillaAdNumber" value="15083"/>
+
+        <parameter name="FarmAdNumber" value="24448"/>
+        <parameter name="LandAdNumber" value="26343"/>
+        <parameter name="RentApartmentAdNumber" value="22711"/>
+        <parameter name="RentVillaAdNumber" value="24436"/>
+        <parameter name="RentFarmAdNumber" value="5003"/>
+        <parameter name="RentLandAdNumber" value="23298"/>
+        <parameter name="FullAdName" value="شقة سوبر ديلوكس مساحة 165م طابق ثالث "/>
+        <!--                        <groups>-->
+        <!--                            <run>-->
+        <!--                                <include name="All Smoke Testing Result"/>-->
+        <!--                            </run>-->
+        <!--                        </groups>-->
+        <classes>
+            <class name="eureka_test.search_test_cases.EnglishSearchTestCases"></class>
+            <class name="eureka_test.search_test_cases.ArabicSearchTestCases2"></class>
+            <class name="eureka_test.property_details_test_cases.EnglishPropertyDetailsTestCases"/>
+            <class name="eureka_test.property_details_test_cases.ArabicPropertyDetailsTestCases"/>
+            <class name="eureka_test.my_properties_test_cases.my_Properties_test_cases.ArabicMyPropertiesTestCases"/>
+            <class name="eureka_test.my_properties_test_cases.my_Properties_test_cases.EnglishMyPropertiesTestCases"/>
+            <class name="eureka_test.list_property_test_cases.add_Apartment.EnglishAddApartmentTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_Apartment.ArabicAddApartmentTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_villa_house.ArabicAddVillaHouseTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_villa_house.EnglishAddVillaHouseTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_farm.ArabicAddFarmTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_farm.EnglishAddFarmTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_land.EnglishAddLandTestCases"></class>
+            <class name="eureka_test.list_property_test_cases.add_land.ArabicAddLandTestCases"></class>
+
+
+
+
+
+            <class name="eureka_test.homepage_test_cases.ArabicHomePageTestCases"></class>
+            <class name="eureka_test.homepage_test_cases.EnglishHomePageTestCases"></class>
+
+
+            <class name="eureka_test.my_profile_test_cases.ArabicMyProfileTestCases"/>
+            <class name="eureka_test.my_profile_test_cases.EnglishMyProfileTestCases"/>
+            <class name="eureka_test.my_properties_test_cases.favorite_properties_test_cases.ArabicFavoritePropertiesTestCases"/>
+            <class name="eureka_test.my_properties_test_cases.favorite_properties_test_cases.EnglishFavoritePropertiesTestCases"/>
+
+
+            <class name="eureka_test.signup_test_cases.EnglishSignUpTestCases"></class>
+            <class name="eureka_test.signup_test_cases.ArabicSignUpTestCases"></class>
+
+
+            <class name="eureka_test.forget_password_test_cases.ArabicForgetPasswordTestCases"></class>
+            <class name="eureka_test.forget_password_test_cases.EnglishForgetPasswordTestCases"></class>
+
+
+            <class name="eureka_test.login_test_cases.ArabicLoginTestCases"></class>
+            <class name="eureka_test.login_test_cases.EnglishLoginTestCases"></class>
+
+
+
+        </classes>
+
+
+    </test>
+
+</suite>

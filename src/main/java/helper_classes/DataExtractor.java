@@ -1,7 +1,9 @@
 package helper_classes;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,28 +16,72 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DataExtractor {
-    public static String extractDigitsFromString(WebElement element, WebDriver webDriver, int WaitTime) {
+public class DataExtractor extends Helper {
+    public static String extractDigitsFromString(By element, WebDriver webDriver) {
         try {
-            if (element.isDisplayed()) {
+            if (webDriver.findElement(element).isDisplayed()) {
 
-                WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-                String text = element.getText();
+                WaitHelper.waitToBeVisible(element, webDriver);
+                String text = webDriver.findElement(element).getText();
 //        String numberOnly= text.replaceAll("[^0-9]", "");
                 return text.replaceAll("[^0-9.]", "");
             }
-        } catch (NumberFormatException e) {
-            return "free";
+        } catch (Exception e) {
+            if (webDriver.findElement(element).isDisplayed()) {
+
+                WaitHelper.waitToBeVisible(element, webDriver);
+                String text = webDriver.findElement(element).getText();
+//        String numberOnly= text.replaceAll("[^0-9]", "");
+                return text.replaceAll("[^0-9.]", "");
+            }
         }
         return "";
     }
 
-    public static String extractNegativeNumberFromString(WebElement element, WebDriver webDriver, int WaitTime) {
-        try {
-            if (element.isDisplayed()) {
+    // Method to generate a random Jordanian phone number
+    public static String generateJordanPhoneNumber() {
+        Random rand = new Random();
 
-                WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-                String text = element.getText();
+        // Randomly select the prefix (79, 77, or 78)
+        String[] prefixes = {"79", "77", "78"};
+        String prefix = prefixes[rand.nextInt(prefixes.length)];
+
+        // Generate 7 random digits
+        StringBuilder phoneNumber = new StringBuilder(prefix);
+        for (int i = 0; i < 7; i++) {
+            phoneNumber.append(rand.nextInt(10)); // Appending a random digit (0-9)
+        }
+
+        return phoneNumber.toString();
+    }
+
+    // Method to match entered password with actual password
+    public static boolean matchPasswords(String enteredPassword, String actualPassword) {
+        // Check if lengths are different
+        if (enteredPassword.length() != actualPassword.length()) {
+            return false;
+        }
+
+        // Compare characters one by one
+        for (int i = 0; i < enteredPassword.length(); i++) {
+            char enteredChar = enteredPassword.charAt(i);
+            char actualChar = actualPassword.charAt(i);
+            // Compare characters directly without case conversion
+            if (enteredChar != actualChar) {
+                return false;
+            }
+        }
+
+        // If all characters match, return true
+        return true;
+    }
+
+    public static String extractNegativeNumberFromString(By element, WebDriver webDriver) {
+        try {
+            if (webDriver.findElement(element).isDisplayed()) {
+
+                WaitHelper.waitToBeVisible(element, webDriver);
+                String text = webDriver.findElement(element).getText();
 //        String numberOnly= text.replaceAll("[^0-9]", "");
                 return text.replaceAll("[^-\\d.]", "");
             }
@@ -57,14 +103,14 @@ public class DataExtractor {
     }
 
 
-    public static String extractLettersFromString(WebElement element, WebDriver webDriver, int WaitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        return element.getText().replaceAll("[^a-zA-Z]", "");
+    public static String extractLettersFromString(By element, WebDriver webDriver) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        return webDriver.findElement(element).getText().replaceAll("[^a-zA-Z]", "");
     }
 
-    public static String extractCharacterFromString(WebElement element, WebDriver webDriver, int WaitTime) {
-        WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-        return element.getText().replaceAll("[^0-9.]", "");
+    public static String extractCharacterFromString(By element, WebDriver webDriver) {
+        WaitHelper.waitToBeVisible(element, webDriver);
+        return webDriver.findElement(element).getText().replaceAll("[^0-9.]", "");
     }
 
     public static String extractProductNameFromUrl(String url) {
@@ -137,10 +183,10 @@ public class DataExtractor {
         return sb.toString();
     }
 
-    public static String extractFirstNumberBeforePercent(WebElement element, WebDriver webDriver, int WaitTime) {
-        if (element.isDisplayed()) {
-            WaitHelper.waitToBeVisible(element, webDriver, WaitTime);
-            String input = element.getText();
+    public static String extractFirstNumberBeforePercent(By element, WebDriver webDriver) {
+        if (webDriver.findElement(element).isDisplayed()) {
+            WaitHelper.waitToBeVisible(element, webDriver);
+            String input = webDriver.findElement(element).getText();
             Pattern pattern = Pattern.compile("(\\d+)%");
             Matcher matcher = pattern.matcher(input);
             if (matcher.find()) {

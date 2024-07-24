@@ -11,12 +11,12 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 
-public class URLHelper {
+public class URLHelper extends Helper {
     public static void navigateToUrl(String uRL, WebDriver webDriver) {
         webDriver.navigate().to(uRL);
     }
 
-    public static void waitForUrlContains(String expectedString, WebDriver driver, int WaitTime) {
+    public static void waitForUrlContains(String expectedString, WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WaitTime));
         ExpectedCondition<Boolean> urlIsCorrect = arg0 -> driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
@@ -30,6 +30,7 @@ public class URLHelper {
         ArrayList<String> numberOfTabsTwo = new ArrayList<>(webDriver.getWindowHandles());
         webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));
     }
+
     public void getStatusCode(String uRL) throws IOException {
         HttpURLConnection cn = (HttpURLConnection) new
                 URL(uRL)

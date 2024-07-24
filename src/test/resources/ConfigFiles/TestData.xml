@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Data>
+    <HomePage>
+        <YouTubeVideoAr>فيديو قصير للمساعدة في استخدام الموقع</YouTubeVideoAr>
+        <YouTubeVideoEn>Short video to help use the site</YouTubeVideoEn>
+        <YouTubeVideoSearchAr>شاهد الفيديو القصير للمساعدة في البحث عن عقار</YouTubeVideoSearchAr>
+        <YouTubeVideoSearchEn>Watch the short video to help find a realestate</YouTubeVideoSearchEn>
+        <BuyAr>للبيع</BuyAr>
+        <BuyEn>Buy</BuyEn>
+        <RentAr>للايجار</RentAr>
+        <RentEn>Rent</RentEn>
+        <ApartmentAr>شقة</ApartmentAr>
+        <ApartmentEn>Apartment</ApartmentEn>
+        <VillaHouseAr>فيلا/منزل مستقل</VillaHouseAr>
+        <VillaHouseEn>Villa/House</VillaHouseEn>
+        <FarmAr>مزرعة</FarmAr>
+        <FarmEn>Farm</FarmEn>
+        <LandAr>ارض</LandAr>
+        <LandSecondAr>أرض</LandSecondAr>
+        <LandEn>Land</LandEn>
+        <TabTitleAr>يوريكا جو - التطبيق العقاري الأول في الأردن</TabTitleAr>
+        <TabTitleEn>EurekaJo - The number 1 platform for real-estate in Jordan</TabTitleEn>
+        <HeaderTitleEn>Homes and Lands in Jordan</HeaderTitleEn>
+        <HeaderTitleAr>بيوت وأراضي الأردن</HeaderTitleAr>
+        <ScrollDownBtnAr>الأسفل</ScrollDownBtnAr>
+        <ScrollDownBtnEn>SCROLL DOWN</ScrollDownBtnEn>
+        <FeaturedHeaderFirstTitleAr>العقارات المميزة</FeaturedHeaderFirstTitleAr>
+        <FeaturedHeaderSecondTitleAr>تحقق من عقاراتنا المميزة</FeaturedHeaderSecondTitleAr>
+        <FeaturedHeaderFirstTitleEn>Featured Places</FeaturedHeaderFirstTitleEn>
+        <FeaturedHeaderSecondTitleEn>Check out our Featured places</FeaturedHeaderSecondTitleEn>
+        <RecentlyAddedHeaderFirstTitleEn>Recently Added</RecentlyAddedHeaderFirstTitleEn>
+        <RecentlyAddedSecondTitleEn>Check out latest properties</RecentlyAddedSecondTitleEn>
+        <CustomersStoriesHeaderFirstTitleEn>Customers Stories</CustomersStoriesHeaderFirstTitleEn>
+        <CustomersStoriesHeaderSecondTitleEn>Success stories of eurekajo users</CustomersStoriesHeaderSecondTitleEn>
+        <LearnMoreEn>Learn More</LearnMoreEn>
+        <RecentlyAddedHeaderFirstTitleAr>احدث العقارات</RecentlyAddedHeaderFirstTitleAr>
+        <RecentlyAddedSecondTitleAr>تحقق من أحدث العقارات</RecentlyAddedSecondTitleAr>
+        <CustomersStoriesHeaderFirstTitleAr>قصص العملاء</CustomersStoriesHeaderFirstTitleAr>
+        <CustomersStoriesHeaderSecondTitleAr>قصص نجاحات مستخدمين يوريكا-جو</CustomersStoriesHeaderSecondTitleAr>
+        <LearnMoreAr>المزيد</LearnMoreAr>
+        <FeaturedLabelEn>Featured</FeaturedLabelEn>
+        <FeaturedLabelAr>مميز</FeaturedLabelAr>
+        <AddtofavouritesToolTipEn>Add to favourites</AddtofavouritesToolTipEn>
+        <AddtofavouritesToolTipAr>أضف إلى المفضلة</AddtofavouritesToolTipAr>
+        <VerifiedToolTipAr>تم التحقق من معلومات هذا العقار</VerifiedToolTipAr>
+        <VerifiedToolTipEn>Aqar Verified</VerifiedToolTipEn>
+        <ThreeTourToolTipEn>3D Tour</ThreeTourToolTipEn>
+        <ThreeTourToolTipAr>جولة ثلاثية الابعاد</ThreeTourToolTipAr>
+        <ThreeDTourTagAr>جولة ثلاثية الأبعاد</ThreeDTourTagAr>
+        <VerifiedTagAr>تم التحقق</VerifiedTagAr>
+        <ThreeDTourTagEn>3D Tour</ThreeDTourTagEn>
+        <VerifiedTagEn>Verified</VerifiedTagEn>
+        <CustomerStoriesTitlePageAr>قصص المستخدمين</CustomerStoriesTitlePageAr>
+        <CustomerStoriesTitlePageEn>User Testimonials</CustomerStoriesTitlePageEn>
+        <BrowserTitleInCustomerStoriesAr>يوريكا جو - من قصص المستخدمين في يوريكا-جو - تعلم، استلهم،</BrowserTitleInCustomerStoriesAr>
+        <BrowserTitleInCustomerStoriesEn>EurekaJo - Real Stories, Real Success: EurekaJo's User</BrowserTitleInCustomerStoriesEn>
+
+    </HomePage>
+    <Search>
+        <VillaHomeSizeLabelEn>Villa/House Size</VillaHomeSizeLabelEn>
+        <VillaHomeSizeLabelAr>مساحة الفيلا/منزل مستقل</VillaHomeSizeLabelAr>
+        <FloorNumberLableEn>Floor Number</FloorNumberLableEn>
+        <FloorNumberLableAr>رقم الطابق</FloorNumberLableAr>
+        <FarmSizeLableEn>Floor Number</FarmSizeLableEn>
+        <FarmSizeLableAr>مساحة المزرعة</FarmSizeLableAr>
+        <LandSizeLableEn>Land size</LandSizeLableEn>
+        <LandLableAr>مساحة الأرض</LandLableAr>
+        <YearsOldLableEn>years old</YearsOldLableEn>
+        <YearsOldLableEn>عمر البناء</YearsOldLableEn>
+        <BedroomsLableEn>Bedrooms</BedroomsLableEn>
+        <BedroomsLableAr>غرف النوم</BedroomsLableAr>
+        <BathRoomsLableAr>الحمامات</BathRoomsLableAr>
+        <BathRoomsLableEn>Bathroom</BathRoomsLableEn>
+        <PriceLableEn>Price</PriceLableEn>
+        <PriceLableAr>السعر</PriceLableAr>
+        <ApartmentSizeLableAr>مساحة الشقة</ApartmentSizeLableAr>
+        <ApartmentSizeLableEn>Apartment Size</ApartmentSizeLableEn>
+        <LandSizeLableAr>مساحة الأرض</LandSizeLableAr>
+        <LandASizeLableEn>Land Size</LandASizeLableEn>
+        <FurnishedUnFurnishedLableEn>Furnished/UnFurnished</FurnishedUnFurnishedLableEn>
+        <FurnishedUnFurnishedLableAr>مفروش/غير مفروش</FurnishedUnFurnishedLableAr>
+        <DateListingLableAr>تاريخ الإضافة</DateListingLableAr>
+        <DateListingLableEn>Date Of Listing</DateListingLableEn>
+        <Has3DTourLableEn>Has 3D Tour</Has3DTourLableEn>
+        <Has3DTourLableAr>تحتوي على جولة ثلاثية الابعاد</Has3DTourLableAr>
+        <CounterLableAr>عدد العقارات</CounterLableAr>
+        <CounterLableEn>Items Listed</CounterLableEn>
+        <SearchMapLableEn>To search on the map using the drawing, press</SearchMapLableEn>
+        <SearchMapLableAr>للبحث على الخريطة باستخدام الرسم اضغط على</SearchMapLableAr>
+        <poolLableEn>Pool</poolLableEn>
+        <poolLableAr>حوض السباحة</poolLableAr>
+        <SearchMapLableAr>للبحث على الخريطة باستخدام الرسم اضغط على</SearchMapLableAr>
+        <FarmHouseIsBuiltLableEn>Farm House Is Built</FarmHouseIsBuiltLableEn>
+        <FarmHouseIsBuiltLableAr>تحتوي المزرعة على منزل</FarmHouseIsBuiltLableAr>
+        <WaterWellLableAr>بئر ماء</WaterWellLableAr>
+        <WaterWellLableEn>Water Well</WaterWellLableEn>
+        <SewersAvailableLableEn>Sewers Available</SewersAvailableLableEn>
+        <SewersAvailableLableAr>المجاري واصلة</SewersAvailableLableAr>
+        <ZonedForLableEn>Zoned For</ZonedForLableEn>
+        <ZonedForLableAr>التنظيم</ZonedForLableAr>
+        <ElectricityAvailableLableAr>الكهرباء واصلة</ElectricityAvailableLableAr>
+        <ElectricityAvailableLableEn>Electricity Available</ElectricityAvailableLableEn>
+        <WaterAvailableLableEn>Water Available</WaterAvailableLableEn>
+        <WaterAvailableLableAr>المياه واصلة</WaterAvailableLableAr>
+        <NoMatchedResultLableAr>لا يوجد عقارات مطابقة لمعايير البحث</NoMatchedResultLableAr>
+        <NoMatchedResultLableEn>There are no realestates matching the search criteria</NoMatchedResultLableEn>
+        <SearchFieldPlaceHolderEn>Type the name of the area or the ad number</SearchFieldPlaceHolderEn>
+        <SearchFieldPlaceHolderAr>اكتب اسم المنطقة للبحث فيها او رقم الاعلان</SearchFieldPlaceHolderAr>
+        <SearchPlaceHolderAr>اكتب رقم الإعلان الذي تريد البحث عنه</SearchPlaceHolderAr>
+        <SearchPlaceHolderEn>Type the advertisement number to search for</SearchPlaceHolderEn>
+        <searchKeyWord>تاسع</searchKeyWord>
+        <searchKeyWordArea>ام زويتينة</searchKeyWordArea>
+        <searchKeyWordAreaEN>Jubeiha</searchKeyWordAreaEN>
+        <searchKeyWordAreaAR>الجبيهة</searchKeyWordAreaAR>
+        <LastSearchBuyApartmentAr>شقة - للبيع</LastSearchBuyApartmentAr>
+        <LastSearchBuyApartmentEn>Apartment - Buy</LastSearchBuyApartmentEn>
+        <VillaHouseBuyLastSearchEn>Villa/House - Buy</VillaHouseBuyLastSearchEn>
+        <VillaHouseBuyLastSearchAr>فيلا/منزل مستقل - للبيع</VillaHouseBuyLastSearchAr>
+        <FarmBuyLastSearchAr>مزرعة - للبيع</FarmBuyLastSearchAr>
+        <FarmBuyLastSearchEn>Farm - Buy</FarmBuyLastSearchEn>
+        <LandBuyLastSearchEn>Land - Buy</LandBuyLastSearchEn>
+        <LandBuyLastSearchAr>ارض - للبيع</LandBuyLastSearchAr>
+        <LastSearchRentApartmentAr>شقة - للايجار</LastSearchRentApartmentAr>
+        <LastSearchRentApartmentEn>Apartment - Rent</LastSearchRentApartmentEn>
+        <VillaHouseRentLastSearchEn>Villa/House - Rent</VillaHouseRentLastSearchEn>
+        <VillaHouseRentLastSearchAr>فيلا/منزل مستقل - للايجار</VillaHouseRentLastSearchAr>
+        <FarmRentLastSearchAr>مزرعة - للايجار</FarmRentLastSearchAr>
+        <FarmRentLastSearchEn>Farm - Rent</FarmRentLastSearchEn>
+        <LandRentLastSearchEn>Land - Rent</LandRentLastSearchEn>
+        <LandRentLastSearchAr>ارض - للايجار</LandRentLastSearchAr>
+        <DescriptionOnMapSectionEn>To search on the map using the drawing, press</DescriptionOnMapSectionEn>
+        <DescriptionOnMapSectionAr>للبحث على الخريطة باستخدام الرسم اضغط على</DescriptionOnMapSectionAr>
+        <morethanOptionInFloorNumberMenuEn>More than 8</morethanOptionInFloorNumberMenuEn>
+        <morethanOptionInFloorNumberMenuAr>اكثر من 8</morethanOptionInFloorNumberMenuAr>
+        <zeroGroundOptionInFloorNumberMenuEn>0- Ground</zeroGroundOptionInFloorNumberMenuEn>
+        <zeroGroundOptionInFloorNumberMenuAr>0- ارضي</zeroGroundOptionInFloorNumberMenuAr>
+        <fiveLessThanOptionInFloorNumberMenuEn>5- Less Than</fiveLessThanOptionInFloorNumberMenuEn>
+        <fiveLessThanOptionInFloorNumberMenuAr>5- اقل من</fiveLessThanOptionInFloorNumberMenuAr>
+    </Search>
+
+    <searchFields>
+        <yearsOldFieldNameEn>Years Old</yearsOldFieldNameEn>
+        <bedroomFieldNameAr>غرف النوم</bedroomFieldNameAr>
+        <bedroomFieldNameEn>Bedrooms</bedroomFieldNameEn>
+        <yearsOldFieldNameAr>عمر البناء</yearsOldFieldNameAr>
+        <yearsOldFieldOptionEn>years old</yearsOldFieldOptionEn>
+        <yearsOldFieldOptionAr>عمر البناء</yearsOldFieldOptionAr>
+        <NewyearsOptionEn>New</NewyearsOptionEn>
+        <zero-5YearsEn>0-5 Years</zero-5YearsEn>
+        <sex-10YearsEn>6-10 Years</sex-10YearsEn>
+        <eleven-10YearsEn>11-15 Years</eleven-10YearsEn>
+        <sexten-25YearsEn>16-25 Years</sexten-25YearsEn>
+        <moreThan26YearsEn>26+ More Than</moreThan26YearsEn>
+        <zeroBedroomOptionEn>0 (studio)</zeroBedroomOptionEn>
+        <zeroBedroomOptionAr>0 (ستوديو)</zeroBedroomOptionAr>
+
+        <yearsOldFieldNameAr>عمر البناء</yearsOldFieldNameAr>
+        <NewyearsOptionAr>جديدة</NewyearsOptionAr>
+        <zero-5YearsAr>0-5 سنين</zero-5YearsAr>
+        <sex-10YearsAr>6-10 سنين</sex-10YearsAr>
+        <eleven-10YearsAr>11-15 سنة</eleven-10YearsAr>
+        <sexten-25YearsAr>16-25 سنة</sexten-25YearsAr>
+        <moreThan26YearsAr>26+ أكثر من</moreThan26YearsAr>
+        <bathroomFieldNameEn>Bathroom</bathroomFieldNameEn>
+        <bathroomFieldNameAr>الحمامات</bathroomFieldNameAr>
+        <FurnishedUnFurnishedAr>مفروش/غير مفروش</FurnishedUnFurnishedAr>
+        <FurnishedUnFurnishedEn>Furnished/UnFurnished</FurnishedUnFurnishedEn>
+        <FurnishedOptionEn>Furnished</FurnishedOptionEn>
+        <UnFurnishedOptionEn>UnFurnished</UnFurnishedOptionEn>
+        <FurnishedOptionAr>مفروش</FurnishedOptionAr>
+        <UnFurnishedOptionAr>غير مفروش</UnFurnishedOptionAr>
+        <PreviousPageEn>Previous</PreviousPageEn>
+        <NextPageEn>Next</NextPageEn>
+        <PreviousPageAr>السابقة</PreviousPageAr>
+        <NextPageAr>التالية</NextPageAr>
+        <DateOfListingSearchEn>Date Of Listing</DateOfListingSearchEn>
+        <DateOfListingSearchAr>تاريخ الإضافة</DateOfListingSearchAr>
+        <oneWeekEn>1 week old</oneWeekEn>
+        <twoWeekEn>2 week old</twoWeekEn>
+        <fourWeekEn>4 week old</fourWeekEn>
+        <twoMonthEn>2 month old</twoMonthEn>
+        <plusTwoMonthEn>2 month+</plusTwoMonthEn>
+        <oneWeekAr>خلال أسبوع</oneWeekAr>
+        <twoWeekAr>خلال أسبوعين</twoWeekAr>
+        <fourWeekAr>خلال شهر</fourWeekAr>
+        <twoMonthAr>خلال شهرين</twoMonthAr>
+        <plusTwoMonthAr>شهرين+</plusTwoMonthAr>
+
+
+    </searchFields>
+    <Login>
+        <phoneNumber>799965459</phoneNumber>
+        <password>P@Ssw0rd</password>
+    </Login>
+    <SignUp>
+        <signUpPassword>P@ssw0rd</signUpPassword>
+        <SignUpTitleEn>Sign Up</SignUpTitleEn>
+        <SignUpTitleAr>إنشاء حساب جديد</SignUpTitleAr>
+        <PhoneNumberFieldNameAr>رقم الهاتف</PhoneNumberFieldNameAr>
+        <PhoneNumberFieldNameEn>Phone Number</PhoneNumberFieldNameEn>
+        <confirmPhoneNumberByLabelEn>Confirm The Phone Number By</confirmPhoneNumberByLabelEn>
+        <confirmPhoneNumberByLabelAr>تأكيد رقم الهاتف من خلال</confirmPhoneNumberByLabelAr>
+        <whatsAppOption>WhatsApp</whatsAppOption>
+        <SMSOption>SMS</SMSOption>
+        <termsAndConditionsLabelAr>أوافق على الشروط والأحكام</termsAndConditionsLabelAr>
+        <termsAndConditionsLabelEn>Accept Terms And Conditions</termsAndConditionsLabelEn>
+        <signUpButtonNameEn>Sign up</signUpButtonNameEn>
+        <signUpButtonNameAr>إنشاء حساب جديد</signUpButtonNameAr>
+        <signinButtonNameAr>تسجيل الدخول</signinButtonNameAr>
+        <signinButtonNameEr>Sign In</signinButtonNameEr>
+    </SignUp>
+    <ForgetPassword>
+        <errorMsgEn>This field is required.</errorMsgEn>
+        <errorMsgAr>هذا الحقل إلزامي</errorMsgAr>
+    </ForgetPassword>
+    <Footer>
+        <WhyEurekaEn>Why Eureka</WhyEurekaEn>
+        <AboutUsEn>About Us</AboutUsEn>
+        <FAQEn>FAQ</FAQEn>
+        <UserTestimonialsEn>User Testimonials</UserTestimonialsEn>
+        <ContactUsEn>Contact Us</ContactUsEn>
+        <email>Info@Eurekajo.Com</email>
+        <phoneNumber>+962798444999</phoneNumber>
+        <copyRightEn>All rights reserved. © 2024 Copyright</copyRightEn>
+        <PrivacypolicyEn>Privacy policy</PrivacypolicyEn>
+        <TermsAndConditionsEn>Terms and conditions</TermsAndConditionsEn>
+
+        <WhyEurekaAr>لماذا يوريكا-جو</WhyEurekaAr>
+        <AboutUsAr>من نحن</AboutUsAr>
+        <FAQAr>اسئلة واجوبة</FAQAr>
+        <UserTestimonialsAr>قصص المستخدمين</UserTestimonialsAr>
+        <ContactUsAr>تواصل معنا</ContactUsAr>
+        <email>Info@Eurekajo.Com</email>
+        <phoneNumber>+962798444999</phoneNumber>
+        <copyRightAr>جميع الحقوق محفوظة. © 2024 حقوق النشر.</copyRightAr>
+        <PrivacypolicyAr>سياسة الخصوصية</PrivacypolicyAr>
+        <TermsAndConditionsAr>الأحكام والشروط</TermsAndConditionsAr>
+
+
+    </Footer>
+    <AddApartment>
+        <appDownloadRecoMsgEn>We recommend you to download it for a better and easier experience</appDownloadRecoMsgEn>
+        <appDownloadRecoMsgAr>ننصحك بتحميل التطبيق لتجربة أفضل وأسهل</appDownloadRecoMsgAr>
+        <titleValidationMsgEn>The title field is required</titleValidationMsgEn>
+        <titleValidationMsgAr>الرجاء ادخال العنوان</titleValidationMsgAr>
+        <priceValidationMsgEn>The Price field is required</priceValidationMsgEn>
+        <priceValidationMsgAr>يرجى ادخال السعر</priceValidationMsgAr>
+        <areaValidationMsgEn>The Area field is required</areaValidationMsgEn>
+        <areaValidationMsgAr>يرجى ادخال المنطقة</areaValidationMsgAr>
+        <sizeValidationMsgEn>The size field is required</sizeValidationMsgEn>
+        <sizeValidationMsgAr>الرجاء ادخال المساحة</sizeValidationMsgAr>
+        <bedroomsNumberValidationMsgEn>The Number of bedrooms field is required</bedroomsNumberValidationMsgEn>
+        <bedroomsNumberValidationMsgAr>يرجى ادخال عدد الغرف</bedroomsNumberValidationMsgAr>
+        <masterRoomsValidationMsgEn>The Master rooms field is required</masterRoomsValidationMsgEn>
+        <masterRoomsValidationMsgAr>يرجى ادخال عدد الغرف الماستر</masterRoomsValidationMsgAr>
+        <numberOfApartmentsValidationMsgEn>The Number of apartments in the building field is required
+        </numberOfApartmentsValidationMsgEn>
+        <numberOfApartmentsValidationMsgAr>يرجى ادخال عدد الشقق في المبنى</numberOfApartmentsValidationMsgAr>
+        <termsAndConditionsValidationMsgEn>Please Accept Terms And Conditions</termsAndConditionsValidationMsgEn>
+        <termsAndConditionsValidationMsgAr>يرجى الموافقة على الشروط والأحكام</termsAndConditionsValidationMsgAr>
+        <reCaptchaValidationMsgEn>Please confirm by click on I am not robot</reCaptchaValidationMsgEn>
+        <reCaptchaValidationMsgAr>يرجى التأكيد بالضغط على أنا لست برنامج روبوت</reCaptchaValidationMsgAr>
+        <numberOfBathroomsValidationMsgEn>The Number of Bathrooms field is required</numberOfBathroomsValidationMsgEn>
+        <numberOfBathroomsValidationMsgAr>يرجى ادخال عدد الحمامات</numberOfBathroomsValidationMsgAr>
+        <ageValidationMsgEn>The Age Building field is required</ageValidationMsgEn>
+        <ageValidationMsgAr>يرجى ادخال عمر البناء</ageValidationMsgAr>
+        <mainImageValidationMsgEn>The Main Image field is required</mainImageValidationMsgEn>
+        <mainImageValidationMsgAr>يرجى ادخال الصورة الرئيسية</mainImageValidationMsgAr>
+        <priceNoteEn>We recommend to always show the price. This will increase the interaction with your Listing by 60%</priceNoteEn>
+        <priceNoteAr>تنصح دائما بإظهار السعر حيث أنه يزيد التفاعل على إعلانك بنسبة 60%</priceNoteAr>
+
+        <priceNote1En>Please enter the price for the whole piece of land, not the price per meter</priceNote1En>
+        <priceNote2En>We recommend to always show the price. This will increase the interaction with your Listing by 60%</priceNote2En>
+        <priceNote1Ar>السعر المطلوب لكامل القطعة وليس سعر المتر</priceNote1Ar>
+        <priceNote2Ar>تنصح دائما بإظهار السعر حيث أنه يزيد التفاعل على إعلانك بنسبة 60%</priceNote2Ar>
+        <videoURLNoteEn>(Adding a video to your realestate increases the view rate from 30% to 50%)</videoURLNoteEn>
+        <videoURLNoteAr>(اضافة فيديو لعقارك يرفع نسبة المشاهدات من 30% الى 50%)</videoURLNoteAr>
+        <locationNoteEn>(To locate the property, please move the red dot to the appropriate place)</locationNoteEn>
+        <locationNoteAr>(لتحديد موقع العقار، يرجى تحريك النقطة الحمراء إلى المكان المناسب)</locationNoteAr>
+        <keywordsNoteEn>(Please note that these words will not appear in the advertisement, and they are for the purposes of searching for the advertisement only)</keywordsNoteEn>
+        <keywordsNoteAr>(يرجى الملاحظة بأن هذه الكلمات لن تظهر في الاعلان، وانها لغايات البحث عن الاعلان فقط)</keywordsNoteAr>
+        <numberBedroomsNoteEn>(يرجى الملاحظة بأن هذه الكلمات لن تظهر في الاعلان، وانها لغايات البحث عن الاعلان فقط)</numberBedroomsNoteEn>
+        <numberBedroomsNoteAr>(في حال كانت الشقة ستوديو ضع عدد الغرف 0)</numberBedroomsNoteAr>
+        <BasicInformationApartmentTitleEn>Basic Information - Apartment</BasicInformationApartmentTitleEn>
+        <BasicInformationApartmentTitleAr>المعلومات الأساسية - شقة</BasicInformationApartmentTitleAr>
+        <LocationTitleAr>الموقع</LocationTitleAr>
+        <LocationTitleEn>Location</LocationTitleEn>
+        <ApartmentInformationEn>Apartment Information</ApartmentInformationEn>
+        <ApartmentInformationAr>معلومات الشقة</ApartmentInformationAr>
+        <ExtraFeaturesAr>ميزات اضافية</ExtraFeaturesAr>
+        <ExtraFeaturesEn>Extra Features</ExtraFeaturesEn>
+        <GalleryEn>Gallery</GalleryEn>
+        <GalleryAr>الصور</GalleryAr>
+        <BedRoomsMsgEn>(If the apartment is a studio, put the number of rooms 0)</BedRoomsMsgEn>
+        <BedRoomsMsgAr>(في حال كانت الشقة ستوديو ضع عدد الغرف 0)</BedRoomsMsgAr>
+    </AddApartment>
+    <ExtraFeaturesCheckbox>
+        <FurnishedEn>Furnished</FurnishedEn>
+        <FurnishedAr>مفروش</FurnishedAr>
+        <BalconyEn>Balcony</BalconyEn>
+        <BalconyAr>بلكونة</BalconyAr>
+        <LivingRoomEn>Living Room</LivingRoomEn>
+        <LivingRoomAr>غرفة معيشة</LivingRoomAr>
+        <HomeDécorEn>Home Décor</HomeDécorEn>
+        <HomeDécorAr>ديكور</HomeDécorAr>
+        <HeaterEn>Heater</HeaterEn>
+        <HeaterAr>تدفئة</HeaterAr>
+        <WaterWellEn>Water Well</WaterWellEn>
+        <WaterWellAr>بئر ماء</WaterWellAr>
+        <InsulationOfExternalFacadesEn>Insulation Of External Facades And Surfaces</InsulationOfExternalFacadesEn>
+        <InsulationOfExternalFacadesAr>عزل الواجهات والأسطح الخارجية</InsulationOfExternalFacadesAr>
+        <FloorApartmentEn>Floor Apartment</FloorApartmentEn>
+        <FloorApartmentAr>شقة طابقية</FloorApartmentAr>
+        <GardenEn>Garden</GardenEn>
+        <GardenAr>حديقة</GardenAr>
+        <LaundryRoomEn>Laundry Room</LaundryRoomEn>
+        <LaundryRoomAr>غرفة غسيل</LaundryRoomAr>
+        <WalkInClosetsEn>Walk-In Closets</WalkInClosetsEn>
+        <WalkInClosetsAr>خزانة حائط</WalkInClosetsAr>
+        <Air-ConditioningEn>Air-Conditioning</Air-ConditioningEn>
+        <Air-ConditioningAr>تكييف</Air-ConditioningAr>
+        <IntercomEn>Intercom</IntercomEn>
+        <IntercomAr>انتركم</IntercomAr>
+        <SecuritySystemEn>Security System</SecuritySystemEn>
+        <SecuritySystemAr>نظام حماية</SecuritySystemAr>
+        <ElevatorAvailableEn>Elevator Available</ElevatorAvailableEn>
+        <ElevatorAvailableAr>مصعد</ElevatorAvailableAr>
+        <SalonEn>Salon</SalonEn>
+        <SalonAr>صالون</SalonAr>
+        <MaidRoomEn>Maid Room</MaidRoomEn>
+        <MaidRoomAr>غرفة خادمة</MaidRoomAr>
+        <FireplaceEn>Fireplace</FireplaceEn>
+        <FireplaceAr>فايربليس</FireplaceAr>
+        <DoubleGlazedWindowsEn>Double Glazed Windows</DoubleGlazedWindowsEn>
+        <DoubleGlazedWindowsAr>نوافذ زجاجية مزدوجة</DoubleGlazedWindowsAr>
+        <SolarSystemEn>Solar System</SolarSystemEn>
+        <SolarSystemAr>النظام الشمسي</SolarSystemAr>
+        <BuildingJanitorEn>Building Janitor</BuildingJanitorEn>
+        <BuildingJanitorAr>حارس للعمارة</BuildingJanitorAr>
+        <InstalledKitchenEn>Installed Kitchen</InstalledKitchenEn>
+        <InstalledKitchenAr>مطبخ راكب</InstalledKitchenAr>
+        <DiningRoomEn>Dining Room</DiningRoomEn>
+        <DiningRoomAr>غرفة سفرة</DiningRoomAr>
+        <StorageRoomEn>Storage Room</StorageRoomEn>
+        <StorageRoomAr>غرفة تخزين</StorageRoomAr>
+        <ElectricShuttersEn>Electric Shutters</ElectricShuttersEn>
+        <ElectricShuttersAr>ابجورات كهربائية</ElectricShuttersAr>
+        <WindowSafetyIronGuardsEn>Window Safety Iron Guards</WindowSafetyIronGuardsEn>
+        <WindowSafetyIronGuardsAr>حمايات للنوافذ</WindowSafetyIronGuardsAr>
+        <CentralSatelliteEn>Central Satellite</CentralSatelliteEn>
+        <CentralSatelliteAr>ستلايت مركزي</CentralSatelliteAr>
+        <ServicedEn>Serviced</ServicedEn>
+        <ServicedAr>مخدومة</ServicedAr>
+
+    </ExtraFeaturesCheckbox>
+    <TitlePlaceHolderEn>Example: A deluxe first floor apartment in Sweifieh, an area of 130 m, two bedrooms</TitlePlaceHolderEn>
+    <TitlePlaceHolderAr>مثال: شقة ديلوكس طابق اول في الصويفية مساحة 130م غرفتين نوم</TitlePlaceHolderAr>
+    <PricePlaceHolderEn>Example: 1000</PricePlaceHolderEn>
+    <PricePlaceHolderAr>مثلا: 1000</PricePlaceHolderAr>
+    <LocationPlaceHolderEn>https://www.google.com/maps/search/?api=1</LocationPlaceHolderEn>
+    <LocationPlaceHolderAr>https://www.google.com/maps/search/?api=1</LocationPlaceHolderAr>
+    <AddressPlaceHolderEn>Example: 44 Khaled Shoman Street, Jabal Amman</AddressPlaceHolderEn>
+    <AddressPlaceHolderAr>مثال: 44 شارع خالد شومان، جبل عمان</AddressPlaceHolderAr>
+    <LandMarkPlaceHolderEn>Example: near the Taqwa Mosque</LandMarkPlaceHolderEn>
+    <LandMarkPlaceHolderAr>مثال: قرب مسجد التقوى</LandMarkPlaceHolderAr>
+    <SurroundedByPlaceHolderEn>Example: A quiet residential area or close to the main street</SurroundedByPlaceHolderEn>
+    <SurroundedByPlaceHolderAr>مثال: منطقة سكنية هادئة او قريبة من الشارع الرئيسي</SurroundedByPlaceHolderAr>
+    <SizePlaceHolderEn>Example: 1000</SizePlaceHolderEn>
+    <SizePlaceHolderAr>مثلا: 1000</SizePlaceHolderAr>
+    <BedRoomPlaceHolderEn>Example: 3</BedRoomPlaceHolderEn>
+    <BedRoomPlaceHolderAr>مثلا: 3</BedRoomPlaceHolderAr>
+    <MasterBedRoomPlaceHolderAr>مثلا: 1</MasterBedRoomPlaceHolderAr>
+    <MasterBedRoomPlaceHolderEn>Example: 1</MasterBedRoomPlaceHolderEn>
+    <AppartmentBuildingPlaceHolderAr>مثلا: 6</AppartmentBuildingPlaceHolderAr>
+    <AppartmentBuildingPlaceHolderEn>Example: 6</AppartmentBuildingPlaceHolderEn>
+    <TaraceSizePlaceHolderAr>مثلا: 50</TaraceSizePlaceHolderAr>
+    <TaraceSizePlaceHolderEn>Example: 50</TaraceSizePlaceHolderEn>
+    <FeaturesPlaceHolderEn>Write here the property description and ad text</FeaturesPlaceHolderEn>
+    <FeaturesPlaceHolderAr>اكتب هنا وصف العقار ونص الاعلان</FeaturesPlaceHolderAr>
+    <KeyWordsPlaceHolderAr>اكتب هنا الكلمات التي تود ان تكون مشمولة بالبحث. مثال: شقة، ديلوكس، سوبر ديلوكس، (اسم المنطقة وجميع المناطق المحيطة) ام اذينة، عبدون، الدوار السادس، الدوار الخامس، الدوار الرابع، وادي صقرة، ارضيات، parquet flooring ، بلاط رخام، marble، بطاريات جروهي، Grohe ، حمامات معلقة، ايديال ستاندتارد ، طابق اخير مع روف</KeyWordsPlaceHolderAr>
+    <KeyWordsPlaceHolderEn>Type the words you want to be included in the search here. Example: Apartment, Deluxe, Super Deluxe, (name of the area and all surrounding areas) Umm Uthaina, Abdoun, Sixth Circle, Fifth Circle, Fourth Circle, Wadi Saqra, flooring, parquet flooring, marble tiles, marble, Grohe batteries, Grohe, hanging bathrooms Ideal Standtard, last floor with roof</KeyWordsPlaceHolderEn>
+    <MeterSizeAr>متر مربع</MeterSizeAr>
+    <CurrencyAr>دينار أردني</CurrencyAr>
+    <MeterSizeEn>SQ. Meter</MeterSizeEn>
+    <CurrencyEn>JD</CurrencyEn>
+    <titleValidationMsgAr>الحد الأقصى المسموح به هو 500</titleValidationMsgAr>
+    <titleValidationMsgEn>The field Title must be a string with a maximum length of 500</titleValidationMsgEn>
+    <featureValidationMsgEn>The field Title must be a string with a maximum length of 5000</featureValidationMsgEn>
+    <keywordsValidationMsgAr>الحد الأقصى المسموح به هو 500</keywordsValidationMsgAr>
+    <featuresValidationMsgEn>الحد الأقصى المسموح به هو 5000</featuresValidationMsgEn>
+    <AddApartmentBrwoserTabEn>EurekaJo - Create Apartment</AddApartmentBrwoserTabEn>
+    <AddApartmentBrwoserTabAr>يوريكا جو - إنشاء شقة</AddApartmentBrwoserTabAr>
+    <AddVilla>
+        <BasicInformationHeadrEn>Basic Information - Villa/House</BasicInformationHeadrEn>
+        <BasicInformationHeadrAr>المعلومات الأساسية - فيلا/منزل مستقل</BasicInformationHeadrAr>
+        <VillaLocationTitleEn>Location</VillaLocationTitleEn>
+        <VillaLocationTitleAr>الموقع</VillaLocationTitleAr>
+        <VillaHouseInfoEn>Villa/House Information</VillaHouseInfoEn>
+        <VillaHouseInfoAr>معلومات الفيلا/منزل مستقل</VillaHouseInfoAr>
+        <VillaTitlePlaceHolderAr>مثال: فيلا/منزل مستقل حديثة في دابوق للبيع</VillaTitlePlaceHolderAr>
+        <VillaTitlePlaceHolderEn>Example: A modern Villa/House in Dabouq for sale</VillaTitlePlaceHolderEn>
+        <AddVillaHouseBrwoserTabEn>EurekaJo - Create Villa/House</AddVillaHouseBrwoserTabEn>
+        <AddVillaHouseBrwoserTabAr>يوريكا جو - إنشاء فيلا/منزل مستقل</AddVillaHouseBrwoserTabAr>
+        <villaSizePlaceHolderAr>مثلا: 1000</villaSizePlaceHolderAr>
+        <villaSizePlaceHolderEn>Example: 1000</villaSizePlaceHolderEn>
+    </AddVilla>
+    <AddFarm>
+        <FarmInformationHeadrEn>Basic Information - Farm</FarmInformationHeadrEn>
+        <FarmInformationHeadrAr>المعلومات الأساسية - مزرعة</FarmInformationHeadrAr>
+        <FarmLocationTitleEn>Location</FarmLocationTitleEn>
+        <FarmLocationTitleAr>الموقع</FarmLocationTitleAr>
+        <FarmInfoEn>Land Information</FarmInfoEn>
+        <FarmInfoAr>معلومات الأرض</FarmInfoAr>
+        <VillaTitlePlaceHolderAr>مثال: فيلا/منزل مستقل حديثة في دابوق للبيع</VillaTitlePlaceHolderAr>
+        <VillaTitlePlaceHolderEn>Example: A modern Villa/House in Dabouq for sale</VillaTitlePlaceHolderEn>
+        <AddVillaHouseBrwoserTabEn>EurekaJo - Create Villa/House</AddVillaHouseBrwoserTabEn>
+        <AddVillaHouseBrwoserTabAr>يوريكا جو - إنشاء فيلا/منزل مستقل</AddVillaHouseBrwoserTabAr>
+        <villaSizePlaceHolderAr>مثلا: 1000</villaSizePlaceHolderAr>
+        <villaSizePlaceHolderEn>Example: 1000</villaSizePlaceHolderEn>
+
+        <governorateOption1En>-- Select --</governorateOption1En>
+        <governorateOption2En>Amman</governorateOption2En>
+        <governorateOption3En>Zarqa</governorateOption3En>
+        <governorateOption4En>Irbid</governorateOption4En>
+        <governorateOption5En>Karak</governorateOption5En>
+        <governorateOption6En>Al balqa</governorateOption6En>
+        <governorateOption7En>Madaba</governorateOption7En>
+        <governorateOption8En>Al tafila</governorateOption8En>
+        <governorateOption9En>Ajloun</governorateOption9En>
+        <governorateOption10En>Jerash</governorateOption10En>
+        <governorateOption11En>Ma'an</governorateOption11En>
+        <governorateOption12En>Al mafraq</governorateOption12En>
+        <governorateOption13En>Al aqaba</governorateOption13En>
+        <governorateOption1Ar>-- اختر --</governorateOption1Ar>
+        <governorateOption2Ar>عمان</governorateOption2Ar>
+        <governorateOption3Ar>الزرقاء</governorateOption3Ar>
+        <governorateOption4Ar>اربد</governorateOption4Ar>
+        <governorateOption5Ar>الكرك</governorateOption5Ar>
+        <governorateOption6Ar>البلقاء</governorateOption6Ar>
+        <governorateOption7Ar>مادبا</governorateOption7Ar>
+        <governorateOption8Ar>الطفيلة</governorateOption8Ar>
+        <governorateOption9Ar>عجلون</governorateOption9Ar>
+        <governorateOption10Ar>جرش</governorateOption10Ar>
+        <governorateOption11Ar>معان</governorateOption11Ar>
+        <governorateOption12Ar>المفرق</governorateOption12Ar>
+        <governorateOption13Ar>العقبة</governorateOption13Ar>
+        <extraFeatureOption1En>Fenced</extraFeatureOption1En>
+        <extraFeatureOption2En>Barbecue Area</extraFeatureOption2En>
+        <extraFeatureOption3En>Panoramic View</extraFeatureOption3En>
+        <extraFeatureOption4En>Outdoor Showers</extraFeatureOption4En>
+        <extraFeatureOption5En>Solar Panels</extraFeatureOption5En>
+        <extraFeatureOption6En>Water Available</extraFeatureOption6En>
+        <extraFeatureOption7En>Farm Guard</extraFeatureOption7En>
+        <extraFeatureOption9En>Heated Swimming Pool</extraFeatureOption9En>
+        <extraFeatureOption10En>Jacuzzi</extraFeatureOption10En>
+        <extraFeatureOption11En>Electricity Available</extraFeatureOption11En>
+        <extraFeatureOption12En>Kids Play Area</extraFeatureOption12En>
+        <extraFeatureOption13En>Total Privacy</extraFeatureOption13En>
+        <extraFeatureOption14En>Surrounding Sound System</extraFeatureOption14En>
+        <extraFeatureOption15En>Sewers Available</extraFeatureOption15En>
+        <extraFeatureOption16En>Guard Room</extraFeatureOption16En>
+        <extraFeatureOption17En>Children's Playground</extraFeatureOption17En>
+        <extraFeatureOption18En>Wifi Internet</extraFeatureOption18En>
+        <extraFeatureOption1Ar>مسيجة</extraFeatureOption1Ar>
+        <extraFeatureOption2Ar>منطقة شواء</extraFeatureOption2Ar>
+        <extraFeatureOption3Ar>منظر بانورامي</extraFeatureOption3Ar>
+        <extraFeatureOption4Ar>شورات خارجية</extraFeatureOption4Ar>
+        <extraFeatureOption5Ar>طاقة شمسية</extraFeatureOption5Ar>
+        <extraFeatureOption6Ar>المياه واصلة</extraFeatureOption6Ar>
+        <extraFeatureOption7Ar>حارس مزرعة</extraFeatureOption7Ar>
+        <extraFeatureOption9Ar>بركة مدفأة</extraFeatureOption9Ar>
+        <extraFeatureOption10Ar>جاكوزي</extraFeatureOption10Ar>
+        <extraFeatureOption11Ar>الكهرباء واصلة</extraFeatureOption11Ar>
+        <extraFeatureOption12Ar>منطقة لعب الاطفال</extraFeatureOption12Ar>
+        <extraFeatureOption13Ar>خصوصية تامة</extraFeatureOption13Ar>
+        <extraFeatureOption14Ar>نظام صوتي</extraFeatureOption14Ar>
+        <extraFeatureOption15Ar>المجاري واصلة</extraFeatureOption15Ar>
+        <extraFeatureOption16Ar>غرفة حارس</extraFeatureOption16Ar>
+        <extraFeatureOption17Ar>ألعاب أطفال</extraFeatureOption17Ar>
+        <extraFeatureOption18Ar>انترنت واي فاي</extraFeatureOption18Ar>
+        <FarmTitlePlaceHolderAr>مثال: مزرعة بمنطقة السرو مساحة 5 دونم مزروعة بشجر الزيتون</FarmTitlePlaceHolderAr>
+        <FarmTitlePlaceHolderEn>Example: A furnished farm for rent - Fourth Circle</FarmTitlePlaceHolderEn>
+        <FarmTotalSizePlaceHolderAr>مثلا: 4000</FarmTotalSizePlaceHolderAr>
+        <FarmTotalSizePlaceHolderEn>Example: 4000</FarmTotalSizePlaceHolderEn>
+        <FarmDistrictPlaceHolderAr>مثلا: ام البساتين</FarmDistrictPlaceHolderAr>
+        <FarmDistrictPlaceHolderEn>Example: Umm Al-Basateen</FarmDistrictPlaceHolderEn>
+        <FarmVillagePlaceHolderAr>مثلا: قرية سالم</FarmVillagePlaceHolderAr>
+        <FarmVillagePlaceHolderEn>Example: Salem Village</FarmVillagePlaceHolderEn>
+        <FarmBasinPlaceHolderAr>مثلا: حوض شاكر الجنوبي</FarmBasinPlaceHolderAr>
+        <FarmBasinPlaceHolderEn>Example: the southern Shaker Basin</FarmBasinPlaceHolderEn>
+        <FarmPieceNumberPlaceHolderAr>مثلا: 421</FarmPieceNumberPlaceHolderAr>
+        <FarmPieceNumberPlaceHolderEn>Example: 421</FarmPieceNumberPlaceHolderEn>
+        <AddFarmBrwoserTabEn>EurekaJo - Create Farm</AddFarmBrwoserTabEn>
+        <AddFarmBrwoserTabAr>يوريكا جو - إنشاء مزرعة</AddFarmBrwoserTabAr>
+
+    </AddFarm>
+    <VideoTitleApartmentEn>Video to help you in how to add realestate for apartment</VideoTitleApartmentEn>
+    <VideoTitleApartmentAr>فيديو قصير للمساعدة في اضافة العقار للشقة</VideoTitleApartmentAr>
+    <VideoTitleVillaAr>فيديو قصير للمساعدة في اضافة العقار للفيلا/منزل مستقل</VideoTitleVillaAr>
+    <VideoTitleVillaEn>Video to help you in how to add realestate for Villa/House</VideoTitleVillaEn>
+    <VideoTitleFarmEn>Video to help you in how to add realestate for farm</VideoTitleFarmEn>
+    <VideoTitleFarmAr>فيديو قصير للمساعدة في اضافة العقار للمزرعة</VideoTitleFarmAr>
+    <VideoTitleLandAr>فيديو قصير للمساعدة في اضافة العقار للأرض</VideoTitleLandAr>
+    <VideoTitleLandEn>Video to help you in how to add realestate for land</VideoTitleLandEn>
+    <CityEn>Amman</CityEn>
+    <CityAr>عمان</CityAr>
+    <noResultInMenuEn>No results found</noResultInMenuEn>
+    <noResultInMenuAr>لم يتم العثور على أي نتائج</noResultInMenuAr>
+
+
+    <AddLand>
+        <LandInformationHeadrEn>Basic Information - Land</LandInformationHeadrEn>
+        <LandInformationHeadrAr>المعلومات الأساسية - أرض</LandInformationHeadrAr>
+        <FarmLocationTitleEn>Location</FarmLocationTitleEn>
+        <FarmLocationTitleAr>الموقع</FarmLocationTitleAr>
+        <titleLandPlaceholderEn>Example: Luxurious land for sale in the Jordan Valley, land area 5 dunums</titleLandPlaceholderEn>
+        <titleLandPlaceholderAr>مثال: قطعة ارض للبيع بمنطقة الغور، مساحة 5 دونم</titleLandPlaceholderAr>
+        <PieceNumberLandPlaceholderEn>Example: 421</PieceNumberLandPlaceholderEn>
+        <PieceNumberLandPlaceholderAr>مثلا: 421</PieceNumberLandPlaceholderAr>
+        <AddLandBrwoserTabAr>يوريكا جو - إنشاء أرض</AddLandBrwoserTabAr>
+        <AddLandBrwoserTabEn>EurekaJo - Create Land</AddLandBrwoserTabEn>
+        <ZonedForOption1En>Residential A</ZonedForOption1En>
+        <ZonedForOption2En>Residential B</ZonedForOption2En>
+        <ZonedForOption3En>Residential C</ZonedForOption3En>
+        <ZonedForOption4En>Residential D</ZonedForOption4En>
+        <ZonedForOption5En>Offices</ZonedForOption5En>
+        <ZonedForOption6En>Commercial</ZonedForOption6En>
+        <ZonedForOption7En>Lite Industries</ZonedForOption7En>
+        <ZonedForOption8En>Industrial</ZonedForOption8En>
+        <ZonedForOption9En>Agricultural</ZonedForOption9En>
+        <ZonedForOption10En>Not Zoned</ZonedForOption10En>
+        <ZonedForOption11En>Touristic</ZonedForOption11En>
+        <ZonedForOption12En>Rural</ZonedForOption12En>
+        <ZonedForOption13En>Special Housing</ZonedForOption13En>
+        <ZonedForOption1Ar>سكني أ</ZonedForOption1Ar>
+        <ZonedForOption2Ar>سكني ب</ZonedForOption2Ar>
+        <ZonedForOption3Ar>سكني ج</ZonedForOption3Ar>
+        <ZonedForOption4Ar>سكني د</ZonedForOption4Ar>
+        <ZonedForOption5Ar>مكاتب</ZonedForOption5Ar>
+        <ZonedForOption6Ar>تجاري</ZonedForOption6Ar>
+        <ZonedForOption7Ar>صناعات خفيفة</ZonedForOption7Ar>
+        <ZonedForOption8Ar>صناعي</ZonedForOption8Ar>
+        <ZonedForOption9Ar>زراعي</ZonedForOption9Ar>
+        <ZonedForOption10Ar>خارج التنظيم</ZonedForOption10Ar>
+        <ZonedForOption11Ar>سياحي</ZonedForOption11Ar>
+        <ZonedForOption12Ar>ريفي</ZonedForOption12Ar>
+        <ZonedForOption13Ar>سكن خاص</ZonedForOption13Ar>
+        <DailyAr>يومي</DailyAr>
+        <DailyEn>Daily</DailyEn>
+        <MyProperitiesPage>
+            <OfferingTypeOptionEn>Offering Type</OfferingTypeOptionEn>
+            <OfferingTypeOptionAr>للايجار + للبيع</OfferingTypeOptionAr>
+            <CategoriesOptionEn>Categories</CategoriesOptionEn>
+            <CategoriesOptionAr>جميع الفئات</CategoriesOptionAr>
+        </MyProperitiesPage>
+        <Header>
+            <ProfileAr>ملفي</ProfileAr>
+            <ProfileEn>My Profile</ProfileEn>
+            <RequestAccountVerificationEn>Request Account Verification</RequestAccountVerificationEn>
+            <RequestAccountVerificationAr>طلب توثيق الحساب</RequestAccountVerificationAr>
+            <RequestBusinessAccountEn>Request Business Account</RequestBusinessAccountEn>
+            <RequestBusinessAccountAr>طلب حساب تجاري</RequestBusinessAccountAr>
+            <ContactUsAr>تواصل معنا</ContactUsAr>
+            <ContactUsEn>Contact Us</ContactUsEn>
+            <logoutEn>logout</logoutEn>
+            <logoutAr>تسجيل خروج</logoutAr>
+            <defualtImageProfile>/Content/Images/UserThumb.jpg</defualtImageProfile>
+
+            <FullNameOptionEn>Full Name</FullNameOptionEn>
+            <FullNameOptionAr>الاسم</FullNameOptionAr>
+            <PhoneNumberEn>Phone Number</PhoneNumberEn>
+            <PhoneNumberAr>رقم الهاتف</PhoneNumberAr>
+            <ContactMethodEn>Contact Method</ContactMethodEn>
+            <ContactMethodAr>طريقة التواصل</ContactMethodAr>
+            <ChangePasswordEn>Change password</ChangePasswordEn>
+            <ChangePasswordAr>تغيير كلمة المرور</ChangePasswordAr>
+            <ProfileServicesEn>Profile Services</ProfileServicesEn>
+            <ProfileServicesAr>خدمات الحساب</ProfileServicesAr>
+            <DeleteAccountEn>Delete Account</DeleteAccountEn>
+            <DeleteAccountAr>حذف الحساب</DeleteAccountAr>
+            <ContactUsEn>Contact Us</ContactUsEn>
+            <ContactUsAr>تواصل معنا</ContactUsAr>
+        </Header>
+    </AddLand>
+</Data>

@@ -9,7 +9,7 @@
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
-at eureka_pages.AeProductDetailsPage.getOOSMsg(AeProductDetailsPage.java:234)
+at site_pages.AeProductDetailsPage.getOOSMsg(AeProductDetailsPage.java:234)
 at eureka_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed(AeProductDetailsPageTestCases.java:62)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
