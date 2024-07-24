@@ -4,7 +4,7 @@
  * @classDescription
  */
 
-package eureka_test.login_test_cases;
+package site_test.login_test_cases;
 
 import site_pages.homepage.HomePage;
 import org.testng.annotations.BeforeClass;

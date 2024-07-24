@@ -7,14 +7,14 @@
     <test thread-count="2" parallel="methods" name=" System Testing Report(failed)">
         <parameter name="environment" value="production"/>
         <classes>
-            <class name="eureka_test.AeProductDetailsPageTestCases">
+            <class name="site_test.AeProductDetailsPageTestCases">
                 <methods>
                     <include name="tearDown"/>
                     <include name="setupBrowser"/>
                     <include name="verifyInabilityToAddOosProductToTheCart"/>
                     <include name="verifyOOSMessageIsDisplayed"/>
                 </methods>
-            </class> <!-- eureka_test.AeProductDetailsPageTestCases -->
+            </class> <!-- site_test.AeProductDetailsPageTestCases -->
         </classes>
     </test> <!--  System Testing Report(failed) -->
 </suite> <!-- Failed suite [ Test] -->

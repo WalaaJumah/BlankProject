@@ -53,8 +53,8 @@ public class BaseTest {
                     break;
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
-//                     options.addArguments("headless");
-//                     options.addArguments("disable-gpu");
+                     options.addArguments("headless");
+                     options.addArguments("disable-gpu");
 //                    options.addArguments("--force-device-scale-factor=0.9");
 //                    options.addArguments("--disable-notifications");
 //                    options.addArguments("--force-device-scale-factor=0.9");

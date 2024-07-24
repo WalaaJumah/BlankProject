@@ -30,13 +30,13 @@
 
 
 
-            <class name="eureka_test.login_test_cases.ArabicLoginTestCases"/>
+            <class name="testclass"/>
 
 
 
-            <!--                        <class name="eureka_test.my_properties_test_cases.my_Properties_test_cases.EnglishMyPropertiesTestCases"/>-->
+            <!--                        <class name="site_test.my_properties_test_cases.my_Properties_test_cases.EnglishMyPropertiesTestCases"/>-->
 
-            <!--                        <class name="eureka_test.list_property_test_cases.add_land.ArabicAddLandTestCases">-->
+            <!--                        <class name="site_test.list_property_test_cases.add_land.ArabicAddLandTestCases">-->
             <!--                            <methods>-->
             <!--                                <include name="verifyClickingOnAddLandWorksCorrectly"/>-->
             <!--                                <include name="verifyRealEstateAgentFieldWillAppearAfterSelectionRealEstateAgentOptionInRentPage"/>-->
@@ -47,9 +47,9 @@
             <!--                        </class>-->
 
 
-            <!--            <class name="eureka_test.list_property_test_cases.add_land.ArabicAddLandTestCases"/>-->
-            <!--            <class name="eureka_test.list_property_test_cases.add_land.EnglishAddLandTestCases"/>-->
-            <!--            <class name="eureka_test.list_property_test_cases.add_land.EnglishAddLandTestCases"/>-->
+            <!--            <class name="site_test.list_property_test_cases.add_land.ArabicAddLandTestCases"/>-->
+            <!--            <class name="site_test.list_property_test_cases.add_land.EnglishAddLandTestCases"/>-->
+            <!--            <class name="site_test.list_property_test_cases.add_land.EnglishAddLandTestCases"/>-->
         </classes>
 
 

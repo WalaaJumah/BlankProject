@@ -4,7 +4,7 @@
  * @classDescription
  */
 
-package eureka_test.signup_test_cases;
+package site_test.signup_test_cases;
 
 import core.BaseTest;
 import site_pages.signup.SignUpPage;

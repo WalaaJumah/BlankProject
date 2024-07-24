@@ -23,8 +23,8 @@ public class testclass extends BaseTest {
     //Date Search
     @Test(groups = {"Priority 3 Modules", "1.1 Critical Severity"}, description = "{{CountryName}}: For Logged-in user, Verify clicking on the Add Apartment option will redirect user to the Add Apartment form", priority = 3)
     public void verifyClickingOnAddApartmentWorksCorrectly() {
-        ArabicLoginPage loginPage = new ArabicLoginPage(webDriver);
-        loginPage.login(XmlReader.getXMLData("phoneNumber"), XmlReader.getXMLData("password"));
+
+        System.out.println("XML: "+ XmlReader.getXMLData("phoneNumber"));
     }
 
 

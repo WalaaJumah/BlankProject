@@ -5,21 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update My Account">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/DataHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/PropertiesHelpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/files_reader/PropertiesHelpers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/XmlReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/EmailServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/EmailServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xml_reader/XmlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/files_reader/XmlReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/login_test_cases/ArabicLoginTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/EnglishLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/login_test_cases/EnglishLoginTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/signup_test_cases/ArabicSignUpTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/EnglishSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/signup_test_cases/EnglishSignUpTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testclass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/All Modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/All Modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/All ModulesQA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/All ModulesQA.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Test/System Testing Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/System Testing Report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Test/System Testing Report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/System Testing Report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Test/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-sporter_test.AeProductDetailsPageTestCases.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-sporter_test.AeProductDetailsPageTestCases.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Test/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods-not-run.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods-not-run.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Test/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/testng.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,17 +518,17 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/eureka_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/site_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java</url>
           <line>102</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/eureka_test/loginTestCases/LoginTestCases.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/site_test/loginTestCases/LoginTestCases.java</url>
           <line>6</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/eureka_test/cartTestCases/CartTestCases.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/site_test/cartTestCases/CartTestCases.java</url>
           <line>288</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
