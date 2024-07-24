@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update My Account">
-      <change afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/Json/JSONReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/FileAttruibutesDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/FileConfigFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/IJobVacancyInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/excel/ExcelReader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/files_reader/ExcelReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/ConfigFiles/credentials..properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/ConfigFiles/job_info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/ConfigFiles/jobs.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testclass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/blank_project/src/main/java",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/blank_project/src/test/resources/ConfigFiles",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -83,11 +81,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\test\resources\ConfigFiles" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\main\java" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\main\java\site_pages" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\main\java\helper_classes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources\test_runner" />

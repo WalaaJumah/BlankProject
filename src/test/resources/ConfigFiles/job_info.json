@@ -1,0 +1,16 @@
+[
+    {
+      "position": "https://www.linkedin.com",
+      "read_from": "json",
+      "file-path": "test4.json",
+      "write-File": "api",
+      "enable": false
+    },
+    {
+      "position": "https://www.gmail.com",
+      "read_from": "json",
+      "file-path": "test4.json",
+      "write-File": "api",
+      "enable": false
+    }
+  ]
