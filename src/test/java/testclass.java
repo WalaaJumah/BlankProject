@@ -1,5 +1,6 @@
 import core.BaseTest;
 
+import files_reader.PropertiesHelpers;
 import site_pages.login.ArabicLoginPage;
 import helper_classes.AssertionHelper;
 import helper_classes.ElementHelper;
@@ -25,6 +26,7 @@ public class testclass extends BaseTest {
     public void verifyClickingOnAddApartmentWorksCorrectly() {
 
         System.out.println("XML: "+ XmlReader.getXMLData("phoneNumber"));
+        System.out.println("Propertie: "+ PropertiesHelpers.getValue("senderEmail"));
     }
 
 

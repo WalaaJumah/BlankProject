@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update My Account">
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/login_test_cases/ArabicLoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/EnglishLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/login_test_cases/EnglishLoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/signup_test_cases/ArabicSignUpTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/EnglishSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site_test/signup_test_cases/EnglishSignUpTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/Json/JSONReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/FileAttruibutesDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/FileConfigFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/common/IJobVacancyInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_factory/excel/ExcelReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/files_reader/ExcelReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testclass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/All Modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/All Modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/All ModulesQA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/All ModulesQA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Test/System Testing Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/System Testing Report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Test/System Testing Report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/System Testing Report.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Test/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-sporter_test.AeProductDetailsPageTestCases.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-sporter_test.AeProductDetailsPageTestCases.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Test/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/classes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods-alphabetical.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods-not-run.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods-not-run.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Test/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Test/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Test/testng.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/blank_project/src/main/java/site_pages",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/blank_project/src/main/java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -95,11 +83,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\main\java" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\main\java\site_pages" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\main\java\helper_classes" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tamara_payment_method_pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources\test_runner" />
@@ -109,6 +97,8 @@
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="constants" />
+      <recent name="files_reader" />
       <recent name="helper_classes.reading_helper" />
       <recent name="helper_classes" />
     </key>
