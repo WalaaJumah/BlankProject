@@ -1,6 +1,6 @@
 package helper_classes;
 
-import helper_classes.reading_helper.XmlReader;
+import files_reader.XmlReader;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 

@@ -30,7 +30,7 @@
 
 
 
-            <class name="eureka_test.search_test_cases.ArabicSearchTestCases2"/>
+            <class name="eureka_test.login_test_cases.ArabicLoginTestCases"/>
 
 
 

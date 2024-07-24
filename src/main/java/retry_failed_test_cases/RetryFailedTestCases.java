@@ -1,6 +1,6 @@
 package retry_failed_test_cases;
 
-import helper_classes.reading_helper.PropertiesHelpers;
+import files_reader.PropertiesHelpers;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 

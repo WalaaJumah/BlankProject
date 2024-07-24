@@ -6,7 +6,7 @@
 
 package services;
 
-import helper_classes.reading_helper.PropertiesHelpers;
+import files_reader.PropertiesHelpers;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;

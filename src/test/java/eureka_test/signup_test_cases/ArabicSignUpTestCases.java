@@ -15,7 +15,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import xml_reader.XmlReader;
+import files_reader.XmlReader;
 
 @Test(groups = "2.03  SignUp Page")
 public class ArabicSignUpTestCases extends BaseTest {

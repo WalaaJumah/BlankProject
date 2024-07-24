@@ -4,7 +4,7 @@
  * @classDescription
  */
 
-package helper_classes.reading_helper;
+package helper_classes;
 
 import helper_classes.Helper;
 

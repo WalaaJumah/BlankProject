@@ -1,7 +1,6 @@
 package core;
 
 import error_helper.SiteErrorPage;
-import site_pages.search.ArabicSearchPage;
 import helper_classes.AssertionHelper;
 import helper_classes.WaitHelper;
 import org.openqa.selenium.By;
@@ -122,13 +121,6 @@ public class BasePage {
     public void navigateToAddApartmentLink() {
         webDriver.navigate().to(BaseURL + addApartmentLink);
         verifyTheDisplayedPageDoesNotHaveErrors();
-    }
-
-    public void navigateToMyPropertiesLink() {
-        webDriver.navigate().to(BaseURL + myPropertiesLink);
-        ArabicSearchPage searchPage = new ArabicSearchPage(webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-        searchPage.waitTillCartLoaderDisappear(webDriver);
     }
 
     public void navigateToAddVillaLink() {

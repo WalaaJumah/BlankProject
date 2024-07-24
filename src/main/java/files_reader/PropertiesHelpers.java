@@ -1,4 +1,4 @@
-package helper_classes.reading_helper;
+package files_reader;
 
 import java.io.*;
 import java.util.Arrays;

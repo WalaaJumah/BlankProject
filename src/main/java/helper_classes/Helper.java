@@ -6,7 +6,7 @@
 
 package helper_classes;
 
-import helper_classes.reading_helper.PropertiesHelpers;
+import files_reader.PropertiesHelpers;
 
 public class Helper {
     static int WaitTime = Integer.parseInt(PropertiesHelpers.getValue("WAIT_TIME"));

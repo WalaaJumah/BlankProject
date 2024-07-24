@@ -8,12 +8,9 @@ package eureka_test.login_test_cases;
 
 import core.BaseTest;
 import site_pages.login.ArabicLoginPage;
-import site_pages.signup.SignUpPage;
 import helper_classes.AssertionHelper;
-import helper_classes.ElementHelper;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import xml_reader.XmlReader;
+import files_reader.XmlReader;
 
 @Test(groups = "2.04 Login Page")
 public class ArabicLoginTestCases extends BaseTest {

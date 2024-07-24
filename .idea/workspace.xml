@@ -6,6 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update My Account">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/AssertionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper_classes/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/PropertiesHelpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/files_reader/PropertiesHelpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper_classes/reading_helper/XmlReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/EmailServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/EmailServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xml_reader/XmlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/files_reader/XmlReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eureka_test/login_test_cases/ArabicLoginTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eureka_test/signup_test_cases/ArabicSignUpTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testclass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +73,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/blank_project&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/blank_project/src/main/java/site_pages",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src\main\java\site_pages" />
+      <recent name="C:\Users\w.jumaa\IdeaProjects\blank_project\src" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\main\java\helper_classes" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tamara_payment_method_pages" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test\tamara_payment_method_test_cases" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\EurekaJo\src\test\resources\test_runner" />
@@ -99,7 +113,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/test/resources/test_runner/RunTest.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/blank_project/src/test/resources/test_runner/testRun.xml">
     <configuration name="C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/test/resources/test_runner/RunTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eurekaJo" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/test_runner/RunTest.xml" />
@@ -139,16 +153,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/categories.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eurekaJo" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/categories.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/oman.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eurekaJo" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/oman.xml" />
@@ -159,20 +163,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/blank_project/src/test/resources/test_runner/testRun.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eurekaJo" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/test_runner/testRun.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/blank_project/src/test/resources/test_runner/testRun.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/test/resources/test_runner/RunTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/RunTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/oman.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/categories.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/blank_project/src/test/resources/test_runner/testRun.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/EurekaJo/src/test/resources/test_runner/RunTest.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/RunTest.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/oman.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/SporterApprovedFrameWork/src/test/resources/runner/categories.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -493,7 +507,7 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/eureka_pages/loginPage/LoginPage.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/site_pages/loginPage/LoginPage.java</url>
           <line>73</line>
           <properties field="signInOption" class="eureka_pages.loginPage.LoginPage" />
           <option name="timeStamp" value="2" />
@@ -514,9 +528,9 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/eureka_pages/homepage_classes/HomePage.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/site_pages/homepage_classes/HomePage.java</url>
           <line>15</line>
-          <properties class="eureka_pages.homepage_classes.HomePage" method="&lt;init&gt;">
+          <properties class="eureka_pages.homepage_classes.HomePage">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

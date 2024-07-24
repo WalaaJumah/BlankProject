@@ -1,4 +1,4 @@
-package helper_classes.reading_helper;
+package files_reader;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -6,19 +6,31 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class XmlReader {
     public static String getXMLData(String dataFor) {
         String nodeValue;
         try {
-//            File file = new File("src/test/resources/DrNutritionData.xml");
-            InputStream inputStream = XmlReader.class.getClassLoader().getResourceAsStream("DrNutritionData.xml");
-
+            File file = new File("src/test/resources/ConfigFiles/TestData.xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            org.w3c.dom.Document document = documentBuilder.parse(inputStream);
+            org.w3c.dom.Document document = documentBuilder.parse(file);
+            nodeValue = document.getElementsByTagName(dataFor).item(0).getTextContent();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return nodeValue;
+    }
+
+    public static String getXMLDataFromFile(String dataFor, String filePath) {
+        String nodeValue;
+        try {
+            File file = new File(filePath);
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            org.w3c.dom.Document document = documentBuilder.parse(file);
             nodeValue = document.getElementsByTagName(dataFor).item(0).getTextContent();
         } catch (Exception e) {
             throw new RuntimeException(e);
